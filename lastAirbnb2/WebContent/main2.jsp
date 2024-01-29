@@ -1,8 +1,9 @@
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="esVo.LanguageVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="dao.*"%>
+<%@page import="myDao.*"%>
 <%@page import="myVo.*"%>
+<%@page import="esDao.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%	
