@@ -1056,16 +1056,18 @@
 					</div>
 					
 					<div class="pop_section2-2">
-						<form action="Controller" method="post">
+						<form id="test1" method="get">
 							<input type="text" id = "searchText" placeholder="후기검색" name="searchText">
-							<input type="hidden" value ="main3" name="command"/>
-							<button type="submit" class="searchBtn">검색</button>
+							<input type="hidden" name="command" value="searchBytext">
+							<input type="hidden" name="roomIdx" value="<%= roomvo.getRoom_idx() %>">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path></svg>
 						</form>
+						<!-- button이 form태그 안에있으면 form태그 해당메서드로 실행되기때문에 url이 달라진다 -->
+						<button onclick="test1();" class="searchBtn" value="검색">검색</button>
 					</div>
 				</div>
 				
-				<div><!-- 오렌지  -->
+				<div id="review-container"><!-- 오렌지  -->
 				<%for(ReviewVo review : reviewvo){ %>
 					<div class="pop_section2-3">
 						<div>
