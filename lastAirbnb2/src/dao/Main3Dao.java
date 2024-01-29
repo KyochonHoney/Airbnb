@@ -14,13 +14,14 @@ import myVo.RoomExplainVo;
 import myVo.RoomImageVo;
 import myVo.RoomInfoVo;
 import myVo.RoomVo;
+import myVo.SearchReviewByTextVo;
 import myVo.StayVo;
 import esVo.UserInfoVo;
 
 public class Main3Dao {
    static Connection conn= DBConnection.getConnection();
    
-   //룸정보들 메서드
+   //猷몄젙蹂대뱾 硫붿꽌�뱶
    public RoomVo getRoom(int roomIdx) {
       RoomVo roomvo = null;
       
@@ -62,7 +63,7 @@ public class Main3Dao {
       return roomvo;
    }
    
-   //회원정보 메서드
+   //�쉶�썝�젙蹂� 硫붿꽌�뱶
    public UserInfoVo getUserInfo(int hostidx) {
       UserInfoVo uservo = null;
       String sql ="SELECT * FROM user_info WHERE user_idx=?";
@@ -100,7 +101,7 @@ public class Main3Dao {
    }
    
    
-   // 룸이미지 메서드
+   // 猷몄씠誘몄� 硫붿꽌�뱶
    public RoomImageVo getRoomImage(int roomIdx) {
       RoomImageVo imageVo = null;
       
@@ -127,9 +128,9 @@ public class Main3Dao {
       }
       return imageVo;
    }
-   // 룸설명 
-   // select room_info_ex from airbnb_room where room_idx=8;   -- 1(3)8(90)3(7) 또는 null
-   // select room_info_cate_detail from room_info where room_info_idx=8;   -- 최근 숙박한 게스트 중 (((n)))%가 위치에 별점 5점을 준 숙소입니다.
+   // 猷몄꽕紐� 
+   // select room_info_ex from airbnb_room where room_idx=8;   -- 1(3)8(90)3(7) �삉�뒗 null
+   // select room_info_cate_detail from room_info where room_info_idx=8;   -- 理쒓렐 �닕諛뺥븳 寃뚯뒪�듃 以� (((n)))%媛� �쐞移섏뿉 蹂꾩젏 5�젏�쓣 以� �닕�냼�엯�땲�떎.
    // Ex) str2 : ["1", "8", "3"]
    public ArrayList<RoomInfoVo> getRoomInfo(int roomIdx, String[] str2) {
       ArrayList<RoomInfoVo> roominfovo  = new ArrayList<RoomInfoVo>();
@@ -154,7 +155,7 @@ public class Main3Dao {
                    ResultSet rs2 = pstmt2.executeQuery();
                    String strBlahBlah = "";
                    if(rs2.next()) {
-                      strBlahBlah = rs2.getString("room_info_ex"); //7(키패드) 
+                      strBlahBlah = rs2.getString("room_info_ex"); //7(�궎�뙣�뱶) 
                       strBlahBlah = strBlahBlah.replace("\r\n", "\n");
                       strBlahBlah = strBlahBlah.replace("\n", "");
                    }
@@ -181,7 +182,7 @@ public class Main3Dao {
    
    // s : 11(Cond? Nast Traveler, Octover 2019)
    // num : 11
-   // getInside() ----> getRoomInfo() 에서만 사용하는 메서드.
+   // getInside() ----> getRoomInfo() �뿉�꽌留� �궗�슜�븯�뒗 硫붿꽌�뱶.
    private String getInside(String s, int num) {  // ex. s:"1(3)8(90)3(7)" , room_info_ex
       System.out.println("--------------------------------------");
       System.out.println("s : " + s);
@@ -205,11 +206,11 @@ public class Main3Dao {
    }
 
    
-   // 편의시설 쪼개기
+   // �렪�쓽�떆�꽕 履쇨컻湲�
    public ArrayList<ConvenientVo> getConvenientV2(String conv){
       ArrayList<ConvenientVo> convenientvo  = new ArrayList<ConvenientVo>();
       
-      // 조인으로 카테고리까지 추가해야하는지
+      // 議곗씤�쑝濡� 移댄뀒怨좊━源뚯� 異붽��빐�빞�븯�뒗吏�
       String sql = "SELECT *" 
             + " FROM convenient" 
             + " WHERE convenient_idx IN (" + conv + ")"
@@ -236,8 +237,8 @@ public class Main3Dao {
    }
    
    
-   // 편의시설 카테고리
-   // Ex) 1 ---> return:"아름다운 전망"
+   // �렪�쓽�떆�꽕 移댄뀒怨좊━
+   // Ex) 1 ---> return:"�븘由꾨떎�슫 �쟾留�"
    public String getConvCate(int convCateIdx) {
       String sql = "SELECT convenient_category" 
             + " FROM convenient_cate" 
@@ -258,7 +259,7 @@ public class Main3Dao {
    
    
    
-    // 침대타입 
+    // 移⑤����엯 
     public ArrayList<StayVo> getStay(int roomIdx){ ArrayList<StayVo>
     stayvo = new ArrayList<StayVo>();
     
@@ -283,7 +284,7 @@ public class Main3Dao {
     }
     
    
-   // 리뷰(조인조건)
+   // 由щ럭(議곗씤議곌굔)
    public ArrayList<ReviewVo> getReview(int roomIdx) {
       ArrayList<ReviewVo> reviewvo = new ArrayList<ReviewVo>();
       
@@ -296,8 +297,6 @@ public class Main3Dao {
          while(rs.next()) {
              int room_idx =  rs.getInt("room_idx");
              int review_idx =  rs.getInt("review_idx");
-             int re_review_idx =  rs.getInt("re_review_idx");
-             int order_idx =  rs.getInt("order_idx");
              String review = rs.getString("review");
              int user_idx =  rs.getInt("user_idx");
              double score = rs.getDouble("score");
@@ -306,7 +305,7 @@ public class Main3Dao {
              String user_regidence = rs.getString("user_regidence");
              String user_image = rs.getString("user_image");
              
-         reviewvo.add(new ReviewVo(room_idx, review_idx, re_review_idx, order_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));
+         reviewvo.add(new ReviewVo(room_idx, review_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));
          
          }
          rs.close();
@@ -317,26 +316,21 @@ public class Main3Dao {
       return reviewvo;
    }
    // 후기검색
-   public ArrayList<ReviewVo> getSearch(int roomIdx, String searchText){//특정한 리스트를 받아서 반환
+   public ArrayList<ReviewVo> getSearch(int roomIdx, String searchText){//�듅�젙�븳 由ъ뒪�듃瑜� 諛쏆븘�꽌 諛섑솚
          ArrayList<ReviewVo> reviewList = new ArrayList<ReviewVo>();
-         String SQL ="select * from review WHERE 1=1 ";
+         String SQL ="SELECT * FROM review r, user_info u WHERE";
          try {
-//               ic//이거 빼면 안 나온다ㅜ 왜지?
-//                   SQL +=" and  roomIdx = '"+roomIdx+"'";
-//               }
-//            
-               if(searchText != null && !searchText.equals("") ){//이거 빼면 안 나온다ㅜ 왜지?
-                   SQL +=" and room_idx = ? and  review LIKE '%"+searchText.trim()+"%'";
+               if(searchText != null && !searchText.equals("") ){//�씠嫄� 鍮쇰㈃ �븞 �굹�삩�떎�뀥 �솢吏�?
+                   SQL +=" room_idx = ? AND  review LIKE '%"+searchText.trim()+"%' AND r.user_idx = u.user_idx ";
                }
-               SQL += " order by written_date desc";
+               SQL += " ORDER BY written_date DESC";
+              System.out.println(SQL);
                PreparedStatement pstmt=conn.prepareStatement(SQL);
                pstmt.setInt(1, roomIdx);
                ResultSet rs=pstmt.executeQuery();
             while(rs.next()) {
                int room_idx =  rs.getInt("room_idx");
              int review_idx =  rs.getInt("review_idx");
-             int re_review_idx =  rs.getInt("re_review_idx");
-             int order_idx =  rs.getInt("order_idx");
              String review = rs.getString("review");
              int user_idx =  rs.getInt("user_idx");
              double score = rs.getDouble("score");
@@ -344,7 +338,7 @@ public class Main3Dao {
              String user_id = rs.getString("user_id");
              String user_regidence = rs.getString("user_regidence");
              String user_image = rs.getString("user_image");
-             reviewList.add(new ReviewVo(room_idx, review_idx, re_review_idx, order_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));//list에 해당 인스턴스를 담는다.
+             reviewList.add(new ReviewVo(room_idx, review_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));
             }         
          } catch(Exception e) {
             e.printStackTrace();
@@ -352,7 +346,7 @@ public class Main3Dao {
          return reviewList;
       }
    
-   // 룸세부설명(긴글)
+   // 猷몄꽭遺��꽕紐�(湲닿�)
    public RoomExplainVo getRoomExplain(int roomIdx) {
       RoomExplainVo explainvo = null;
       String sql = " SELECT * FROM room_explain WHERE room_idx=?";
@@ -381,7 +375,7 @@ public class Main3Dao {
    
    
    
-   // 숙소의 후기갯수 세는 메서드
+   // �닕�냼�쓽 �썑湲곌갗�닔 �꽭�뒗 硫붿꽌�뱶
    public int getCountReview(int roomIdx) {
       int cnt = 0;
       try {

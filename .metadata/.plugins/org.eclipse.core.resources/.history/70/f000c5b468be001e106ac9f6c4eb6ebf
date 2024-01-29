@@ -1,0 +1,21 @@
+package action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SearchBytextAction implements Action{
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String searchText = request.getParameter("searchText");
+		String roomIdx = request.getParameter("roomIdx");
+		
+		Main3Dao dao = new Main3Dao();
+		
+		
+	}
+
+}

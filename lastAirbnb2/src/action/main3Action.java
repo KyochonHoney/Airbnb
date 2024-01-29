@@ -24,25 +24,22 @@ public class main3Action implements Action{
    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       Main3Dao dao3 = new Main3Dao();
    
-      //후기검색(입력값)
+      //�썑湲곌��깋(�엯�젰媛�)
     //  String searchText = (String) request.getAttribute("searchText");
      // System.out.println("searchText>>>>>>>>>>>>>>"+searchText);
 
-      // main2.jsp에서 넘겨준 숙소idx,호스트idx 받기
+      // main2.jsp�뿉�꽌 �꽆寃⑥� �닕�냼idx,�샇�뒪�듃idx 諛쏄린
       int roomIdx = Integer.parseInt(request.getParameter("roomIdx"));
      // System.out.println("searchText>>>>>>>>>>>>>>"+searchText);
       RoomVo roomvo = dao3.getRoom(roomIdx);
       int hostidx = roomvo.getUser_idx();
       
-      // 룸info 자르기
+      // 猷퇳nfo �옄瑜닿린
       String str = roomvo.getRoom_info_idx(); //1,2,3
       String[] str2 = str.split(",");
       
       String conv = roomvo.getConvenient_idx();
       
-      // 혹시 검색하고싶은게 여러개일때 필요한것만 찾아서 씀
-//      ReviewVo reviewVo = new ReviewVo();
-//      int useIdx = reviewVo.getUser_idx();
 
                                                 
       int countReview = dao3.getCountReview(roomIdx);
@@ -53,7 +50,6 @@ public class main3Action implements Action{
       ArrayList<ConvenientVo> convenientvo = dao3.getConvenientV2(conv);
       ArrayList<ReviewVo> reviewvo = dao3.getReview(roomIdx);
       ArrayList<StayVo> stayvo = dao3.getStay(roomIdx);
-    //  ArrayList<ReviewVo> reviewList = dao3.getSearch(roomIdx, searchText);
       
 
       
@@ -66,7 +62,6 @@ public class main3Action implements Action{
       request.setAttribute("reviewvo",reviewvo);
       request.setAttribute("convenientvo",convenientvo);
       request.setAttribute("stayvo",stayvo);
-//      request.setAttribute("reviewList",reviewList);
       
       
       

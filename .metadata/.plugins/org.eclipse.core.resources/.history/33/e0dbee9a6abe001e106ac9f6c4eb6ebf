@@ -1,0 +1,5 @@
+package myVo;
+
+public class SearchReviewByTextVo {
+
+}

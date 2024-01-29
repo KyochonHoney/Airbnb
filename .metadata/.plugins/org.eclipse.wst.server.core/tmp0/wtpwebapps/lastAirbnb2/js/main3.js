@@ -195,7 +195,7 @@ $(function(){
 			$(".side1-4sp").text("게스트 추가");
 		else{
 			$(".side1-4sp").text(adult + kid + baby + pet);
-		}	
+		}
 	});
 	
 	// 인원수-버튼
@@ -550,4 +550,51 @@ $(function(){
 	// 댓글검색
 //	$("#searchInput").keyup(function(e){if(e.keyCode = 13) Seacrh();})
 }); 
+
+
+//  후기 ajax
+function test1(){
+	const reviewcontainer = $("#review-container");
+    let formData = $("#test1").serialize();
+	//console.log(formData);
+	$.ajax({
+		type:'get',
+		url:'Controller',
+		data : formData,
+		success : function(obj){
+			reviewcontainer.empty();
+			for(let i =0; i<obj.length; i++){
+				let str = 
+				"<div class='pop_section2-3'>"+
+						"<div>" +
+							"<img src= " + obj[i].user_image + "/>" +
+							"<div>" + 
+								"<span class='re-sp1'>" + obj[i].user_id + "<br></span>" +
+								"<span class='re-sp2'>" + obj[i].user_regidence + "</span>" +
+							"</div>" +
+						"</div>" +
+						
+						"<div>" +
+							"<div>" +
+								
+							"</div>"+
+							obj[i].written_date +
+						"</div>" +
+					
+						
+						"<div>" +
+							obj[i].review +	
+						"</div>" +	
+					"</div>"
+					console.log(str);
+					reviewcontainer.append(str);
+			}
+		},
+		error: function(r, s, e){
+					alert("[에러] code:" + r.status
+							+ "message:" + r.responseText
+							+ "error:" + e );
+		}
+	});
+}
 
