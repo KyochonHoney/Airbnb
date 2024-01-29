@@ -195,7 +195,7 @@ $(function(){
 			$(".side1-4sp").text("게스트 추가");
 		else{
 			$(".side1-4sp").text(adult + kid + baby + pet);
-		}
+		}	
 	});
 	
 	// 인원수-버튼

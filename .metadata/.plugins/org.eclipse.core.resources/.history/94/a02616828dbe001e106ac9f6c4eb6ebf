@@ -195,7 +195,7 @@ $(function(){
 			$(".side1-4sp").text("게스트 추가");
 		else{
 			$(".side1-4sp").text(adult + kid + baby + pet);
-		}
+		}	
 	});
 	
 	// 인원수-버튼
@@ -562,6 +562,7 @@ function test1(){
 		url:'Controller',
 		data : formData,
 		success : function(obj){
+			if(searchText!= null){
 			reviewcontainer.empty();
 			for(let i =0; i<obj.length; i++){
 				let str = 

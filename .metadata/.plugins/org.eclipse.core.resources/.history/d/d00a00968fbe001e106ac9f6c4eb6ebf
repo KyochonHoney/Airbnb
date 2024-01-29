@@ -196,6 +196,7 @@ $(function(){
 		else{
 			$(".side1-4sp").text(adult + kid + baby + pet);
 		}
+		if(adultVAL + kidVAL + babyVAL + petVAL)	
 	});
 	
 	// 인원수-버튼
