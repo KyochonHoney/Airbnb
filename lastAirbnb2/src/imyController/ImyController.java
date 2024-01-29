@@ -9,22 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import action.ClickLikeInTimelineAction;
-import action.DeleteNotificationAction;
-import action.DoFollowAction;
-import action.DoUnfollowAction;
-import action.InsertReplyAction;
-import action.JoinAction;
-import action.LoginAction;
-import action.LogoutAction;
-import action.ShowNextTimelinePageAction;
-import action.UpdateAddressAction;
-import action.UpdateEmailAction;
-import action.UpdateNameAction;
-import action.UpdatePhoneNumAction;
-import action.UpdateSecondNumAction;
-import action.main2Action;
-import action.main3Action;
+import esAction.*;
+import myAction.*;
+import swAction.*;
 
 @WebServlet("/ImyController")
 public class ImyController extends HttpServlet {
