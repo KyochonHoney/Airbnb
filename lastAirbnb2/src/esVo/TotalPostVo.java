@@ -2,7 +2,7 @@ package esVo;
 
 import java.util.ArrayList;
 
-import dao.ProfileTimelineDao;
+import esDao.ProfileTimelineDao;
 
 public class TotalPostVo {
 	private PostVo postList;
