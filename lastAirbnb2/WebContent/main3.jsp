@@ -1056,7 +1056,7 @@
 					</div>
 					
 					<div class="pop_section2-2">
-						<form action="Controller" method="post">
+						<form action="ImyController" method="post">
 							<input type="text" id = "searchText" placeholder="후기검색" name="searchText">
 							<input type="hidden" value ="main3" name="command"/>
 							<button type="submit" class="searchBtn">검색</button>
