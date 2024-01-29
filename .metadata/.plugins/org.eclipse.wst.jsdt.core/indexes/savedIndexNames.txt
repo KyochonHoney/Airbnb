@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+C:\Users\kshe7\OneDrive\πŸ≈¡ »≠∏È\last\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3003910641.index
+3314862302.index
+3160120840.index
+1168139427.index

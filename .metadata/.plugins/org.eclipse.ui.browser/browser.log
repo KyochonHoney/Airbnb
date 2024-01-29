@@ -1,0 +1,586 @@
+
+1월 25, 2024 16:00:53.581 NEW SESSION
+1월 25, 2024 16:00:53.581 [22436:24552:0125/160053.565:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:00:53.581 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:00:53.597 ERROR: Failed parsing Certificate
+1월 25, 2024 16:00:53.597 
+1월 25, 2024 16:00:55.207 [22436:24552:0125/160055.205:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:00:55.207 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:00:55.207 ERROR: Failed parsing Certificate
+1월 25, 2024 16:00:55.207 
+1월 25, 2024 16:00:55.207 [22436:12512:0125/160055.205:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:00:55.217 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:00:55.217 ERROR: Failed parsing Certificate
+1월 25, 2024 16:00:55.217 
+1월 25, 2024 16:01:29.664 [22436:24552:0125/160129.662:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:01:29.665 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:01:29.665 ERROR: Failed parsing Certificate
+1월 25, 2024 16:01:29.667 
+1월 25, 2024 16:01:29.709 [22436:24552:0125/160129.707:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:01:29.709 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:01:29.710 ERROR: Failed parsing Certificate
+1월 25, 2024 16:01:29.711 
+1월 25, 2024 16:01:29.779 [22436:24552:0125/160129.777:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:01:29.780 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:01:29.781 ERROR: Failed parsing Certificate
+1월 25, 2024 16:01:29.781 
+1월 25, 2024 16:09:04.295 [22436:18212:0125/160904.295:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+1월 25, 2024 16:17:10.399 [22436:18212:0125/161710.399:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+1월 25, 2024 16:17:14.98 [22436:24552:0125/161714.083:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:17:14.98 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:17:14.98 ERROR: Failed parsing Certificate
+1월 25, 2024 16:17:14.98 
+1월 25, 2024 16:19:42.322 [22436:24552:0125/161942.320:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:19:42.326 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:19:42.327 ERROR: Failed parsing Certificate
+1월 25, 2024 16:19:42.329 
+1월 25, 2024 16:19:42.644 [22436:24552:0125/161942.643:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:19:42.647 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:19:42.647 ERROR: Failed parsing Certificate
+1월 25, 2024 16:19:42.648 
+1월 25, 2024 16:21:50.793 [22436:16332:0125/162150.793:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+1월 25, 2024 16:31:19.871 [22436:18212:0125/163119.870:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+1월 25, 2024 16:31:24.82 [22436:18212:0125/163124.082:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 25, 2024 16:32:15.111 [22436:24552:0125/163215.110:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:32:15.114 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:32:15.114 ERROR: Failed parsing Certificate
+1월 25, 2024 16:32:15.116 
+1월 25, 2024 16:39:10.578 [22436:16332:0125/163910.576:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+1월 25, 2024 16:39:33.596 [22436:24552:0125/163933.596:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:39:33.596 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:39:33.596 ERROR: Failed parsing Certificate
+1월 25, 2024 16:39:33.596 
+1월 25, 2024 16:39:35.118 [22436:24552:0125/163935.118:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:39:35.119 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:39:35.119 ERROR: Failed parsing Certificate
+1월 25, 2024 16:39:35.121 
+1월 25, 2024 16:39:35.162 [22436:24552:0125/163935.162:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:39:35.177 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:39:35.177 ERROR: Failed parsing Certificate
+1월 25, 2024 16:39:35.177 
+1월 25, 2024 16:47:16.656 [22436:24552:0125/164716.655:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:47:16.657 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:47:16.658 ERROR: Failed parsing Certificate
+1월 25, 2024 16:47:16.659 
+1월 25, 2024 16:47:18.263 [22436:24552:0125/164718.262:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:47:18.264 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:47:18.265 ERROR: Failed parsing Certificate
+1월 25, 2024 16:47:18.267 
+1월 25, 2024 16:47:42.843 [22436:24552:0125/164742.843:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 16:47:42.847 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 16:47:42.849 ERROR: Failed parsing Certificate
+1월 25, 2024 16:47:42.850 
+
+1월 25, 2024 17:01:06.359 NEW SESSION
+1월 25, 2024 17:01:06.359 [17996:7316:0125/170106.350:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:01:06.359 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:01:06.359 ERROR: Failed parsing Certificate
+1월 25, 2024 17:01:06.366 
+1월 25, 2024 17:01:07.854 [17996:25740:0125/170107.852:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:01:07.854 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:01:07.854 ERROR: Failed parsing Certificate
+1월 25, 2024 17:01:07.854 
+1월 25, 2024 17:01:07.885 [17996:25740:0125/170107.883:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:01:07.885 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:01:07.888 ERROR: Failed parsing Certificate
+1월 25, 2024 17:01:07.888 
+1월 25, 2024 17:09:51.264 [17996:7316:0125/170951.264:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:09:51.264 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:09:51.264 ERROR: Failed parsing Certificate
+1월 25, 2024 17:09:51.264 
+1월 25, 2024 17:09:52.807 [17996:7316:0125/170952.807:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:09:52.807 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:09:52.807 ERROR: Failed parsing Certificate
+1월 25, 2024 17:09:52.807 
+1월 25, 2024 17:15:55.713 [17996:7316:0125/171555.712:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:15:55.714 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:15:55.715 ERROR: Failed parsing Certificate
+1월 25, 2024 17:15:55.716 
+1월 25, 2024 17:15:56.478 [17996:7316:0125/171556.477:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:15:56.479 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:15:56.481 ERROR: Failed parsing Certificate
+1월 25, 2024 17:15:56.482 
+1월 25, 2024 17:26:06.275 [17996:7316:0125/172606.274:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:26:06.276 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:26:06.278 ERROR: Failed parsing Certificate
+1월 25, 2024 17:26:06.279 
+1월 25, 2024 17:32:25.259 [17996:7316:0125/173225.259:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 25, 2024 17:32:25.261 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 25, 2024 17:32:25.261 ERROR: Failed parsing Certificate
+1월 25, 2024 17:32:25.261 
+
+1월 27, 2024 19:37:02.584 NEW SESSION
+1월 27, 2024 19:37:02.584 [17380:6704:0127/193702.581:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:37:08.888 [17380:6704:0127/193708.887:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:37:40.699 [17380:6704:0127/193740.698:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:38:30.526 [17380:9384:0127/193830.525:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:38:30.527 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:38:30.528 ERROR: Failed parsing Certificate
+1월 27, 2024 19:38:30.529 
+1월 27, 2024 19:38:39.476 [17380:6704:0127/193839.475:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:39:44.992 [17380:9384:0127/193944.990:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:39:44.992 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:39:44.992 ERROR: Failed parsing Certificate
+1월 27, 2024 19:39:44.998 
+1월 27, 2024 19:41:08.194 [11424:13284:0127/194108.194:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:41:49.838 [18112:17432:0127/194149.836:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 19:41:52.387 [18112:17432:0127/194152.385:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:42:13.390 [18112:11496:0127/194213.389:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:42:13.392 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:42:13.393 ERROR: Failed parsing Certificate
+1월 27, 2024 19:42:13.394 
+1월 27, 2024 19:42:21.901 [16052:9116:0127/194221.900:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 19:42:24.448 [16052:9116:0127/194224.444:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:42:34.24 [11204:1344:0127/194234.024:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:46:44.515 [11172:16560:0127/194644.514:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:46:44.515 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:46:44.517 ERROR: Failed parsing Certificate
+1월 27, 2024 19:46:44.517 
+1월 27, 2024 19:46:44.591 [11172:16560:0127/194644.590:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:46:44.592 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:46:44.593 ERROR: Failed parsing Certificate
+1월 27, 2024 19:46:44.594 
+1월 27, 2024 19:46:44.949 [11172:16560:0127/194644.949:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:46:44.950 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:46:44.950 ERROR: Failed parsing Certificate
+1월 27, 2024 19:46:44.951 
+1월 27, 2024 19:46:55.330 [11172:18232:0127/194655.330:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:47:40.855 [11172:18232:0127/194740.854:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:47:53.413 [11172:18232:0127/194753.413:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 19:47:59.944 [11172:18232:0127/194759.943:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 19:48:21.428 [11172:18232:0127/194821.428:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:48:53.203 [11172:18232:0127/194853.200:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:49:01.387 [11172:18232:0127/194901.386:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:49:04.430 [11172:18232:0127/194904.429:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:51:46.868 [2268:4640:0127/195146.867:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 19:51:57.943 [2268:4640:0127/195157.943:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:53:15.525 [2268:12776:0127/195315.524:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:53:15.526 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:53:15.527 ERROR: Failed parsing Certificate
+1월 27, 2024 19:53:15.529 
+1월 27, 2024 19:53:17.270 [2268:12776:0127/195317.269:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:53:17.271 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:53:17.272 ERROR: Failed parsing Certificate
+1월 27, 2024 19:53:17.273 
+1월 27, 2024 19:53:17.274 [2268:13084:0127/195317.269:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:53:17.275 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:53:17.276 ERROR: Failed parsing Certificate
+1월 27, 2024 19:53:17.277 
+1월 27, 2024 19:53:28.629 [2268:4640:0127/195328.629:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:53:50.691 [2268:4640:0127/195350.690:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:55:36.517 [2268:12776:0127/195536.516:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:55:36.519 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:55:36.520 ERROR: Failed parsing Certificate
+1월 27, 2024 19:55:36.521 
+1월 27, 2024 19:55:38.469 [2268:12776:0127/195538.468:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:55:38.471 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:55:38.472 ERROR: Failed parsing Certificate
+1월 27, 2024 19:55:38.474 
+1월 27, 2024 19:56:36.287 [2268:4640:0127/195636.287:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 19:56:38.339 [2268:4640:0127/195638.338:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:57:33.960 [2268:4640:0127/195733.959:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:58:19.392 [2268:4640:0127/195819.391:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:59:11.888 [2268:4640:0127/195911.887:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 19:59:37.240 [2268:12776:0127/195937.240:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 19:59:37.241 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 19:59:37.243 ERROR: Failed parsing Certificate
+1월 27, 2024 19:59:37.243 
+1월 27, 2024 20:00:12.393 [2268:4640:0127/200012.392:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 20:00:18.442 [2268:4640:0127/200018.441:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:00:59.388 [2268:4640:0127/200059.387:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:02:13.309 [2212:9424:0127/200213.307:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:02:42.605 [2212:8620:0127/200242.604:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:02:42.606 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:02:42.608 ERROR: Failed parsing Certificate
+1월 27, 2024 20:02:42.609 
+1월 27, 2024 20:02:44.272 [2212:8620:0127/200244.271:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:02:44.274 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:02:44.275 ERROR: Failed parsing Certificate
+1월 27, 2024 20:02:44.277 
+1월 27, 2024 20:03:20.100 [14612:7728:0127/200320.100:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:03:41.267 [14612:7728:0127/200341.267:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:04:25.380 [14612:7728:0127/200425.380:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:04:34.462 [14612:7728:0127/200434.461:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:04:39.60 [14612:7728:0127/200439.059:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 20:05:17.245 [14612:7728:0127/200517.245:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:05:35.52 [14612:4016:0127/200535.051:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:05:35.53 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:05:35.54 ERROR: Failed parsing Certificate
+1월 27, 2024 20:05:35.56 
+1월 27, 2024 20:06:47.805 [14612:7728:0127/200647.804:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:07:15.213 [14612:7728:0127/200715.212:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:07:39.545 [18088:14084:0127/200739.545:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:07:57.983 [18088:14084:0127/200757.982:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:08:08.459 [18088:2160:0127/200808.458:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:08:08.459 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:08:08.461 ERROR: Failed parsing Certificate
+1월 27, 2024 20:08:08.464 
+1월 27, 2024 20:09:44.46 [18088:14084:0127/200944.045:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:10:39.662 [18088:14084:0127/201039.661:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:10:54.199 [18088:14084:0127/201054.199:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:11:05.599 [18088:2160:0127/201105.599:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:11:05.600 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:11:05.600 ERROR: Failed parsing Certificate
+1월 27, 2024 20:11:05.601 
+1월 27, 2024 20:25:45.343 [16812:17328:0127/202545.341:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:26:07.251 [16812:17328:0127/202607.250:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:26:56.651 [16812:17328:0127/202656.650:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:27:46.69 [17028:18152:0127/202746.069:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:27:55.833 [17028:3400:0127/202755.824:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:27:55.833 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:27:55.835 ERROR: Failed parsing Certificate
+1월 27, 2024 20:27:55.836 
+1월 27, 2024 20:27:57.362 [17028:3400:0127/202757.361:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:27:57.362 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:27:57.364 ERROR: Failed parsing Certificate
+1월 27, 2024 20:27:57.364 
+1월 27, 2024 20:27:57.367 [17028:10920:0127/202757.361:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:27:57.369 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:27:57.369 ERROR: Failed parsing Certificate
+1월 27, 2024 20:27:57.371 
+1월 27, 2024 20:28:32.432 [17028:18152:0127/202832.431:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:29:05.02 [17028:18152:0127/202905.002:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:29:38.710 [17028:18152:0127/202938.709:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:31:12.907 [14452:7012:0127/203112.907:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:31:42.764 [14452:17736:0127/203142.763:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:31:42.764 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:31:42.766 ERROR: Failed parsing Certificate
+1월 27, 2024 20:31:42.767 
+1월 27, 2024 20:31:53.962 [14452:17736:0127/203153.956:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:31:53.962 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:31:53.965 ERROR: Failed parsing Certificate
+1월 27, 2024 20:31:53.965 
+1월 27, 2024 20:32:32.713 [14452:7012:0127/203232.713:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:33:41.175 [14452:7012:0127/203341.175:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:34:36.996 [14452:17736:0127/203436.995:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:34:36.996 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:34:36.997 ERROR: Failed parsing Certificate
+1월 27, 2024 20:34:36.998 
+1월 27, 2024 20:34:38.734 [14452:17736:0127/203438.733:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:34:38.735 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:34:38.735 ERROR: Failed parsing Certificate
+1월 27, 2024 20:34:38.737 
+1월 27, 2024 20:34:39.67 [14452:17736:0127/203439.066:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:34:39.69 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:34:39.69 ERROR: Failed parsing Certificate
+1월 27, 2024 20:34:39.70 
+1월 27, 2024 20:36:10.572 [14452:7012:0127/203610.571:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:37:00.750 [14452:17736:0127/203700.750:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:37:00.751 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:37:00.752 ERROR: Failed parsing Certificate
+1월 27, 2024 20:37:00.754 
+1월 27, 2024 20:37:46.657 [14452:7012:0127/203746.655:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:39:04.553 [14452:7012:0127/203904.552:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:40:41.851 [14452:17736:0127/204041.850:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:40:41.852 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:40:41.853 ERROR: Failed parsing Certificate
+1월 27, 2024 20:40:41.854 
+1월 27, 2024 20:40:43.612 [14452:17736:0127/204043.611:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:40:43.613 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:40:43.614 ERROR: Failed parsing Certificate
+1월 27, 2024 20:40:43.615 
+1월 27, 2024 20:43:45.458 [14452:17736:0127/204345.458:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:43:45.459 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:43:45.460 ERROR: Failed parsing Certificate
+1월 27, 2024 20:43:45.461 
+1월 27, 2024 20:48:00.330 [14452:17736:0127/204800.330:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:48:00.332 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:48:00.332 ERROR: Failed parsing Certificate
+1월 27, 2024 20:48:00.333 
+1월 27, 2024 20:48:00.954 [14452:17736:0127/204800.954:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:48:00.956 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:48:00.957 ERROR: Failed parsing Certificate
+1월 27, 2024 20:48:00.957 
+1월 27, 2024 20:51:31.686 [14452:7012:0127/205131.686:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:53:27.449 [14452:7012:0127/205327.448:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:54:36.878 [14452:7012:0127/205436.877:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:55:30.856 [14452:7012:0127/205530.855:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:56:00.606 [14452:7012:0127/205600.605:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:57:03.188 [14452:7012:0127/205703.187:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:57:54.510 [14452:7012:0127/205754.508:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:58:16.559 [14452:7012:0127/205816.558:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 20:58:56.927 [14452:17736:0127/205856.927:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 20:58:56.928 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 20:58:56.929 ERROR: Failed parsing Certificate
+1월 27, 2024 20:58:56.930 
+1월 27, 2024 20:59:31.247 [14452:7012:0127/205931.247:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:00:03.869 [14452:7012:0127/210003.869:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:00:39.377 [14452:7012:0127/210039.376:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:01:04.621 [14452:7012:0127/210104.620:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:01:46.289 [14452:7012:0127/210146.288:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:04:19.670 [14452:7012:0127/210419.669:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:04:40.153 [14452:7012:0127/210440.153:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:05:02.259 [14452:7012:0127/210502.258:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:05:25.814 [14452:7012:0127/210525.814:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:06:06.771 [14452:7012:0127/210606.770:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:08:25.945 [14452:7012:0127/210825.944:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:08:51.968 [14452:7012:0127/210851.968:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:11:12.829 [14452:7012:0127/211112.829:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:13:24.382 [14452:7012:0127/211324.382:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:13:51.378 [14452:7012:0127/211351.377:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:14:34.921 [14452:17736:0127/211434.919:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:14:34.922 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:14:34.923 ERROR: Failed parsing Certificate
+1월 27, 2024 21:14:34.923 
+1월 27, 2024 21:14:47.464 [14452:7012:0127/211447.464:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:15:42.725 [14452:7012:0127/211542.724:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:17:28.283 [14452:17736:0127/211728.282:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:17:28.284 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:17:28.285 ERROR: Failed parsing Certificate
+1월 27, 2024 21:17:28.285 
+1월 27, 2024 21:17:57.882 [14452:17736:0127/211757.882:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:17:57.886 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:17:57.886 ERROR: Failed parsing Certificate
+1월 27, 2024 21:17:57.886 
+1월 27, 2024 21:17:59.541 [14452:17736:0127/211759.541:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:17:59.546 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:17:59.546 ERROR: Failed parsing Certificate
+1월 27, 2024 21:17:59.546 
+1월 27, 2024 21:18:48.180 [14452:7012:0127/211848.180:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:19:09.865 [14452:7012:0127/211909.864:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:19:27.793 [14452:7012:0127/211927.793:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:20:44.183 [14452:17736:0127/212044.182:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:20:44.185 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:20:44.186 ERROR: Failed parsing Certificate
+1월 27, 2024 21:20:44.187 
+1월 27, 2024 21:21:14.929 [18348:17760:0127/212114.927:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:22:09.131 [18348:17760:0127/212209.130:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:23:28.100 [18348:17760:0127/212328.099:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:24:00.504 [18348:14460:0127/212400.503:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:24:00.506 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:24:00.507 ERROR: Failed parsing Certificate
+1월 27, 2024 21:24:00.507 
+1월 27, 2024 21:24:01.830 [18348:14460:0127/212401.830:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:24:01.832 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:24:01.832 ERROR: Failed parsing Certificate
+1월 27, 2024 21:24:01.833 
+1월 27, 2024 21:24:01.996 [18348:14460:0127/212401.996:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:24:01.997 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:24:01.997 ERROR: Failed parsing Certificate
+1월 27, 2024 21:24:01.998 
+1월 27, 2024 21:24:17.938 [18348:17760:0127/212417.938:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:24:46.828 [18348:17760:0127/212446.827:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:25:20.636 [18348:17760:0127/212520.636:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:25:48.470 [18348:17760:0127/212548.470:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:29:43.976 [16656:3992:0127/212943.974:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:30:11.702 [16656:3992:0127/213011.701:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:30:52.93 [16656:3992:0127/213052.093:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:31:14.468 [712:15992:0127/213114.468:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 27, 2024 21:31:17.330 [712:6804:0127/213117.330:ERROR:CONSOLE(0)] "ReferenceError: dragEvent is not defined", source:  (0)
+1월 27, 2024 21:31:43.443 [712:15992:0127/213143.443:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 21:32:03.731 [712:7020:0127/213203.731:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:32:03.732 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:32:03.732 ERROR: Failed parsing Certificate
+1월 27, 2024 21:32:03.733 
+1월 27, 2024 21:32:05.67 [712:5080:0127/213205.067:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:32:05.68 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:32:05.69 ERROR: Failed parsing Certificate
+1월 27, 2024 21:32:05.70 
+1월 27, 2024 21:32:05.201 [712:7020:0127/213205.200:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:32:05.201 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:32:05.203 ERROR: Failed parsing Certificate
+1월 27, 2024 21:32:05.204 
+1월 27, 2024 21:32:56.542 [16728:10300:0127/213256.541:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+1월 27, 2024 21:33:26.307 [16728:10300:0127/213326.306:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+1월 27, 2024 21:35:40.139 [9916:7828:0127/213540.138:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 27, 2024 21:35:40.140 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 27, 2024 21:35:40.142 ERROR: Failed parsing Certificate
+1월 27, 2024 21:35:40.142 
+
+1월 28, 2024 15:19:03.440 NEW SESSION
+1월 28, 2024 15:19:03.440 [17412:14800:0128/151903.437:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:19:03.441 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:19:03.441 ERROR: Failed parsing Certificate
+1월 28, 2024 15:19:03.442 
+1월 28, 2024 15:19:03.471 [17412:14800:0128/151903.471:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:19:03.471 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:19:03.472 ERROR: Failed parsing Certificate
+1월 28, 2024 15:19:03.472 
+1월 28, 2024 15:19:03.808 [17412:14800:0128/151903.808:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:19:03.809 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:19:03.809 ERROR: Failed parsing Certificate
+1월 28, 2024 15:19:03.811 
+1월 28, 2024 15:19:04.717 [17412:14800:0128/151904.717:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:19:04.718 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:19:04.718 ERROR: Failed parsing Certificate
+1월 28, 2024 15:19:04.720 
+1월 28, 2024 15:28:21.245 [17412:14800:0128/152821.245:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:28:21.246 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:28:21.246 ERROR: Failed parsing Certificate
+1월 28, 2024 15:28:21.248 
+1월 28, 2024 15:31:55.284 [17412:14800:0128/153155.284:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:31:55.285 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:31:55.285 ERROR: Failed parsing Certificate
+1월 28, 2024 15:31:55.289 
+1월 28, 2024 15:34:11.168 [17412:14800:0128/153411.167:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:34:11.169 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:34:11.170 ERROR: Failed parsing Certificate
+1월 28, 2024 15:34:11.171 
+1월 28, 2024 15:34:12.464 [17412:14800:0128/153412.463:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:34:12.464 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:34:12.465 ERROR: Failed parsing Certificate
+1월 28, 2024 15:34:12.466 
+1월 28, 2024 15:36:54.201 [17412:14800:0128/153654.200:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:36:54.202 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:36:54.202 ERROR: Failed parsing Certificate
+1월 28, 2024 15:36:54.202 
+1월 28, 2024 15:39:08.226 [17412:14800:0128/153908.226:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:39:08.227 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:39:08.227 ERROR: Failed parsing Certificate
+1월 28, 2024 15:39:08.228 
+1월 28, 2024 15:42:24.481 [17412:14800:0128/154224.481:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:42:24.482 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:42:24.482 ERROR: Failed parsing Certificate
+1월 28, 2024 15:42:24.483 
+1월 28, 2024 15:49:45.984 [11768:6608:0128/154945.984:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:49:45.984 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:49:45.984 ERROR: Failed parsing Certificate
+1월 28, 2024 15:49:45.984 
+1월 28, 2024 15:49:47.267 [11768:6608:0128/154947.266:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:49:47.268 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:49:47.268 ERROR: Failed parsing Certificate
+1월 28, 2024 15:49:47.268 
+1월 28, 2024 15:49:47.368 [11768:6608:0128/154947.368:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:49:47.368 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:49:47.368 ERROR: Failed parsing Certificate
+1월 28, 2024 15:49:47.368 
+1월 28, 2024 15:52:36.96 [11768:6608:0128/155236.095:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:52:36.97 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:52:36.97 ERROR: Failed parsing Certificate
+1월 28, 2024 15:52:36.99 
+1월 28, 2024 15:52:37.356 [11768:6608:0128/155237.356:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:52:37.357 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:52:37.357 ERROR: Failed parsing Certificate
+1월 28, 2024 15:52:37.357 
+1월 28, 2024 15:52:37.493 [11768:6608:0128/155237.493:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:52:37.494 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:52:37.494 ERROR: Failed parsing Certificate
+1월 28, 2024 15:52:37.494 
+1월 28, 2024 15:54:56.783 [11768:6608:0128/155456.783:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:54:56.784 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:54:56.784 ERROR: Failed parsing Certificate
+1월 28, 2024 15:54:56.786 
+1월 28, 2024 15:56:11.743 [11768:6608:0128/155611.743:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:56:11.744 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:56:11.744 ERROR: Failed parsing Certificate
+1월 28, 2024 15:56:11.745 
+1월 28, 2024 15:59:21.400 [11768:6608:0128/155921.399:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:59:21.400 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:59:21.400 ERROR: Failed parsing Certificate
+1월 28, 2024 15:59:21.401 
+1월 28, 2024 15:59:22.834 [11768:6608:0128/155922.833:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 15:59:22.835 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 15:59:22.836 ERROR: Failed parsing Certificate
+1월 28, 2024 15:59:22.837 
+1월 28, 2024 16:07:30.735 [11768:6608:0128/160730.735:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:07:30.736 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:07:30.736 ERROR: Failed parsing Certificate
+1월 28, 2024 16:07:30.736 
+1월 28, 2024 16:10:24.186 [11768:6608:0128/161024.185:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:10:24.187 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:10:24.187 ERROR: Failed parsing Certificate
+1월 28, 2024 16:10:24.189 
+1월 28, 2024 16:16:34.715 [11768:6608:0128/161634.713:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:16:34.715 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:16:34.716 ERROR: Failed parsing Certificate
+1월 28, 2024 16:16:34.719 
+1월 28, 2024 16:30:37.321 [11768:6608:0128/163037.318:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:30:37.322 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:30:37.322 ERROR: Failed parsing Certificate
+1월 28, 2024 16:30:37.324 
+1월 28, 2024 16:33:12.611 [11768:6608:0128/163312.610:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:33:12.612 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:33:12.613 ERROR: Failed parsing Certificate
+1월 28, 2024 16:33:12.616 
+1월 28, 2024 16:46:04.283 [11768:6608:0128/164604.282:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:46:04.283 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:46:04.283 ERROR: Failed parsing Certificate
+1월 28, 2024 16:46:04.287 
+1월 28, 2024 16:49:19.847 [11768:6608:0128/164919.846:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:49:19.847 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:49:19.847 ERROR: Failed parsing Certificate
+1월 28, 2024 16:49:19.848 
+1월 28, 2024 16:52:10.700 [11768:6608:0128/165210.700:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 16:52:10.701 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 16:52:10.701 ERROR: Failed parsing Certificate
+1월 28, 2024 16:52:10.701 
+1월 28, 2024 17:08:24.912 [11768:6608:0128/170824.911:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 17:08:24.912 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 17:08:24.913 ERROR: Failed parsing Certificate
+1월 28, 2024 17:08:24.918 
+1월 28, 2024 17:10:57.262 [11768:6608:0128/171057.262:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 17:10:57.263 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 17:10:57.263 ERROR: Failed parsing Certificate
+1월 28, 2024 17:10:57.265 
+1월 28, 2024 17:17:58.378 [11768:6608:0128/171758.378:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 17:17:58.379 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 17:17:58.380 ERROR: Failed parsing Certificate
+1월 28, 2024 17:17:58.380 
+1월 28, 2024 17:27:37.319 [11768:6608:0128/172737.319:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 17:27:37.319 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 17:27:37.319 ERROR: Failed parsing Certificate
+1월 28, 2024 17:27:37.319 
+1월 28, 2024 17:42:46.60 [11768:6608:0128/174246.060:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 17:42:46.61 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 17:42:46.61 ERROR: Failed parsing Certificate
+1월 28, 2024 17:42:46.66 
+1월 28, 2024 17:46:16.180 [11768:6608:0128/174616.179:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 17:46:16.180 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 17:46:16.181 ERROR: Failed parsing Certificate
+1월 28, 2024 17:46:16.184 
+1월 28, 2024 17:48:28.309 [11768:8080:0128/174828.309:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+1월 28, 2024 17:53:08.577 [11768:8080:0128/175308.576:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 17:53:40.778 [11768:8080:0128/175340.777:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 17:54:29.570 [11768:8080:0128/175429.570:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 17:56:22.789 [11768:8080:0128/175622.788:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 17:59:11.239 [11768:8080:0128/175911.237:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 18:04:51.262 [11768:8080:0128/180451.261:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 18:14:54.312 [11768:8080:0128/181454.311:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+1월 28, 2024 18:19:29.596 [11768:6608:0128/181929.594:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:19:29.597 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:19:29.597 ERROR: Failed parsing Certificate
+1월 28, 2024 18:19:29.598 
+1월 28, 2024 18:19:29.990 [11768:6608:0128/181929.989:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:19:29.991 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:19:29.991 ERROR: Failed parsing Certificate
+1월 28, 2024 18:19:29.992 
+1월 28, 2024 18:19:30.431 [11768:6608:0128/181930.429:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:19:30.432 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:19:30.434 ERROR: Failed parsing Certificate
+1월 28, 2024 18:19:30.435 
+1월 28, 2024 18:23:10.649 [11768:6608:0128/182310.648:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:23:10.651 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:23:10.652 ERROR: Failed parsing Certificate
+1월 28, 2024 18:23:10.655 
+1월 28, 2024 18:25:57.973 [11768:6608:0128/182557.972:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:25:57.975 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:25:57.976 ERROR: Failed parsing Certificate
+1월 28, 2024 18:25:57.977 
+1월 28, 2024 18:29:45.98 [11768:6608:0128/182945.097:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:29:45.99 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:29:45.101 ERROR: Failed parsing Certificate
+1월 28, 2024 18:29:45.102 
+1월 28, 2024 18:33:36.413 [16248:16572:0128/183336.413:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:33:36.413 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:33:36.413 ERROR: Failed parsing Certificate
+1월 28, 2024 18:33:36.413 
+1월 28, 2024 18:36:39.93 [16248:16572:0128/183639.093:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:36:39.108 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:36:39.109 ERROR: Failed parsing Certificate
+1월 28, 2024 18:36:39.109 
+1월 28, 2024 18:40:09.947 [16248:16572:0128/184009.947:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:40:09.947 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:40:09.947 ERROR: Failed parsing Certificate
+1월 28, 2024 18:40:09.947 
+1월 28, 2024 18:42:55.735 [16248:16572:0128/184255.735:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:42:55.735 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:42:55.735 ERROR: Failed parsing Certificate
+1월 28, 2024 18:42:55.735 
+1월 28, 2024 18:46:32.929 [16248:16572:0128/184632.929:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:46:32.929 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:46:32.929 ERROR: Failed parsing Certificate
+1월 28, 2024 18:46:32.929 
+1월 28, 2024 18:49:00.900 [16248:16572:0128/184900.900:ERROR:cert_issuer_source_aia.cc(34)] Error parsing cert retrieved from AIA (as DER):
+1월 28, 2024 18:49:00.902 ERROR: Couldn't read tbsCertificate as SEQUENCE
+1월 28, 2024 18:49:00.902 ERROR: Failed parsing Certificate
+1월 28, 2024 18:49:00.904 
