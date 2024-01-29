@@ -1,0 +1,10 @@
+package myVo;
+
+public class SearchReviewByTextVo {
+	private int roomIdx;
+	private int reviewIdx;
+	private String review;
+	private int userIdx;
+	private int score;
+	private String wirttenDatel
+}

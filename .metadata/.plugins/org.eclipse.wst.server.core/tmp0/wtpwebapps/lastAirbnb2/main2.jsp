@@ -478,7 +478,7 @@
 				</div>
 			<% } %>
 		</div><!-- 카테끝 -->
-		 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;position: absolute;top: 28.5px;right: 172px;"><path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path></svg>
+		 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; cursor : pointer; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;position: absolute;top: 28.5px;right: 160px;"><path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path></svg>
 		<div id="menu_btn">
 			<button>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="display:block;fill:none;height:16px;width:16px;stroke:currentColor;stroke-width:3;overflow:visible" aria-hidden="true" role="presentation" focusable="false"><path fill="none" d="M7 16H3m26 0H15M29 6h-4m-8 0H3m26 20h-4M7 16a4 4 0 1 0 8 0 4 4 0 0 0-8 0zM17 6a4 4 0 1 0 8 0 4 4 0 0 0-8 0zm0 20a4 4 0 1 0 8 0 4 4 0 0 0-8 0zm0 0H3"></path></svg>
@@ -1080,7 +1080,7 @@
 	            }
 	         });
 	         
-	         // 숙소idx,호스트idx 파라미터 넘기기
+	         // 숙소idx 파라미터 넘기기
 	    	$("#content>a").click(function(){
 	    		let roomIdx = $(this).find(".room_idx").text();
 	    		location.href="Controller?command=main3&roomIdx=" + roomIdx;

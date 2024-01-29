@@ -17,6 +17,7 @@ import action.InsertReplyAction;
 import action.JoinAction;
 import action.LoginAction;
 import action.LogoutAction;
+import action.SearchBytextAction;
 import action.ShowNextTimelinePageAction;
 import action.UpdateAddressAction;
 import action.UpdateEmailAction;
@@ -30,7 +31,7 @@ import action.main3Action;
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
+   
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String command = request.getParameter("command");
@@ -55,6 +56,7 @@ public class Controller extends HttpServlet {
 		case "showNextTimeline" : action = new ShowNextTimelinePageAction(); break;
 		case "main2" : action = new main2Action(); break;
 	    case "main3" : action = new main3Action(); break;
+	    case "searchBytext" : action = new SearchBytextAction(); break;
 		}
 		action.execute(request, response); 
 	}
