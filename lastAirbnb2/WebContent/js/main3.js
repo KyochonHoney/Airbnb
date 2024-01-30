@@ -540,15 +540,10 @@ $(function(){
 		$(".datepicker3").datepicker("setDate", null);
   		$(".datepicker4").datepicker("setDate", "+1m");
 		});
-	// datepiker 바탕누르면닫기
-	if($(".side_date_pop").css("display")=="block"){
-		$("#info_outer").click(function(){
-			$(".side_date_pop").css("display","none");
-		});	
-	}
+
 	
-	// 댓글검색
-//	$("#searchInput").keyup(function(e){if(e.keyCode = 13) Seacrh();})
+	// 댓글 엔터키 검색
+	$("#searchText").keyup(function(e){if(e.keyCode === 13) test1();})
 }); 
 
 
@@ -556,10 +551,9 @@ $(function(){
 function test1(){
 	const reviewcontainer = $("#review-container");
     let formData = $("#test1").serialize();
-	//console.log(formData);
 	$.ajax({
 		type:'get',
-		url:'Controller',
+		url:'lmyController',
 		data : formData,
 		success : function(obj){
 			reviewcontainer.empty();
@@ -567,16 +561,17 @@ function test1(){
 				let str = 
 				"<div class='pop_section2-3'>"+
 						"<div>" +
-							"<img src= " + obj[i].user_image + "/>" +
+							"<img src= \"" + obj[i].user_image + "\"/>" +
 							"<div>" + 
 								"<span class='re-sp1'>" + obj[i].user_id + "<br></span>" +
+								/*user_regidence가 null일때*/
 								"<span class='re-sp2'>" + obj[i].user_regidence + "</span>" +
 							"</div>" +
 						"</div>" +
 						
 						"<div>" +
 							"<div>" +
-								
+								/*별점*/
 							"</div>"+
 							obj[i].written_date +
 						"</div>" +
@@ -586,12 +581,11 @@ function test1(){
 							obj[i].review +	
 						"</div>" +	
 					"</div>"
-					console.log(str);
 					reviewcontainer.append(str);
 			}
 		},
 		error: function(r, s, e){
-					alert("[에러] code:" + r.status
+					console.log("[에러] code:" + r.status
 							+ "message:" + r.responseText
 							+ "error:" + e );
 		}

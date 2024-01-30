@@ -1,6 +1,6 @@
 package myDao;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,6 @@ import myVo.RoomExplainVo;
 import myVo.RoomImageVo;
 import myVo.RoomInfoVo;
 import myVo.RoomVo;
-import myVo.SearchReviewByTextVo;
 import myVo.StayVo;
 import esVo.UserInfoVo;
 
@@ -153,19 +152,16 @@ public class Main3Dao {
                    PreparedStatement pstmt2 = conn.prepareStatement(sql2);
                    pstmt2.setInt(1, roomIdx);
                    ResultSet rs2 = pstmt2.executeQuery();
-                   String strBlahBlah = "";
+                   String infoText = "";
                    if(rs2.next()) {
-                      strBlahBlah = rs2.getString("room_info_ex"); //7(ï¿½ê¶Žï¿½ë™£ï¿½ë±¶) 
-                      strBlahBlah = strBlahBlah.replace("\r\n", "\n");
-                      strBlahBlah = strBlahBlah.replace("\n", "");
+                	   infoText = rs2.getString("room_info_ex"); //7(ï¿½ê¶Žï¿½ë™£ï¿½ë±¶) 
+                	   infoText = infoText.replace("\r\n", "\n");
+                	   infoText = infoText.replace("\n", "");
                    }
                    rs2.close();
                    pstmt2.close();
                    // str2[i]  ---> "8"
-                   String strNew = getInside(strBlahBlah, Integer.parseInt(str2[i])); //
-                   System.out.println(strBlahBlah);
-                   System.out.println(Integer.parseInt(str2[i]));
-                   System.out.println("strNew : " + strNew);
+                   String strNew = getInside(infoText, Integer.parseInt(str2[i])); //
                    room_info_cate_detail = room_info_cate_detail.replace("(((n)))", strNew);
                 }
                 
@@ -259,9 +255,9 @@ public class Main3Dao {
    
    
    
-    // ç§»â‘¤ï¿½ï¿½ï¿½ï¿½?—¯ 
-    public ArrayList<StayVo> getStay(int roomIdx){ ArrayList<StayVo>
-    stayvo = new ArrayList<StayVo>();
+    // ¼÷¹ÚÀ¯Çü
+    public ArrayList<StayVo> getStay(int roomIdx){ 
+    	ArrayList<StayVo> stayvo = new ArrayList<StayVo>();
     
     String sql = "select * from stay where room_idx = ?";
     
@@ -284,7 +280,7 @@ public class Main3Dao {
     }
     
    
-   // ?”±?‰ëŸ­(è­°ê³—?”¤è­°ê³Œêµ?)
+   // ¸®ºä ºÒ·¯¿À´Â ¸Þ¼­µå
    public ArrayList<ReviewVo> getReview(int roomIdx) {
       ArrayList<ReviewVo> reviewvo = new ArrayList<ReviewVo>();
       
@@ -324,7 +320,6 @@ public class Main3Dao {
                    SQL +=" room_idx = ? AND  review LIKE '%"+searchText.trim()+"%' AND r.user_idx = u.user_idx ";
                }
                SQL += " ORDER BY written_date DESC";
-              System.out.println(SQL);
                PreparedStatement pstmt=conn.prepareStatement(SQL);
                pstmt.setInt(1, roomIdx);
                ResultSet rs=pstmt.executeQuery();

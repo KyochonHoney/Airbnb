@@ -203,7 +203,7 @@
          <div class="jm_section">
             <h2>에어비엔비에 오신것을 환영합니다</h2>
          
-            <form id="jm_form" action="Controller" method="post">
+            <form id="jm_form" action="lmyController" method="post">
                <div>
                   <label for="jm_form" id="code"></label> 
                   <select name="jm_code" class="jm_seclect_box">
@@ -231,7 +231,7 @@
                   style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; margin: 0 auto;">
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
-      		<form method="post" class="join_user_form" action="Controller">
+      		<form method="post" class="join_user_form" action="lmyController">
       			이름 : <input type="text" placeholder="Ex) 김철수" name="user_id" required/> <br/><br/><br/>
       			비밀번호 : <input type="password" name="pw" required/> <br/><br/><br/>
       			비밀번호 확인 : <input type="password" class="check_pw" required/> <br/><br/><br/>
