@@ -472,6 +472,11 @@ $(function(){
 		$("#cate").css("display","none");
 		$("body").css("overflow-y","scroll");
 	});
+	// 배경눌렀을때 모든 세부창 닫기
+	$("body").click(function(){
+		$(".side_date_pop").css("display","none");
+	});
+		
 	
 	
 	//datepicker
@@ -548,7 +553,7 @@ $(function(){
 	}
 	
 	// 댓글검색
-//	$("#searchInput").keyup(function(e){if(e.keyCode = 13) Seacrh();})
+	$("#searchText").keyup(function(e){if(e.keyCode === 13) test1();})
 }); 
 
 
@@ -556,10 +561,9 @@ $(function(){
 function test1(){
 	const reviewcontainer = $("#review-container");
     let formData = $("#test1").serialize();
-	//console.log(formData);
 	$.ajax({
 		type:'get',
-		url:'Controller',
+		url:'lmyController',
 		data : formData,
 		success : function(obj){
 			reviewcontainer.empty();
@@ -586,12 +590,11 @@ function test1(){
 							obj[i].review +	
 						"</div>" +	
 					"</div>"
-					console.log(str);
 					reviewcontainer.append(str);
 			}
 		},
 		error: function(r, s, e){
-					alert("[에러] code:" + r.status
+					console.log("[에러] code:" + r.status
 							+ "message:" + r.responseText
 							+ "error:" + e );
 		}

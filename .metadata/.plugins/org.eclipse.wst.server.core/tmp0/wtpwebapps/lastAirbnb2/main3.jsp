@@ -1,9 +1,9 @@
 <%@page import="esVo.LanguageVo"%>
-<%@page import="dao.LanguageDao"%>
-<%@page import="dao.LoginDao"%>
+<%@page import="esDao.LanguageDao"%>
+<%@page import="esDao.LoginDao"%>
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="dao.Main3Dao"%>
+<%@page import="myDao.Main3Dao"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="myVo.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -415,49 +415,55 @@
 					</div>
 				</div>
 			</div>
-	
-	<%-- 	<%for(StayVo sv : stayvo){ %>
-			<%if(sv.getStay_img().contains("https:")){ %>		
-			<!-- 7숙박장소(사진버전) -->	
-			<div class="info_inner7">
+		<!-- 숙박시설  -->
+<%-- 		<div class="info_inner7">
+			<div>숙박 장소</div>
+				<%for(StayVo sv : stayvo){ %>
+					<%if(sv.getStay_img().contains("https:")){%>
+						<div class="info_inner7-1">
+							<img src ="<%=sv.getStay_img()%>"/>
+							<div><%=sv.getStay_type() %></div>
+							<div><%=sv.getBed_count() %></div>
+						</div>
+				<%}%>
+				<%}%>
+		</div> --%>
+		<!-- 숙박장소(이모티콘버전) -->	
+		<%for(StayVo sv : stayvo){ %>
+		<%if(sv.getStay_img().contains("svg")){ %>
+			<div class="info_inner7Svg"> 
 				<div>숙박 장소</div>
-				<div class="info_inner7-1">
-					<img src ="<%=sv.getStay_img()%>"/>
-					<div ><%=sv.getStay_type() %></div>
-					<div ><%=sv.getBed_count() %></div>
-				</div>
+				<div>
 				
-			</div>	 --%>
-			<%-- <%}else if(sv.getStay_img().contains("svg")){ %>
-	<!-- 숙박장소(이모티콘버전) -->	
-			<div class="info_inner7"> 
-				<div>숙박 장소</div>
-				
-				<div class="info_inner7-1" style="margin-right:16px;">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
+					<div class="info_inner7-2" style="margin-right:16px;">
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
+						</div>
+						<div ><%=sv.getStay_type() %></div>
+						<div ><%=sv.getBed_count()%></div>
 					</div>
-					<div >침실 1</div>
-					<div >더블 침대 1개</div>
-				</div>
-				<div class="info_inner7-1" style="margin-right:16px;">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M20 0a2 2 0 0 1 2 1.85V6h4V2h2v4.76l1.68 3.37a3 3 0 0 1 .31 1.11l.01.23V30h-2v-2h-6v2h-2v-2H4v2H2V11.47a3 3 0 0 1 .22-1.13l.1-.21L4 6.76V2h2v4h4V2a2 2 0 0 1 1.85-2H12zm0 24H4v2h16zm8 0h-6v2h6zm-8-8H4v6h16zm8 4h-6v2h6zm0-4h-6v2h6zm-8-4H4v2h16zm8 0h-6v2h6zm-1.62-4H5.62l-1 2h22.76zM20 2h-8v4h8z"></path></svg>
+			<!-- 		<div class="info_inner7-2" style="margin-right:16px;">
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M20 0a2 2 0 0 1 2 1.85V6h4V2h2v4.76l1.68 3.37a3 3 0 0 1 .31 1.11l.01.23V30h-2v-2h-6v2h-2v-2H4v2H2V11.47a3 3 0 0 1 .22-1.13l.1-.21L4 6.76V2h2v4h4V2a2 2 0 0 1 1.85-2H12zm0 24H4v2h16zm8 0h-6v2h6zm-8-8H4v6h16zm8 4h-6v2h6zm0-4h-6v2h6zm-8-4H4v2h16zm8 0h-6v2h6zm-1.62-4H5.62l-1 2h22.76zM20 2h-8v4h8z"></path></svg>
+						</div>
+						<div >침실 1</div>
+						<div >더블 침대 1개</div>
 					</div>
-					<div >침실 1</div>
-					<div >더블 침대 1개</div>
+					<div class="info_inner7-2">
+						<div>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M20 0a2 2 0 0 1 2 1.85V6h4V2h2v4.76l1.68 3.37a3 3 0 0 1 .31 1.11l.01.23V30h-2v-2h-6v2h-2v-2H4v2H2V11.47a3 3 0 0 1 .22-1.13l.1-.21L4 6.76V2h2v4h4V2a2 2 0 0 1 1.85-2H12zm0 24H4v2h16zm8 0h-6v2h6zm-8-8H4v6h16zm8 4h-6v2h6zm0-4h-6v2h6zm-8-4H4v2h16zm8 0h-6v2h6zm-1.62-4H5.62l-1 2h22.76zM20 2h-8v4h8z"></path></svg>
+						</div>
+						<div >침실 1</div>
+						<div >더블 침대 1개</div>
+					</div> -->
+					
 				</div>
-				<div class="info_inner7-1">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M20 0a2 2 0 0 1 2 1.85V6h4V2h2v4.76l1.68 3.37a3 3 0 0 1 .31 1.11l.01.23V30h-2v-2h-6v2h-2v-2H4v2H2V11.47a3 3 0 0 1 .22-1.13l.1-.21L4 6.76V2h2v4h4V2a2 2 0 0 1 1.85-2H12zm0 24H4v2h16zm8 0h-6v2h6zm-8-8H4v6h16zm8 4h-6v2h6zm0-4h-6v2h6zm-8-4H4v2h16zm8 0h-6v2h6zm-1.62-4H5.62l-1 2h22.76zM20 2h-8v4h8z"></path></svg>
-					</div>
-					<div >침실 1</div>
-					<div >더블 침대 1개</div>
-				</div>
-			</div>  
-			<%} %>  --%>
+			</div>   
+			<%} %>  
+		<%} %>  
+		
 			<!-- 8편의 시설 -->	
 			<div class="info_inner8">
 				<div><h2>숙소 편의시설</h2></div>
@@ -1056,16 +1062,18 @@
 					</div>
 					
 					<div class="pop_section2-2">
-						<form action="ImyController" method="post">
+						<form id="test1" onsubmit="return false">
 							<input type="text" id = "searchText" placeholder="후기검색" name="searchText">
-							<input type="hidden" value ="main3" name="command"/>
-							<button type="submit" class="searchBtn">검색</button>
+							<input type="hidden" name="command" value="searchBytext">
+							<input type="hidden" name="roomIdx" value="<%= roomvo.getRoom_idx() %>">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path></svg>
 						</form>
+						<!-- button이 form태그 안에있으면 form태그 해당메서드로 실행되기때문에 url이 달라진다 -->
+<!-- 						<button onclick="test1();" id="searchBtn" value="검색">검색</button> -->
 					</div>
 				</div>
 				
-				<div><!-- 오렌지  -->
+				<div id="review-container"><!-- 오렌지  -->
 				<%for(ReviewVo review : reviewvo){ %>
 					<div class="pop_section2-3">
 						<div>

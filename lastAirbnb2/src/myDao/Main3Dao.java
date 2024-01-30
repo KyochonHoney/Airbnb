@@ -1,6 +1,6 @@
 package myDao;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,6 @@ import myVo.RoomExplainVo;
 import myVo.RoomImageVo;
 import myVo.RoomInfoVo;
 import myVo.RoomVo;
-import myVo.SearchReviewByTextVo;
 import myVo.StayVo;
 import esVo.UserInfoVo;
 
@@ -259,9 +258,9 @@ public class Main3Dao {
    
    
    
-    // ç§»â‘¤ï¿½ï¿½ï¿½ï¿½?—¯ 
-    public ArrayList<StayVo> getStay(int roomIdx){ ArrayList<StayVo>
-    stayvo = new ArrayList<StayVo>();
+    // ¼÷¹ÚÀ¯Çü
+    public ArrayList<StayVo> getStay(int roomIdx){ 
+    	ArrayList<StayVo> stayvo = new ArrayList<StayVo>();
     
     String sql = "select * from stay where room_idx = ?";
     
@@ -284,7 +283,7 @@ public class Main3Dao {
     }
     
    
-   // ?”±?‰ëŸ­(è­°ê³—?”¤è­°ê³Œêµ?)
+   // ¸®ºä ºÒ·¯¿À´Â ¸Þ¼­µå
    public ArrayList<ReviewVo> getReview(int roomIdx) {
       ArrayList<ReviewVo> reviewvo = new ArrayList<ReviewVo>();
       

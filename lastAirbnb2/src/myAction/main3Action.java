@@ -25,17 +25,13 @@ public class main3Action implements Action{
    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       Main3Dao dao3 = new Main3Dao();
    
-      //占쎌뜎疫꿸퀗占쏙옙源�(占쎌뿯占쎌젾揶쏉옙)
-    //  String searchText = (String) request.getAttribute("searchText");
-     // System.out.println("searchText>>>>>>>>>>>>>>"+searchText);
-
-      // main2.jsp占쎈퓠占쎄퐣 占쎄퐜野꺿뫁占� 占쎈땿占쎈꺖idx,占쎌깈占쎈뮞占쎈뱜idx 獄쏆룄由�
+      // main2.jsp�뜝�럥�뱺�뜝�럡�맋 �뜝�럡�맂�뇦爰용쳛�뜝占� �뜝�럥�빣�뜝�럥爰뻟dx,�뜝�럩源덂뜝�럥裕욃뜝�럥諭쐇dx �뛾�룇猷꾤뵳占�
       int roomIdx = Integer.parseInt(request.getParameter("roomIdx"));
-     // System.out.println("searchText>>>>>>>>>>>>>>"+searchText);
       RoomVo roomvo = dao3.getRoom(roomIdx);
       int hostidx = roomvo.getUser_idx();
       
-      // �뙴�눛nfo 占쎌쁽�몴�떯由�
+      
+      // 占쎈쇀占쎈닗nfo �뜝�럩�겱占쎈ご占쎈뼬�뵳占�
       String str = roomvo.getRoom_info_idx(); //1,2,3
       String[] str2 = str.split(",");
       
