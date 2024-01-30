@@ -1070,7 +1070,7 @@
 			//카테고리 인덱스mainservlet으로 넘겨주기
 			$("#cate .w").click(function() {
 				let selectedCate = $(this).find("span").find("div:nth-child(3)").text();
-				location.href="ImyController?command=main2&cate=" + selectedCate;
+				location.href="lmyController?command=main2&cate=" + selectedCate;
 			});	
 			
 	         let cate = <%=paramCate%>;
@@ -1084,7 +1084,7 @@
 	         // 숙소idx 파라미터 넘기기
 	    	$("#content>a").click(function(){
 	    		let roomIdx = $(this).find(".room_idx").text();
-	    		location.href="ImyController?command=main3&roomIdx=" + roomIdx;
+	    		location.href="lmyController?command=main3&roomIdx=" + roomIdx;
 	    	 });
 	         
 	         
