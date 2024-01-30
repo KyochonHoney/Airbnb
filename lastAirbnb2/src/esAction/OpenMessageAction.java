@@ -18,9 +18,12 @@ public class OpenMessageAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MessageDao messDao = new MessageDao();
 		int userIdx = (Integer)(request.getSession().getAttribute("userIdx"));
-		int thisUserIdx = Integer.parseInt(request.getParameter("thisUserIdx"));
+		int thisUserIdx = 0;
+		try {
+			thisUserIdx = Integer.parseInt(request.getParameter("thisUserIdx"));
+		} catch(NumberFormatException e) {  }
 		boolean checkChatList = messDao.checkChatList(userIdx, thisUserIdx);
-		if(checkChatList) {
+		if(checkChatList && thisUserIdx > 0) {
 			messDao.addChatList(userIdx, thisUserIdx);
 			messDao.addChatList(thisUserIdx, userIdx);
 		}
