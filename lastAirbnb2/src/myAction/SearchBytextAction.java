@@ -31,7 +31,7 @@ public class SearchBytextAction implements Action{
 		response.setContentType("application/json"); // MIME , 응답형식지정
 		PrintWriter out = response.getWriter(); //pritwirter 객체얻음
 		JSONArray array = new JSONArray();
-
+		
 			for(ReviewVo vo : reviewList) {
 				JSONObject obj = new JSONObject();
 				obj.put("room_idx",vo.getRoom_idx());

@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="info_inner7-2"/>
+		<item key="selection" value="Sys"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="Sys"/>
+			<item value="숙박 장소"/>
+			<item value="숙박"/>
 			<item value="info_inner7-2"/>
 			<item value="info_inner7"/>
 			<item value="이모티콘"/>
 			<item value="stay"/>
 			<item value="sty"/>
-			<item value="숙박"/>
 			<item value="put"/>
 			<item value="obj"/>
 			<item value="후기검색"/>
@@ -21,8 +23,6 @@
 			<item value="신고"/>
 			<item value="후기팝"/>
 			<item value="후기 팝업"/>
-			<item value="lmyController"/>
-			<item value="imyController"/>
 		</list>
 		<list key="replacehistory">
 			<item value="print"/>

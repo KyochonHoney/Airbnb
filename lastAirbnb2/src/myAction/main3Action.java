@@ -59,6 +59,13 @@ public class main3Action implements Action{
       request.setAttribute("reviewvo",reviewvo);
       request.setAttribute("convenientvo",convenientvo);
       request.setAttribute("stayvo",stayvo);
+      for(StayVo vo : stayvo) {
+    	  if(vo.getStay_img().contains("svg")){
+    		  System.out.println(vo.getStay_img());
+    	  }else {
+    		  System.out.println(vo.getStay_img());
+    	  }
+      }
       
       
       

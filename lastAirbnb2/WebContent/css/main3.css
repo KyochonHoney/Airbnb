@@ -1027,9 +1027,13 @@
 /* 이모티콘버전 */
 
 .info_inner7Svg{
-	width:653.328px; height:289px;
+	width:653.328px; min-height:289px;
 	padding:48px 0;
 	border-bottom:1px solid #DDDDDD;
+}
+.stay_container{
+	display:flex;
+	
 }
 .info_inner7Svg>div:nth-child(1){
 	width:653.328px; height: 50px;
@@ -1038,26 +1042,53 @@
 	font-size :22px;
 	font-weight:600;
 }
+/* 숙소타입(이모티콘) */
 .info_inner7-2{
 	width:207.109px; height: 143px;
 	border-radius: 12px;
 	border : 1px solid rgb(221, 221, 221);
 	padding:24px;
 	float:left;
+	padding-right:8px;
 }
 .info_inner7-2>div:nth-child(1){
 	width: 157.109px; height: 29px;
-	margin-bottom: 16px;
+	margin-bottom: 11px;
 }
-.info_inner7-2>div:nth-child(1)>svg{float:left; margin-right:9px;}
+.info_inner7-2>div:nth-child(1)>svg{
+	float:left; margin-right:9px;
+}
 .info_inner7-2>div:nth-child(2){
 	margin-bottom:8px;
 	line-height:20px;
 	font-size :16px;
 	font-weight:600;
 }
-
-
+.info_inner7-2>div:nth-child(3){
+	line-height:20px;
+	font-size :14px;
+}
+/* 숙소타입(사진) */
+.info_inner7-1>img{
+	width:318.656px; height: 212.438px;
+	object-fit:cover;
+	border-radius:8px;
+	padding-right:10px;
+}
+.info_inner7-1>div:nth-child(2){
+	width:318.656px; height: 20px;
+	margin-top: 16px;
+	font-size:16px;
+	font-weight: 600;
+	line-height:20px;
+}
+.info_inner7-1>div:nth-child(3){
+	width:318.656px; height: 18px;
+	margin-top: 4px;
+	font-size:14px;
+	font-weight: 400;
+	line-height:18px;
+}
 /*--8편의시설---*/
 .info_inner8{
 	width: 653.328px; height:418px;
