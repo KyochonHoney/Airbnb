@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import common.DBConnection;
+import esVo.ChatDetailVo;
 import esVo.ChatListVo;
 import esVo.EmojiVo;
 
@@ -117,4 +118,27 @@ public class MessageDao {
 			pstmt.close();
 		} catch(Exception e) { e.printStackTrace(); }
 	}
+	//채팅목록 가져오기
+	public ArrayList<ChatDetailVo> showChatList(int userIdx, int msgListIdx){
+		String sql ="SELECT ui.user_id, ui.user_image, m.*"
+				+ " FROM user_info ui, message m"
+				+ " WHERE ui.user_idx = m.user_idx AND m.user_idx = ?  AND msg_list_idx = ?"
+				+ " ORDER BY m.msg_idx ASC";
+		ArrayList<ChatDetailVo> list = new ArrayList<ChatDetailVo>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userIdx);
+			pstmt.setInt(2, msgListIdx);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				
+				//여기서부터 고치기
+				
+			}
+		} catch(Exception e) { e.printStackTrace(); }
+		
+		return list;
+	}
+	
 }
