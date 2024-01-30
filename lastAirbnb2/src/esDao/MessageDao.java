@@ -79,9 +79,42 @@ public class MessageDao {
 			if(rs.next()) {
 				chat = rs.getString(1);
 			}
+			rs.close();
+			pstmt.close();
 		} catch(Exception e) { e.printStackTrace(); }
 		
 		return chat;
 	}
-	
+	//채팅방이 기존에 있는지 없는지 체크
+	public boolean checkChatList(int userIdx, int thisUserIdx) {
+		String sql = "SELECT count(*) FROM message_list WHERE host_idx = ? AND partner_idx = ?";
+		String check = "0";
+		String cnt = "";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(userIdx, thisUserIdx);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				cnt = rs.getString(1);
+				System.out.println(check);
+			}
+			rs.close();
+			pstmt.close();
+		} catch(Exception e) { e.printStackTrace(); }
+		
+		return check.equals(cnt); 
+	}
+	//채팅방 없는 거 추가하기
+	public void addChatList(int userIdx, int thisUserIdx) {
+		String sql = "INSERT INTO message_list(msg_list_idx, partner_idx, host_idx) VALUES (msg_list_idx.nextval, ?, ?)";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userIdx);
+			pstmt.setInt(2, thisUserIdx);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch(Exception e) { e.printStackTrace(); }
+	}
 }

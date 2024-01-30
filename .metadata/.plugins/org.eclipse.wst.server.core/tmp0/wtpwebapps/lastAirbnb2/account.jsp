@@ -1,10 +1,10 @@
-<%@page import="esDao.LoginDao"%>
+<%@page import="dao.LoginDao"%>
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="esVo.EmojiVo"%>
-<%@page import="esDao.MessageDao"%>
+<%@page import="dao.MessageDao"%>
 <%@page import="esVo.LanguageVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="esDao.LanguageDao"%>
+<%@page import="dao.LanguageDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

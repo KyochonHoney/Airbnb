@@ -1,6 +1,6 @@
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="swDao.ExperienceDao"%>
-<%@page import="swDao.CollectionDao"%>
+<%@page import="dao.ExperienceDao"%>
+<%@page import="dao.CollectionDao"%>
 <%@page import="swVo.ExpCollectionVo"%>
 <%@page import="swVo.ExpReviewVo"%>
 <%@page import="java.util.ArrayList"%>

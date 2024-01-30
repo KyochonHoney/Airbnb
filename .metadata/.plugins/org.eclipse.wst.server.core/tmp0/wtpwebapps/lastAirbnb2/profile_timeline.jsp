@@ -3,12 +3,12 @@
 <%@page import="java.util.List"%>
 <%@page import="esVo.GetPostReplyByPostIdx"%>
 <%@page import="esVo.PostVo"%>
-<%@page import="esDao.ProfileTimelineDao"%>
+<%@page import="dao.ProfileTimelineDao"%>
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="esVo.LanguageVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="esDao.LanguageDao"%>
-<%@page import="esDao.LoginDao"%>
+<%@page import="dao.LanguageDao"%>
+<%@page import="dao.LoginDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
