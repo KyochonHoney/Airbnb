@@ -1,5 +1,12 @@
+<<<<<<< HEAD
+/esAction/
+/esDao/
+/sesController/
+/common/
+=======
 /myAction/
 /imyController/
 /lswController/
 /myVo/
 /myDao/
+>>>>>>> main
