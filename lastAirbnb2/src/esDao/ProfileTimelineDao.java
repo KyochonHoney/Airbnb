@@ -93,21 +93,13 @@ public class ProfileTimelineDao {
 		}
 	}
 	//Í∑? ?Ç¨?ûå?ùò Í≤åÏãúÍ∏? Í∞??†∏?ò§Í∏?
-	public ArrayList<PostVo> getPostList(int thisUserIdx, int pageNum){
-		String sql = "SELECT t2.* "
-				+ " FROM (SELECT rownum rnum, t.*"
-				+ "    FROM (SELECT * FROM post WHERE user_idx = ? order by written_date asc) t) t2"
-				+ " WHERE t2.rnum >= ? AND t2.rnum<= ?";
+	public ArrayList<PostVo> getPostList(int thisUserIdx){
+		String sql = "SELECT * FROM post WHERE user_idx = ? order by written_date asc";
 		ArrayList<PostVo> list = new ArrayList<PostVo>();
-		
-		int endRNum = pageNum * 3;
-		int startRNum = endRNum - 2;
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, thisUserIdx);
-			//pstmt.setInt(2, startRNum);
-			//pstmt.setInt(3, endRNum);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				int postIdx = rs.getInt("post_idx");

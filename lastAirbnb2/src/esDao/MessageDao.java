@@ -55,7 +55,7 @@ public class MessageDao {
 				String userId = rs.getString("user_id");
 				int msgListIdx = rs.getInt("msg_list_idx");
 				int userIdx1 = rs.getInt("user_idx");
-				
+
 				list.add(new ChatListVo(userImage, userId, msgListIdx, userIdx1));
 			}
 			rs.close();
@@ -98,7 +98,6 @@ public class MessageDao {
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) {
 				cnt = rs.getString(1);
-				System.out.println(check);
 			}
 			rs.close();
 			pstmt.close();
@@ -118,8 +117,8 @@ public class MessageDao {
 			pstmt.close();
 		} catch(Exception e) { e.printStackTrace(); }
 	}
-	//채팅목록 가져오기
-	public ArrayList<ChatDetailVo> showChatList(int userIdx, int msgListIdx){
+	//채팅한 내용 가져오기
+	public ArrayList<ChatDetailVo> showChatList(int userIdx1, int msgListIdx1){
 		String sql ="SELECT ui.user_id, ui.user_image, m.*"
 				+ " FROM user_info ui, message m"
 				+ " WHERE ui.user_idx = m.user_idx AND m.user_idx = ?  AND msg_list_idx = ?"
@@ -128,13 +127,19 @@ public class MessageDao {
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, userIdx);
-			pstmt.setInt(2, msgListIdx);
+			pstmt.setInt(1, userIdx1);
+			pstmt.setInt(2, msgListIdx1);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
+				String userId = rs.getString("user_id");
+				String userImage = rs.getString("user_image");
+				int msgListIdx = rs.getInt("msg_list_idx");
+				int userIdx = rs.getInt("user_idx");
+				String msg = rs.getString("msg");
+				String dateTime = rs.getString("date_time");
+				int msgIdx = rs.getInt("msg_idx");
 				
-				//여기서부터 고치기
-				
+				list.add(new ChatDetailVo(userId, userImage, msgListIdx, userIdx, msg, dateTime, msgIdx));
 			}
 		} catch(Exception e) { e.printStackTrace(); }
 		

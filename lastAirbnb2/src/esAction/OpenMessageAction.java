@@ -23,6 +23,7 @@ public class OpenMessageAction implements Action {
 			thisUserIdx = Integer.parseInt(request.getParameter("thisUserIdx"));
 		} catch(NumberFormatException e) {  }
 		boolean checkChatList = messDao.checkChatList(userIdx, thisUserIdx);
+		//기존채팅방에 없을 때 추가하기
 		if(checkChatList && thisUserIdx > 0) {
 			messDao.addChatList(userIdx, thisUserIdx);
 			messDao.addChatList(thisUserIdx, userIdx);
@@ -31,7 +32,6 @@ public class OpenMessageAction implements Action {
 		ArrayList<EmojiVo> listEmojiVo = messDao.getAllEmoji();
 		//채팅목록 가져오기
 		ArrayList<ChatListVo> chatList = messDao.getChatList(userIdx);
-		//기존채팅방에 없을 때 추가하기
 		
 		request.setAttribute("chatList", chatList);
 		request.setAttribute("listEmojiVo", listEmojiVo);
