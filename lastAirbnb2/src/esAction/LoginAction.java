@@ -26,7 +26,7 @@ public class LoginAction implements Action {
 		
 		request.setAttribute("howManyAlarm", howManyAlarm);
 		request.getSession().setAttribute("userIdx", userIdx);
-		request.getSession().setMaxInactiveInterval(30*60);	//Session占쎌뱽 30�겫占� 占쎈츟占쎈퓠 占쎌읈�겫占� �뜮袁⑹뒲占쎈뼄.
+		request.getSession().setMaxInactiveInterval(30*60);	//Session�쓣 30遺� �뮘�뿉 �쟾遺� 鍮꾩슫�떎.
 		request.setAttribute("checkLogin", checkLogin);
 		request.getRequestDispatcher(url).forward(request, response);
 	}

@@ -17,13 +17,15 @@ public class main2Action implements Action{
    @Override
    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       Main2Dao dao = new Main2Dao();
-      int cateIdx = 1; // 疫꿸퀡�궚揶쏅�り퐬占쎌젟
+      int cateIdx = 1; // 湲곕낯媛믪꽕�젙
       try {
          cateIdx = Integer.parseInt(request.getParameter("cate"));
-      } catch(NumberFormatException e) {}
+      } catch(NumberFormatException e) {
+         e.printStackTrace();
+      }
 //      System.out.println(cateIdx);'
-      //燁삳똾�믤�⑥쥓�봺 占쎌뵠�뵳占� 占쎈솁占쎌뵬沃섎챸苑ｆ에占� 獄쏆룄由�
-       // list1占쎈퓠 燁삳똾�믤�⑥쥓�봺占쎄땀占쎌뒠 占쎈뼖疫뀐옙
+      //移댄뀒怨좊━ �씠由� �뙆�씪誘명꽣濡� 諛쏄린
+       // list1�뿉 移댄뀒怨좊━�궡�슜 �떞湲�
        ArrayList<RoomCategoryVo> list1 = Main2Dao.getCateAll();
        ArrayList<RepresentRoomListVo> roomVo = dao.getRoom(cateIdx);
       

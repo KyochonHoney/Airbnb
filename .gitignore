@@ -28,5 +28,9 @@ hs_err_pid*
 replay_pid*
 
 /.metadata/
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 0f55a9d (Merge pull request #10 from lmy9237/lmy)
 
 # End of https://www.toptal.com/developers/gitignore/api/java
