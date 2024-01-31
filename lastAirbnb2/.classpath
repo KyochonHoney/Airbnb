@@ -9,13 +9,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="lib" path="C:/Users/신사임당/OneDrive/바탕 화면/lastair2/lastAirbnb2/cos.jar"/>
-	<classpathentry kind="lib" path="C:/Users/신사임당/OneDrive/바탕 화면/lastair2/lastAirbnb2/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/신사임당/OneDrive/바탕 화면/lastair2/lastAirbnb2/ojdbc6.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5 (2)">
-		<attributes>
-			<attribute name="owner.project.facets" value="jst.web"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/kshe7/OneDrive/바탕 화면/team5Project/team5Project/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/kshe7/OneDrive/바탕 화면/team5Project/team5Project/cos.jar"/>
+	<classpathentry kind="lib" path="C:/Users/kshe7/OneDrive/바탕 화면/team5Project/team5Project/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

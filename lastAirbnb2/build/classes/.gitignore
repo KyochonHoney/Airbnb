@@ -1,14 +1,2 @@
-/action/
-/common/
-/esAction/
-/esDao/
-/esVo/
-/imyController/
-/lswController/
-/myAction/
 /myDao/
-/myVo/
-/sesController/
-/swAction/
-/swDao/
-/swVo/
+/myAction/

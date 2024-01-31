@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%	
-	//카테고리 목록을 받음
+	//카테고리 목록을 받음12345
 	ArrayList<RoomCategoryVo> roomcate = (ArrayList<RoomCategoryVo>)request.getAttribute("list1"); // roomcate는 
 	int paramCate = (Integer)request.getAttribute("cateIdx");   // cate= 국립공원
 	ArrayList<RepresentRoomListVo> roomList = (ArrayList<RepresentRoomListVo>)request.getAttribute("roomVo"); 
