@@ -27,12 +27,14 @@
 	int userIdx = 0;
 	UserInfoVo userList = null;
 	int howManyAlarm = 0;
-	try{
-		userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
-		userList = LoginDao.getUserInfoBy(userIdx);
-		howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
-	} catch (NullPointerException e){
-		e.printStackTrace();
+	if(request.getSession().getAttribute("userIdx") != null) {
+		try{
+			userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
+			userList = LoginDao.getUserInfoBy(userIdx);
+			howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
+		} catch (NullPointerException e){
+			e.printStackTrace();
+		}
 	}
 %>
 <!DOCTYPE html>
@@ -49,6 +51,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  	<script>
+  		let max_member =  <%=roomvo.getMax_member() %>;
+  	</script>
 </head>
 <body>
 <div class="currency_language_background"></div>
@@ -173,6 +178,7 @@
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
             <h2>로그인 또는 회원 가입</h2>
+            
          </div>
          
          <div class="jm_section">
@@ -192,7 +198,7 @@
 	               <input type="text" class="jm_phnum" placeholder="전화번호" name="phone_num" required/>
 	           	   <input type="password" class="password" placeholder="비밀번호" name="pw" required/>
 	               <span>전화나 문자로 전화번호를 확인하겠습니다. 일반 문자 메시지 요금 및 데이터 요금이 부과됩니다.</span>
-	         	   <input type="hidden" name="url" value="main3.jsp"/>
+	         	   <input type="hidden" name="url" value="Main3"/>
 	         	   <input type="hidden" name="command" value="login"/>
 	               <input type="submit" class="jm_submit" value="로그인"><br/>
                <div class="join_user" style="padding-top: 16px;">회원 가입</div>
@@ -314,12 +320,17 @@
 				<div class="score">
 					<div><%=roomvo.getRoom_score() %></div>
 					<span>
+						<% for(int i=1; i<=roomvo.getRoom_score(); i++) { %>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; "><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+						<% } %>
 					<%-- 	<%if(roomvo.getRoom_score()== 5 ){ %> --%>
+<%--					
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; "><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+--%>
 						<%-- <%else if(roomvo.getRoom_score() >=4){ %>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; "><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
@@ -417,28 +428,33 @@
 			</div>
 
 		<!-- 숙박장소(이모티콘버전) 44,47, -->	
+<%-- 		<%for(StayVo sv : stayvo){ %>
+		<%if(sv.getStay_img()!= null){ %> --%>
 		<div class="info_inner7Svg"> 
 			<div>숙박 장소</div>
+		<%-- <%} %> --%>
 				<div  class="stay_container">
-			<%for(StayVo sv : stayvo){ %>
-			<%if(sv.getStay_img().contains("</svg>")){ %>
+				<%for(StayVo sv : stayvo){ %>
+					<%if(sv.getStay_img()!= null){ %>
+						<%if(sv.getStay_img().contains("</svg>")){ %>
+							<div class="info_inner7-2" style="margin-right:16px;">
+								<div>
+									<%=sv.getStay_img().replace('\\', ' ') %>
+								</div>
+								<div ><%=sv.getStay_type() %></div>
+								<div ><%=sv.getBed_count()%></div>
+							</div>
+						<!-- 사진일때 -->
+						<%}else { %>  
+							<div class="info_inner7-1">
+								<img src ="<%=sv.getStay_img()%>"/>
+								<div><%=sv.getStay_type() %></div>
+								<div><%=sv.getBed_count() %></div>
+							</div>
+						<%} %>
+					<%} %> 
+				<%} %>
 				
-					<div class="info_inner7-2" style="margin-right:16px;">
-						<div>
-							<%=sv.getStay_img().replace('\\', ' ') %>
-						</div>
-						<div ><%=sv.getStay_type() %></div>
-						<div ><%=sv.getBed_count()%></div>
-					</div>
-					<!-- 사진일때 -->
-					<%}else{ %>  
-						<div class="info_inner7-1">
-							<img src ="<%=sv.getStay_img()%>"/>
-							<div><%=sv.getStay_type() %></div>
-							<div><%=sv.getBed_count() %></div>
-						</div>
-					<%} %>
-			<%} %> 
 			</div> 
 		</div>  
 			<!-- 8편의 시설 -->	
@@ -467,7 +483,8 @@
 				String str = roomvo.getRoom_location();
 				String[] str2 = str.split(",");
 				%>
-				<%=str2[0] %>에서 5박
+				<%=str2[0] %>에서 
+				<span>4522</span>박
 				</h2>
 				<div>2024년 9월 1일 - 2024년 9월 6일</div>
 				
@@ -490,16 +507,21 @@
 				<!-- 사이드 팝업 -->
 				<div class="side_date_pop" style="display:none;">
 					<div class="side_date_pop1">
-					 <span>5박</span> <br> 
-					 <span class="side_date_pop_sp">2024년 9월 1일 - 2024년 9월 6일</span>
+					 <span id="dateCalc">ㅇㅇㅅㅇ</span>박 <br> 
+					 <span class="side_date_pop_sp">
+					 <span id="checkinDate"></span>
+					  - 
+					  <span id="checkoutDate"></span>
 					 </div>
 					<button class=side_date_popbtn>
 						<div>
-							<span>체크인</span>2024. 9.1.
+							<span>체크인</span>
+							<div class ="dateInfo_inner"></div>
 							<div class="pop_xbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible; margin-top:6px; margin-left:6px;"><path d="m6 6 20 20M26 6 6 26"></path></svg></div>
 						</div>
 						<div>
-							<span>체크아웃</span>2024. 9.6.
+							<span>체크아웃</span>
+							<div class="dateInfo_inner2"></div>
 							<div class="pop_xbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible; margin-top:6px; margin-left:6px;"><path d="m6 6 20 20M26 6 6 26"></path></svg></div>
 						</div>
 					</button>
@@ -579,8 +601,14 @@
 					
 					<div class="side1-3">
 						<button>
-							<div><span>체크인</span>2024. 9.1.</div>
-							<div><span>체크아웃</span>2024. 9.6.</div>
+							<div>
+								<span>체크인</span>
+								<div class="dateInfo">가는날을 선택하세요</div>
+							</div>
+							<div>
+								<span>체크아웃</span>
+								<div class="dateInfo2">오는날을 선택하세요</div>
+							</div>
 						</button>
 						<div class="side1-4">
 							<span>인원</span>

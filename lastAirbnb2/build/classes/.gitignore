@@ -1,14 +1,8 @@
-/action/
-/common/
-/esAction/
-/esDao/
-/esVo/
-/imyController/
-/lswController/
-/myAction/
+<<<<<<< Updated upstream
 /myDao/
-/myVo/
-/sesController/
-/swAction/
-/swDao/
-/swVo/
+/myAction/
+=======
+/common/
+/myAction/
+/esAction/
+>>>>>>> Stashed changes
