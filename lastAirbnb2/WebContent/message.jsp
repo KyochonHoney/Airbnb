@@ -231,11 +231,13 @@
 				<div>
 					<div>
 						<% for(ChatListVo vo : chatList) { %>
-						<div class="chat_list"><a>
-							<div class="pro_img fl"><img src="<%=vo.getUserImage()%>"/></div>
-							<div class="other_name fl"><%=vo.getUserId() %></div>
-							<div class="current_msg fl"><%=messDao.getRecentChat(vo.getMsgListIdx()) %></div>					
-						</a></div><!--chat_list-->
+							<div class="chat_list"><a>
+								<div class="pro_img fl"><img src="<%=vo.getUserImage()%>"/></div>
+								<div class="other_name fl"><%=vo.getUserId() %></div>
+								<div class="current_msg fl"><%=messDao.getRecentChat(vo.getMsgListIdx()) %></div>
+								<div style="display: none" class="msgListIdx"><%=vo.getMsgListIdx() %></div>
+								<!--getRecentChat null값 확인하기-->				
+							</a></div><!--chat_list-->
 						<% } %>
 					</div>
 				</div>
@@ -243,7 +245,7 @@
 			<div class="chatting_ fl">
 				<div class="chat_top">
 					<div>에어비앤비 고객지원 팀</div>
-				</div><!--chat_top--> 	
+				</div>chat_top 	
 				<div class="chat_center">
 					<div class="chat_center_middle">
 						<h3 class="chat_date">2022.12.13</h3>
@@ -257,8 +259,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">아아 그럼일단 예약은 확정된거죠?? 계좌에는 따로 내역이 안찍혀서 걱정돼서요ㅠ</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>chat_content_outer
+						</div>chat_
 						<div class="chat_">
 							<div class="profile_pic fl"><img src="https://a0.muscache.com/im/pictures/user/82d50c81-b40c-4366-9a31-4533061311a7.jpg?aki_policy=profile_x_medium"/></div>
 							<div class="chat_content_outer fl">
@@ -269,8 +271,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">네네 예약 되었습니다</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>	
+						</div>
 						<div class="chat_">
 							<div class="profile_pic fl"><img aria-hidden="true" decoding="async" elementtiming="LCP-target" src="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" data-original-uri="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" style="--dls-liteimage-object-fit: cover;"></div>
 							<div class="chat_content_outer fl">
@@ -281,8 +283,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">아아 그럼일단 예약은 확정된거죠?? 계좌에는 따로 내역이 안찍혀서 걱정돼서요ㅠ</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>
+						</div>
 						<div class="chat_">
 							<div class="profile_pic fl"><img src="https://a0.muscache.com/im/pictures/user/82d50c81-b40c-4366-9a31-4533061311a7.jpg?aki_policy=profile_x_medium"/></div>
 							<div class="chat_content_outer fl">
@@ -293,8 +295,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">네네 예약 되었습니다</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_--><div class="chat_">
+							</div>
+						</div><div class="chat_">
 							<div class="profile_pic fl"><img aria-hidden="true" decoding="async" elementtiming="LCP-target" src="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" data-original-uri="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" style="--dls-liteimage-object-fit: cover;"></div>
 							<div class="chat_content_outer fl">
 								<div class="chat_time_and_name">
@@ -304,8 +306,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">아아 그럼일단 예약은 확정된거죠?? 계좌에는 따로 내역이 안찍혀서 걱정돼서요ㅠ</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>
+						</div>
 						<div class="chat_">
 							<div class="profile_pic fl"><img src="https://a0.muscache.com/im/pictures/user/82d50c81-b40c-4366-9a31-4533061311a7.jpg?aki_policy=profile_x_medium"/></div>
 							<div class="chat_content_outer fl">
@@ -316,8 +318,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">네네 예약 되었습니다</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_--><div class="chat_">
+							</div>
+						</div><div class="chat_">
 							<div class="profile_pic fl"><img aria-hidden="true" decoding="async" elementtiming="LCP-target" src="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" data-original-uri="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" style="--dls-liteimage-object-fit: cover;"></div>
 							<div class="chat_content_outer fl">
 								<div class="chat_time_and_name">
@@ -327,8 +329,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">아아 그럼일단 예약은 확정된거죠?? 계좌에는 따로 내역이 안찍혀서 걱정돼서요ㅠ</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>
+						</div>
 						<div class="chat_">
 							<div class="profile_pic fl"><img src="https://a0.muscache.com/im/pictures/user/82d50c81-b40c-4366-9a31-4533061311a7.jpg?aki_policy=profile_x_medium"/></div>
 							<div class="chat_content_outer fl">
@@ -339,8 +341,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">네네 예약 되었습니다</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_--><div class="chat_">
+							</div>
+						</div><div class="chat_">
 							<div class="profile_pic fl"><img aria-hidden="true" decoding="async" elementtiming="LCP-target" src="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" data-original-uri="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" style="--dls-liteimage-object-fit: cover;"></div>
 							<div class="chat_content_outer fl">
 								<div class="chat_time_and_name">
@@ -350,8 +352,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">아아 그럼일단 예약은 확정된거죠?? 계좌에는 따로 내역이 안찍혀서 걱정돼서요ㅠ</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>
+						</div>
 						<div class="chat_">
 							<div class="profile_pic fl"><img src="https://a0.muscache.com/im/pictures/user/82d50c81-b40c-4366-9a31-4533061311a7.jpg?aki_policy=profile_x_medium"/></div>
 							<div class="chat_content_outer fl">
@@ -362,8 +364,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">네네 예약 되었습니다</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_--><div class="chat_">
+							</div>
+						</div><div class="chat_">
 							<div class="profile_pic fl"><img aria-hidden="true" decoding="async" elementtiming="LCP-target" src="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" data-original-uri="https://a0.muscache.com/im/pictures/user/7e2794a8-3720-4469-b0d9-c134902ffd24.jpg?aki_policy=profile_x_medium" style="--dls-liteimage-object-fit: cover;"></div>
 							<div class="chat_content_outer fl">
 								<div class="chat_time_and_name">
@@ -373,8 +375,8 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">아아 그럼일단 예약은 확정된거죠?? 계좌에는 따로 내역이 안찍혀서 걱정돼서요ㅠ</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
+							</div>
+						</div>
 						<div class="chat_">
 							<div class="profile_pic fl"><img src="https://a0.muscache.com/im/pictures/user/82d50c81-b40c-4366-9a31-4533061311a7.jpg?aki_policy=profile_x_medium"/></div>
 							<div class="chat_content_outer fl">
@@ -385,10 +387,10 @@
 								</div>
 								<div class="see_more_content"><button class="delete_chat_button">이 메시지 삭제하기</button></div>
 								<div class="chat_content_inner">네네 예약 되었습니다</div>
-							</div><!--chat_content_outer-->
-						</div><!--chat_-->
-					</div><!--chat_center_middle-->
-				</div><!--chat_center-->
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="chat_bottom">
 					<div class="chat_bottom_inner">
 						<div class="emoji_ fl"><svg aria-label="ì´ëª¨í°ì½ ì í" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>ì´ëª¨í°ì½ ì í</title><path d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z"></path></svg></div>
@@ -416,4 +418,38 @@
 			<% } %>
 		</div><!--content-->
 	</body>
+	<script>
+		$(".chat_list").click(function(){
+			let command = "showChat";
+			let msgListIdx = $(this).find(".msgListIdx").html();
+			let userIdx = <%=userIdx %>;
+			$.ajax({
+				url : 'SesContoller',
+				data : {"command" : command, "msgListIdx" : msgListIdx, "userIdx" : userIdx},
+				type : 'post',
+				success : function(arr){
+					let str= "<div class=\"chat_top\">"
+							+	"<div>"+arr.get(0).userId+"<div/>"
+							+"</div>"
+							+"<div class=\"chat_center\">"
+							+	"<div class=\"chat_center_middle\">";
+					for(let i = 0; i < arr.length; i++){
+						str +=   "<div class=\"chat_\">"
+								+	"<div class=\"profile_pic fl\"><img src=\""+ arr.get(i).userImage+ "\"/></div>"
+								+	"<div class=\"chat_content_outer fl\">"
+								+		"<div class=\"chat_time_and_name\">"
+								+			"<div class=\"name_ fl\">" + arr.get(i).userId +"</div>"
+								+			"<div class=\"time_ fl\">" + arr.get(i).dateTime + "</div>"
+								+			
+					}
+					$(".chatting_").append(str);
+				},
+				error : function(r, s, e){
+					alert("[에러] code : " + r.status
+							+ "message :" + r.responseText
+							+ "error : " + e);
+				}
+			});
+		});
+	</script>
 </html>

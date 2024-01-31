@@ -27,11 +27,10 @@ public class ShowNextTimelinePageAction implements Action {
 		int thisUserIdx = Integer.parseInt(request.getParameter("thisUserIdx"));
 		//ArrayList<ArrayList<PostVo>> totalLists = new ArrayList();
 		ArrayList<TotalPostVo> totalLists = new ArrayList<TotalPostVo>();
-		ArrayList<PostVo> postLists = protime.getPostList(thisUserIdx, pageNum);
+		ArrayList<PostVo> postLists = protime.getPostList(thisUserIdx);
 		ArrayList<GetPostReplyByPostIdx> replyLists = protime.getReplyLists(thisUserIdx);
 		
 		for(PostVo vo : postLists) {
-			System.out.println("vo : " + vo.getContent());
 			ArrayList<GetPostReplyByPostIdx> replyList = protime.getReplyLists(vo.getPostIdx());
 			int totalCountLike = protime.countLikeInPost(vo.getPostIdx());
 			int totalCountReply = protime.getCountReply(vo.getPostIdx());
@@ -51,7 +50,6 @@ public class ShowNextTimelinePageAction implements Action {
 			obj.put("totalCountLike", vo.getTotalCountLike());
 			postList.add(obj);
 		}
-		System.out.println("留덉�留� : " + postList);
 		out.println(postList);
 	
 	}

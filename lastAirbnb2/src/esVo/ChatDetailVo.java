@@ -7,7 +7,7 @@ public class ChatDetailVo {
 	private int userIdx;
 	private String msg;
 	private String dateTime;
-	private int msg_idx;
+	private int msgIdx;
 	
 	public ChatDetailVo(String userId, String userImage, int msgListIdx, int userIdx, String msg, String dateTime,
 			int msg_idx) {
@@ -17,7 +17,7 @@ public class ChatDetailVo {
 		this.userIdx = userIdx;
 		this.msg = msg;
 		this.dateTime = dateTime;
-		this.msg_idx = msg_idx;
+		this.msgIdx = msg_idx;
 	}
 
 	public String getUserId() {
@@ -45,7 +45,7 @@ public class ChatDetailVo {
 	}
 
 	public int getMsg_idx() {
-		return msg_idx;
+		return msgIdx;
 	}
 	
 	
