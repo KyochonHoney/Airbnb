@@ -311,35 +311,39 @@ public class Main3Dao {
       }
       return reviewvo;
    }
-   // ?›„ê¸°ê??ƒ‰
-   public ArrayList<ReviewVo> getSearch(int roomIdx, String searchText){//ï¿½ë“…ï¿½ì ™ï¿½ë¸³ ?”±?Šë’ªï¿½ë“ƒ?‘œï¿? è«›ì†ë¸˜ï¿½ê½? è«›ì„‘?†š
-         ArrayList<ReviewVo> reviewList = new ArrayList<ReviewVo>();
-         String SQL ="SELECT * FROM review r, user_info u WHERE";
-         try {
-               if(searchText != null && !searchText.equals("") ){//ï¿½ì” å«„ï¿½ ?®?‡°?ˆƒ ï¿½ë¸ ï¿½êµ¹ï¿½ì‚©ï¿½ë–ï¿½ë?? ï¿½ì†¢ï§ï¿½?
-                   SQL +=" room_idx = ? AND  review LIKE '%"+searchText.trim()+"%' AND r.user_idx = u.user_idx ";
-               }
-               SQL += " ORDER BY written_date DESC";
-               PreparedStatement pstmt=conn.prepareStatement(SQL);
-               pstmt.setInt(1, roomIdx);
-               ResultSet rs=pstmt.executeQuery();
-            while(rs.next()) {
-               int room_idx =  rs.getInt("room_idx");
-             int review_idx =  rs.getInt("review_idx");
-             String review = rs.getString("review");
-             int user_idx =  rs.getInt("user_idx");
-             double score = rs.getDouble("score");
-             String written_date = rs.getString("written_date");
-             String user_id = rs.getString("user_id");
-             String user_regidence = rs.getString("user_regidence");
-             String user_image = rs.getString("user_image");
-             reviewList.add(new ReviewVo(room_idx, review_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));
-            }         
-         } catch(Exception e) {
-            e.printStackTrace();
-         }
-         return reviewList;
-      }
+	// ?›„ê¸°ê??ƒ‰
+	public ArrayList<ReviewVo> getSearch(int roomIdx, String searchText){//ï¿½ë“…ï¿½ì ™ï¿½ë¸³ ?”±?Šë’ªï¿½ë“ƒ?‘œï¿? è«›ì†ë¸˜ï¿½ê½? è«›ì„‘?†š
+		ArrayList<ReviewVo> reviewList = new ArrayList<ReviewVo>();
+		String SQL ="SELECT * FROM review r, user_info u "
+				+ " WHERE r.user_idx = u.user_idx AND r.review IS NOT NULL "
+				+ " AND room_idx = ? ";
+		try {
+			PreparedStatement pstmt =null;
+			if(searchText != null && !searchText.equals("") ){ // ï¿½ì” å«„ï¿½ ?®?‡°?ˆƒ ï¿½ë¸ ï¿½êµ¹ï¿½ì‚©ï¿½ë–ï¿½ë?? ï¿½ì†¢ï§ï¿½?
+				SQL += " AND  review LIKE '%"+searchText.trim()+"%' ";
+			} 
+			SQL += " ORDER BY written_date DESC";
+			pstmt=conn.prepareStatement(SQL);
+			pstmt.setInt(1, roomIdx);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()) {
+				System.out.print(".");
+				int room_idx =  rs.getInt("room_idx");
+				int review_idx =  rs.getInt("review_idx");
+				String review = rs.getString("review");
+				int user_idx =  rs.getInt("user_idx");
+				double score = rs.getDouble("score");
+				String written_date = rs.getString("written_date");
+				String user_id = rs.getString("user_id");
+				String user_regidence = rs.getString("user_regidence");
+				String user_image = rs.getString("user_image");
+				reviewList.add(new ReviewVo(room_idx, review_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));
+			}         
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return reviewList;
+	}
    
    // ?Œ·ëª„ê½­?ºï¿½ï¿½ê½•ï§ï¿?(æ¹²ë‹¿ï¿?)
    public RoomExplainVo getRoomExplain(int roomIdx) {
