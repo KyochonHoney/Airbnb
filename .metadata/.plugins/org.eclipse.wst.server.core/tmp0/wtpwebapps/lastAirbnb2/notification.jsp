@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dao.*"%>
+<%@ page import="esDao.*"%>
 <%@ page import="esVo.*"%>
 <%@ page import="java.util.ArrayList"%>
 <%
@@ -108,9 +108,11 @@
             <div class="profile_list">
             	<% if(userIdx > 0) { %> 
                <div class="profile_list_top">
-                  <form action="message.jsp" method="post">
-                     <input type="submit" value="메시지"/>
-                  </form>
+                  <form action="SesController" method="post">
+					 <input type="submit" value="메시지"/>
+					 <input type="hidden" name="thisUserIdx" value="0"/>
+					 <input type="hidden" name="command" value="message"/>
+				  </form>
                   <form action="notification.jsp" method="post">
                      <input type="submit" value="알림"/>
                   </form>

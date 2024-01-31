@@ -1,9 +1,9 @@
 <%@page import="esVo.LanguageVo"%>
-<%@page import="dao.LanguageDao"%>
-<%@page import="dao.LoginDao"%>
+<%@page import="esDao.LanguageDao"%>
+<%@page import="esDao.LoginDao"%>
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="dao.Main3Dao"%>
+<%@page import="myDao.Main3Dao"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="myVo.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -27,12 +27,14 @@
 	int userIdx = 0;
 	UserInfoVo userList = null;
 	int howManyAlarm = 0;
-	try{
-		userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
-		userList = LoginDao.getUserInfoBy(userIdx);
-		howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
-	} catch (NullPointerException e){
-		e.printStackTrace();
+	if(request.getSession().getAttribute("userIdx") != null) {
+		try{
+			userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
+			userList = LoginDao.getUserInfoBy(userIdx);
+			howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
+		} catch (NullPointerException e){
+			e.printStackTrace();
+		}
 	}
 %>
 <!DOCTYPE html>
@@ -49,6 +51,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  	<script>
+  		let max_member =  <%=roomvo.getMax_member() %>;
+  	</script>
 </head>
 <body>
 <div class="currency_language_background"></div>
@@ -173,12 +178,13 @@
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
             <h2>로그인 또는 회원 가입</h2>
+            
          </div>
          
          <div class="jm_section">
             <h2>에어비엔비에 오신것을 환영합니다</h2>
          
-            <form id="jm_form" action="Controller" method="post">
+            <form id="jm_form" action="lmyController" method="post">
                <div>
                   <label for="jm_form" id="code"></label> 
                   <select name="jm_code" class="jm_seclect_box">
@@ -192,7 +198,7 @@
 	               <input type="text" class="jm_phnum" placeholder="전화번호" name="phone_num" required/>
 	           	   <input type="password" class="password" placeholder="비밀번호" name="pw" required/>
 	               <span>전화나 문자로 전화번호를 확인하겠습니다. 일반 문자 메시지 요금 및 데이터 요금이 부과됩니다.</span>
-	         	   <input type="hidden" name="url" value="main3.jsp"/>
+	         	   <input type="hidden" name="url" value="Main3"/>
 	         	   <input type="hidden" name="command" value="login"/>
 	               <input type="submit" class="jm_submit" value="로그인"><br/>
                <div class="join_user" style="padding-top: 16px;">회원 가입</div>
@@ -206,7 +212,7 @@
                   style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; margin: 0 auto;">
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
-      		<form method="post" class="join_user_form" action="Controller">
+      		<form method="post" class="join_user_form" action="lmyController">
       			이름 : <input type="text" placeholder="Ex) 김철수" name="user_id" required/> <br/><br/><br/>
       			비밀번호 : <input type="password" name="pw" required/> <br/><br/><br/>
       			비밀번호 확인 : <input type="password" class="check_pw" required/> <br/><br/><br/>
@@ -314,12 +320,17 @@
 				<div class="score">
 					<div><%=roomvo.getRoom_score() %></div>
 					<span>
+						<% for(int i=1; i<=roomvo.getRoom_score(); i++) { %>
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; "><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+						<% } %>
 					<%-- 	<%if(roomvo.getRoom_score()== 5 ){ %> --%>
+<%--					
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; "><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
+--%>
 						<%-- <%else if(roomvo.getRoom_score() >=4){ %>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; "><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 10px; width: 10px; fill: currentcolor; margin:0 1px;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
@@ -415,49 +426,37 @@
 					</div>
 				</div>
 			</div>
-	
-	<%-- 	<%for(StayVo sv : stayvo){ %>
-			<%if(sv.getStay_img().contains("https:")){ %>		
-			<!-- 7숙박장소(사진버전) -->	
-			<div class="info_inner7">
-				<div>숙박 장소</div>
-				<div class="info_inner7-1">
-					<img src ="<%=sv.getStay_img()%>"/>
-					<div ><%=sv.getStay_type() %></div>
-					<div ><%=sv.getBed_count() %></div>
-				</div>
+
+		<!-- 숙박장소(이모티콘버전) 44,47, -->	
+<%-- 		<%for(StayVo sv : stayvo){ %>
+		<%if(sv.getStay_img()!= null){ %> --%>
+		<div class="info_inner7Svg"> 
+			<div>숙박 장소</div>
+		<%-- <%} %> --%>
+				<div  class="stay_container">
+				<%for(StayVo sv : stayvo){ %>
+					<%if(sv.getStay_img()!= null){ %>
+						<%if(sv.getStay_img().contains("</svg>")){ %>
+							<div class="info_inner7-2" style="margin-right:16px;">
+								<div>
+									<%=sv.getStay_img().replace('\\', ' ') %>
+								</div>
+								<div ><%=sv.getStay_type() %></div>
+								<div ><%=sv.getBed_count()%></div>
+							</div>
+						<!-- 사진일때 -->
+						<%}else { %>  
+							<div class="info_inner7-1">
+								<img src ="<%=sv.getStay_img()%>"/>
+								<div><%=sv.getStay_type() %></div>
+								<div><%=sv.getBed_count() %></div>
+							</div>
+						<%} %>
+					<%} %> 
+				<%} %>
 				
-			</div>	 --%>
-			<%-- <%}else if(sv.getStay_img().contains("svg")){ %>
-	<!-- 숙박장소(이모티콘버전) -->	
-			<div class="info_inner7"> 
-				<div>숙박 장소</div>
-				
-				<div class="info_inner7-1" style="margin-right:16px;">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
-					</div>
-					<div >침실 1</div>
-					<div >더블 침대 1개</div>
-				</div>
-				<div class="info_inner7-1" style="margin-right:16px;">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M20 0a2 2 0 0 1 2 1.85V6h4V2h2v4.76l1.68 3.37a3 3 0 0 1 .31 1.11l.01.23V30h-2v-2h-6v2h-2v-2H4v2H2V11.47a3 3 0 0 1 .22-1.13l.1-.21L4 6.76V2h2v4h4V2a2 2 0 0 1 1.85-2H12zm0 24H4v2h16zm8 0h-6v2h6zm-8-8H4v6h16zm8 4h-6v2h6zm0-4h-6v2h6zm-8-4H4v2h16zm8 0h-6v2h6zm-1.62-4H5.62l-1 2h22.76zM20 2h-8v4h8z"></path></svg>
-					</div>
-					<div >침실 1</div>
-					<div >더블 침대 1개</div>
-				</div>
-				<div class="info_inner7-1">
-					<div>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M28 4a2 2 0 0 1 2 1.85v7.99l1.85 5.54a3 3 0 0 1 .11.46l.03.24.01.24V30h-2v-2H2v2H0v-9.68a3 3 0 0 1 .09-.71l.06-.23L2 13.84V6a2 2 0 0 1 1.7-1.98l.15-.01L4 4zm2 18H2v4h28zm-1.39-6H3.4l-1.34 4h27.9zM28 6H4v8h2v-4a2 2 0 0 1 1.85-2H24a2 2 0 0 1 2 1.85V14h2zm-13 4H8v4h7zm9 0h-7v4h7z"></path></svg>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 24px; width: 24px; fill: currentcolor;"><path d="M20 0a2 2 0 0 1 2 1.85V6h4V2h2v4.76l1.68 3.37a3 3 0 0 1 .31 1.11l.01.23V30h-2v-2h-6v2h-2v-2H4v2H2V11.47a3 3 0 0 1 .22-1.13l.1-.21L4 6.76V2h2v4h4V2a2 2 0 0 1 1.85-2H12zm0 24H4v2h16zm8 0h-6v2h6zm-8-8H4v6h16zm8 4h-6v2h6zm0-4h-6v2h6zm-8-4H4v2h16zm8 0h-6v2h6zm-1.62-4H5.62l-1 2h22.76zM20 2h-8v4h8z"></path></svg>
-					</div>
-					<div >침실 1</div>
-					<div >더블 침대 1개</div>
-				</div>
-			</div>  
-			<%} %>  --%>
+			</div> 
+		</div>  
 			<!-- 8편의 시설 -->	
 			<div class="info_inner8">
 				<div><h2>숙소 편의시설</h2></div>
@@ -484,7 +483,8 @@
 				String str = roomvo.getRoom_location();
 				String[] str2 = str.split(",");
 				%>
-				<%=str2[0] %>에서 5박
+				<%=str2[0] %>에서 
+				<span>4522</span>박
 				</h2>
 				<div>2024년 9월 1일 - 2024년 9월 6일</div>
 				
@@ -507,16 +507,21 @@
 				<!-- 사이드 팝업 -->
 				<div class="side_date_pop" style="display:none;">
 					<div class="side_date_pop1">
-					 <span>5박</span> <br> 
-					 <span class="side_date_pop_sp">2024년 9월 1일 - 2024년 9월 6일</span>
+					 <span id="dateCalc">ㅇㅇㅅㅇ</span>박 <br> 
+					 <span class="side_date_pop_sp">
+					 <span id="checkinDate"></span>
+					  - 
+					  <span id="checkoutDate"></span>
 					 </div>
 					<button class=side_date_popbtn>
 						<div>
-							<span>체크인</span>2024. 9.1.
+							<span>체크인</span>
+							<div class ="dateInfo_inner"></div>
 							<div class="pop_xbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible; margin-top:6px; margin-left:6px;"><path d="m6 6 20 20M26 6 6 26"></path></svg></div>
 						</div>
 						<div>
-							<span>체크아웃</span>2024. 9.6.
+							<span>체크아웃</span>
+							<div class="dateInfo_inner2"></div>
 							<div class="pop_xbtn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 4; overflow: visible; margin-top:6px; margin-left:6px;"><path d="m6 6 20 20M26 6 6 26"></path></svg></div>
 						</div>
 					</button>
@@ -596,8 +601,14 @@
 					
 					<div class="side1-3">
 						<button>
-							<div><span>체크인</span>2024. 9.1.</div>
-							<div><span>체크아웃</span>2024. 9.6.</div>
+							<div>
+								<span>체크인</span>
+								<div class="dateInfo">가는날을 선택하세요</div>
+							</div>
+							<div>
+								<span>체크아웃</span>
+								<div class="dateInfo2">오는날을 선택하세요</div>
+							</div>
 						</button>
 						<div class="side1-4">
 							<span>인원</span>
@@ -1056,16 +1067,18 @@
 					</div>
 					
 					<div class="pop_section2-2">
-						<form action="ImyController" method="post">
+						<form id="test1" onsubmit="return false">
 							<input type="text" id = "searchText" placeholder="후기검색" name="searchText">
-							<input type="hidden" value ="main3" name="command"/>
-							<button type="submit" class="searchBtn">검색</button>
+							<input type="hidden" name="command" value="searchBytext">
+							<input type="hidden" name="roomIdx" value="<%= roomvo.getRoom_idx() %>">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path></svg>
 						</form>
+						<!-- button이 form태그 안에있으면 form태그 해당메서드로 실행되기때문에 url이 달라진다 -->
+<!-- 						<button onclick="test1();" id="searchBtn" value="검색">검색</button> -->
 					</div>
 				</div>
 				
-				<div><!-- 오렌지  -->
+				<div id="review-container"><!-- 오렌지  -->
 				<%for(ReviewVo review : reviewvo){ %>
 					<div class="pop_section2-3">
 						<div>

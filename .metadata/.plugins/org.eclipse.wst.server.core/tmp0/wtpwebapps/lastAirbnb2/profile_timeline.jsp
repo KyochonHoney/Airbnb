@@ -3,12 +3,12 @@
 <%@page import="java.util.List"%>
 <%@page import="esVo.GetPostReplyByPostIdx"%>
 <%@page import="esVo.PostVo"%>
-<%@page import="dao.ProfileTimelineDao"%>
+<%@page import="esDao.ProfileTimelineDao"%>
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="esVo.LanguageVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="dao.LanguageDao"%>
-<%@page import="dao.LoginDao"%>
+<%@page import="esDao.LanguageDao"%>
+<%@page import="esDao.LoginDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -129,8 +129,10 @@ LoginDao LoginDao = new LoginDao();
 				<div class="profile_list">
 					<% if(userIdx > 0) { %> 
 					<div class="profile_list_top">
-						<form action="message.jsp" method="post">
+						<form action="SesController" method="post">
 							<input type="submit" value="메시지"/>
+							<input type="hidden" name="thisUserIdx" value="0"/>
+							<input type="hidden" name="command" value="message"/>
 						</form>
 						<form action="notification.jsp" method="post">
 							<input type="submit" value="알림"/>
@@ -184,7 +186,7 @@ LoginDao LoginDao = new LoginDao();
          <div class="jm_section">
             <h2>에어비엔비에 오신것을 환영합니다</h2>
          
-            <form id="jm_form" action="Controller" method="post">
+            <form id="jm_form" action="SesController" method="post">
                <div>
                   <label for="jm_form" id="code"></label> 
                   <select name="jm_code" class="jm_seclect_box">
@@ -212,7 +214,7 @@ LoginDao LoginDao = new LoginDao();
                   style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; margin: 0 auto;">
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
-      		<form method="post" class="join_user_form" action="Controller">
+      		<form method="post" class="join_user_form" action="SesController">
       			이름 : <input type="text" placeholder="Ex) 김철수" name="user_id" required/> <br/><br/><br/>
       			비밀번호 : <input type="password" name="pw" required/> <br/><br/><br/>
       			비밀번호 확인 : <input type="password" class="check_pw" required/> <br/><br/><br/>
@@ -536,7 +538,7 @@ LoginDao LoginDao = new LoginDao();
 					$.ajax({
 						type : 'post',
 						data : {"postIdx":postIdx, "thisUserIdx": thisUserIdx , "checkLike": checkLike, "command" : command},
-						url : 'Controller',
+						url : 'SesController',
 						success : function(obj){	
 							check.text(obj.likeCount+ "개");
 							
@@ -568,7 +570,7 @@ LoginDao LoginDao = new LoginDao();
 					$.ajax({
 						type : 'post',
 						data : { "postIdx" : postIdx, "userIdx" : userIdx, "content" : content,"thisUserIdx" : thisUserIdx ,"command" : command },
-						url : 'Controller',
+						url : 'SesController',
 						success : function(obj){
 							if(obj.replyResult){
 								alert("댓글이 달렸습니다.");
@@ -610,7 +612,7 @@ LoginDao LoginDao = new LoginDao();
 						let userIdx = <%=userIdx%>;
 						let thisUserIdx = <%=thisUserIdx%>;
 						$.ajax({
-							url : 'Controller',
+							url : 'SesController',
 							data : {"command" : command, "userIdx" : userIdx, "thisUserIdx" : thisUserIdx},
 							type : 'post',
 							success : function(obj){
@@ -634,7 +636,7 @@ LoginDao LoginDao = new LoginDao();
 					let userIdx = <%=userIdx%>;
 					let thisUserIdx = <%=thisUserIdx%>;
 					$.ajax({
-						url : 'Controller',
+						url : 'SesController',
 						data : {"command" : command, "userIdx" : userIdx, "thisUserIdx" : thisUserIdx},
 						type : 'post',
 						success : function(obj){
@@ -665,7 +667,7 @@ LoginDao LoginDao = new LoginDao();
 						  $.ajax({
 							 type : 'post',
 							 data : { "pageNum" : pageNum , "thisUserIdx" : thisUserIdx , "command" : command},
-							 url : 'Controller',
+							 url : 'SesController',
 							 success : function(obj){
 								 let totalStr = "";
 								 console.log(obj);
