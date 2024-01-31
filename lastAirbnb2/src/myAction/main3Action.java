@@ -25,13 +25,13 @@ public class main3Action implements Action{
    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       Main3Dao dao3 = new Main3Dao();
    
-      // main2.jsp�뜝�럥�뱺�뜝�럡�맋 �뜝�럡�맂�뇦爰용쳛�뜝占� �뜝�럥�빣�뜝�럥爰뻟dx,�뜝�럩源덂뜝�럥裕욃뜝�럥諭쐇dx �뛾�룇猷꾤뵳占�
+      // main2.jsp占쎈쐻占쎈윥占쎈군占쎈쐻占쎈윞占쎈쭓 占쎈쐻占쎈윞占쎈쭆占쎈눇�댆�슜爾쏉옙�쐻�뜝占� 占쎈쐻占쎈윥占쎈묍占쎈쐻占쎈윥�댆六웓x,占쎈쐻占쎈윪繹먮뛼�쐻占쎈윥獒뺤쉩�쐻占쎈윥獄��릥dx 占쎈쎗占쎈즵�뙴袁ㅻ뎨�뜝占�
       int roomIdx = Integer.parseInt(request.getParameter("roomIdx"));
       RoomVo roomvo = dao3.getRoom(roomIdx);
       int hostidx = roomvo.getUser_idx();
       
       
-      // 占쎈쇀占쎈닗nfo �뜝�럩�겱占쎈ご占쎈뼬�뵳占�
+      // �뜝�럥���뜝�럥�떁nfo 占쎈쐻占쎈윪占쎄껑�뜝�럥�걫�뜝�럥堉э옙逾녑뜝占�
       String str = roomvo.getRoom_info_idx(); //1,2,3
       String[] str2 = str.split(",");
       
@@ -59,14 +59,14 @@ public class main3Action implements Action{
       request.setAttribute("reviewvo",reviewvo);
       request.setAttribute("convenientvo",convenientvo);
       request.setAttribute("stayvo",stayvo);
-      for(StayVo vo : stayvo) {
-    	  if(vo.getStay_img().contains("svg")){
-    		  System.out.println(vo.getStay_img());
-    	  }else {
-    		  System.out.println(vo.getStay_img());
-    	  }
-      }
-      
+//      for(StayVo vo : stayvo) {
+//    	  if(vo.getStay_img().contains("svg")){
+//    		  System.out.println(vo.getStay_img());
+//    	  }else {
+//    		  System.out.println(vo.getStay_img());
+//    	  }
+//      }
+//      
       
       
       RequestDispatcher rd = request.getRequestDispatcher("main3.jsp");

@@ -3,7 +3,10 @@ package myAction;
 import java.io.IOException;
 import java.util.ArrayList;
 
+<<<<<<< Updated upstream
 import javax.servlet.RequestDispatcher;
+=======
+>>>>>>> Stashed changes
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +30,7 @@ import myVo.StayVo;
 public class Main3Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+<<<<<<< Updated upstream
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	      Main3Dao dao3 = new Main3Dao();
@@ -47,13 +51,31 @@ public class Main3Servlet extends HttpServlet {
 	                                                
 	      int countReview = dao3.getCountReview(roomIdx);
 	      RoomImageVo imagevo = dao3.getRoomImage(roomIdx);
+=======
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Main3Dao dao3 = new Main3Dao();
+		 
+		int roomIdx = Integer.parseInt(request.getParameter("roomIdx"));
+	    RoomVo roomvo = dao3.getRoom(roomIdx);
+	    int hostidx = roomvo.getUser_idx(); 
+		
+	    String str = roomvo.getRoom_info_idx(); //1,2,3
+	    String[] str2 = str.split(",");
+	    String conv = roomvo.getConvenient_idx();
+	    
+	    int countReview = dao3.getCountReview(roomIdx);
+	    RoomImageVo imagevo = dao3.getRoomImage(roomIdx);
+>>>>>>> Stashed changes
 	      UserInfoVo uservo = dao3.getUserInfo(hostidx);
 	      RoomExplainVo explainvo = dao3.getRoomExplain(roomIdx);
 	      ArrayList<RoomInfoVo> roominfovo = dao3.getRoomInfo(roomIdx,str2);
 	      ArrayList<ConvenientVo> convenientvo = dao3.getConvenientV2(conv);
 	      ArrayList<ReviewVo> reviewvo = dao3.getReview(roomIdx);
 	      ArrayList<StayVo> stayvo = dao3.getStay(roomIdx);
+<<<<<<< Updated upstream
 	      
+=======
+>>>>>>> Stashed changes
 
 	      
 	      request.setAttribute("roomvo",roomvo);
@@ -64,6 +86,7 @@ public class Main3Servlet extends HttpServlet {
 	      request.setAttribute("roominfovo",roominfovo);
 	      request.setAttribute("reviewvo",reviewvo);
 	      request.setAttribute("convenientvo",convenientvo);
+<<<<<<< Updated upstream
 	      request.setAttribute("stayvo",stayvo);
 	      for(StayVo vo : stayvo) {
 	    	  if(vo.getStay_img().contains("svg")){
@@ -80,6 +103,11 @@ public class Main3Servlet extends HttpServlet {
 	   }
 	
 	
+=======
+	      request.setAttribute("stayvo",stayvo);	    
+	}
+
+>>>>>>> Stashed changes
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
