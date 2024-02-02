@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+encoding//WebContent/css/account.css=UTF-8
+encoding//WebContent/css/message.css=UTF-8
+encoding//WebContent/css/profile_timeline.css=UTF-8
 encoding//src/esAction/LoginAction.java=UTF-8
 encoding//src/esAction/ShowNextTimelinePageAction.java=UTF-8
 encoding//src/myAction/Main2Servlet.java=UTF-8

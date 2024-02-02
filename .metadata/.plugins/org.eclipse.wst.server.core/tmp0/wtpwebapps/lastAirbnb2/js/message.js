@@ -77,7 +77,7 @@ $(function() {
    $(".Logout").click(function(){
 	    var result = confirm("정말 로그아웃 하시겠습니까?");
         if(!result){return false;}
-        else{ location.href = "Controller?command=logout?url=profile_timeline.jsp"}
+        else{ location.href = "SesController?command=logout?url=OpenMessage"}
    });
 });
 

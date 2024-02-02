@@ -134,7 +134,7 @@
 						<form action="timeline.jsp" method="post">
 							<input type="submit" value="타임라인"/>
 						</form>
-						<div class="Logout">로그아웃</div>
+						<div class="Logout"><a href="javascript:kakaoLogout();">로그아웃</a></div>
 					</div><!--profile_list_bottom-->
 				 	<% } else{ %>
 					<div class="profile_list_diff">
@@ -181,6 +181,7 @@
 	         	   <input type="hidden" name="command" value="login"/>
 	               <input type="submit" class="jm_submit" value="로그인"><br/>
                <div class="join_user" style="padding-top: 16px;">회원 가입</div>
+               <a href="javascript:kakaoLogin();" class="kakao_login"><img style="width: 524px; height: 48px; margin-top: 20px; border-radius: 10px; object-fit: cover;" src="images/kakaoLogin.png"/></a>
             </form>
          </div>
       </div>
@@ -384,4 +385,45 @@
 			</div><!--footer_inner-->
 		</div><!--ë°footer-->
 	</body>
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+	//4b56ad3e26ac9d9a979a707d8d0d8e4f
+	window.Kakao.init("4b56ad3e26ac9d9a979a707d8d0d8e4f");
+	function kakaoLogin(){
+		window.Kakao.Auth.login({
+			scope : 'profile_nickname, profile_image',
+			success : function(authObj){
+				console.log(authObj);
+				window.Kakao.API.request({
+					url : '/v2/user/me',
+					success : res => {
+						const kakaoAccount = res.kakao_account;
+						console.log(kakaoAccount);
+						let command = 'joinKakao';
+						$.ajax({
+							url : 'SesController',
+							data : {'command' : command, 'kakaoAccount', kakaoAccount},
+							type : 'post',
+							success: function(data){
+								alert("로그인 해주세요");
+								alert("초기로그인 시 카카오계정 이름이 아이디입니다.");
+								location.href = location.href;
+							},
+							error : function(r, s, e){
+								alert("[에러] code : " + r.status
+										+ "message :" + r.responseText
+										+ "error : " + e);
+							}		
+						});
+					} 
+				});
+			}
+		});
+	}
+	function kakaoLogout(){
+		window.Kakao.Auth.logout(function() {
+			  console.log(window.Kakao.Auth.getAccessToken());
+		});
+	}
+	</script>
 </html>

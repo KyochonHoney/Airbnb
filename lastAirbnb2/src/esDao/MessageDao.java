@@ -89,21 +89,21 @@ public class MessageDao {
 	//채팅방이 기존에 있는지 없는지 체크
 	public boolean checkChatList(int userIdx, int thisUserIdx) {
 		String sql = "SELECT count(*) FROM message_list WHERE host_idx = ? AND partner_idx = ?";
-		String check = "0";
-		String cnt = "";
+		int cnt = 0;
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(userIdx, thisUserIdx);
+			pstmt.setInt(1, thisUserIdx);
+			pstmt.setInt(2, userIdx);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) {
-				cnt = rs.getString(1);
+				cnt = rs.getInt(1);
 			}
 			rs.close();
 			pstmt.close();
 		} catch(Exception e) { e.printStackTrace(); }
 		
-		return check.equals(cnt); 
+		return cnt == 0; 
 	}
 	//채팅방 없는 거 추가하기
 	public void addChatList(int userIdx, int thisUserIdx) {
@@ -118,17 +118,16 @@ public class MessageDao {
 		} catch(Exception e) { e.printStackTrace(); }
 	}
 	//채팅한 내용 가져오기
-	public ArrayList<ChatDetailVo> showChatList(int userIdx1, int msgListIdx1){
+	public ArrayList<ChatDetailVo> showChatList( int msgListIdx1){
 		String sql ="SELECT ui.user_id, ui.user_image, m.*"
 				+ " FROM user_info ui, message m"
-				+ " WHERE ui.user_idx = m.user_idx AND m.user_idx = ?  AND msg_list_idx = ?"
+				+ " WHERE ui.user_idx = m.user_idx AND msg_list_idx = ?"
 				+ " ORDER BY m.msg_idx ASC";
 		ArrayList<ChatDetailVo> list = new ArrayList<ChatDetailVo>();
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, userIdx1);
-			pstmt.setInt(2, msgListIdx1);
+			pstmt.setInt(1, msgListIdx1);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				String userId = rs.getString("user_id");
@@ -141,9 +140,25 @@ public class MessageDao {
 				
 				list.add(new ChatDetailVo(userId, userImage, msgListIdx, userIdx, msg, dateTime, msgIdx));
 			}
+			rs.close();
+			pstmt.close();
 		} catch(Exception e) { e.printStackTrace(); }
 		
 		return list;
 	}
+	//새로운 챗 DB추가
+	public void UpdateChat(int msgListIdx, int userIdx, String message) {
+		String sql = "INSERT INTO message(msg_list_idx, user_idx, msg, date_time, msg_idx)"
+				+ " VALUES (?, ?, ?, sysdate, msg_idx.nextval)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, msgListIdx);
+			pstmt.setInt(2, userIdx);
+			pstmt.setString(3, message);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch(Exception e) { e.printStackTrace(); }
+	}
+	
 	
 }

@@ -37,5 +37,20 @@ public class JoinDao {
 			}
 		}
 	}
+	//kakao로그인 한 사람은 이렇게 회원가입
+	public void joinKakaoUser(String name, String image) {
+		String sql = "INSERT INTO user_info(user_idx, user_id, user_regidence, user_image, introduce, interact, super_host, join_date, "
+				+	"user_school, user_job, hometown, birthday, email, phone_number, second_number, password, active) "
+				+	"VALUES (user_idx.nextval, ? , null , ?, null, null, 0, sysdate, null, null, null, null, ?, null, '1234', 1 ";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, image);
+			pstmt.setString(3, name);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch(Exception e) { e.printStackTrace(); }
+	}
 
 }

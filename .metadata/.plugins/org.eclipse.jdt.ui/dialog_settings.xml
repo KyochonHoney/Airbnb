@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\kshe7\OneDrive\바탕 화면\team5Project\team5Project"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\신사임당\OneDrive\바탕 화면\lastair2\lastAirbnb2"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="BuildPathsPropertyPage">
@@ -33,5 +33,7 @@
 	<section name="NewClassWizardPage">
 		<item key="create_constructor" value="false"/>
 		<item key="create_unimplemented" value="true"/>
+	</section>
+	<section name="RenameInformationPopup">
 	</section>
 </section>

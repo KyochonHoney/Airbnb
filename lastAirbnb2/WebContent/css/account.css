@@ -5,13 +5,16 @@
 	text-decoration: none;
 	border-collapse: collapse;
 }
+a{
+	color: black;
+}
 body{	
 	margin: 0;
 	padding: 0;
 }
 .fl{ float: left; }
 .fr{ float: right;}
-/*스켈레톤코드*/
+/*�뒪耳덈젅�넠肄붾뱶*/
 #header{
 	width: 100%;
 	height: 80px;
@@ -19,8 +22,8 @@ body{
 	position: fixed;
 	background-color: white;
 	z-index: 2;
-}/*머리말*/
-/*회원가입 팝업*/
+}/*癒몃━留�*/
+/*�쉶�썝媛��엯 �뙘�뾽*/
 #joinmember_outer{
    background-color:rgba(0,0,0,0.5);
    position: fixed;
@@ -45,7 +48,7 @@ body{
    display: none;
 }
 #joinmember{
-   width:568px; height: 570px;
+   width:568px; height: 640px;
    border-radius: 12px;
    background-color:white;
    overflow-x:hidden;
@@ -135,57 +138,57 @@ body{
    border-radius: 8px;
    margin-top:26px;
 }
-/*회원가입팝업끝*/
+/*�쉶�썝媛��엯�뙘�뾽�걹*/
 #header_left{
 	width: 500px;
 	height: 80px;
-}/*로고 감싸는 쪽*/
+}/*濡쒓퀬 媛먯떥�뒗 履�*/
 #header_left > a > img{
 	margin-right: 89px;
     margin-top: 25px;
     width: 99px;
     height: 31px;
-}/*airbnb로고*/
+}/*airbnb濡쒓퀬*/
 #header_center{
 	width: 700px;
 	height: 80px;
-}/*검색창을 감싸는 div*/
+}/*寃��깋李쎌쓣 媛먯떥�뒗 div*/
 #header_right{
 	width: 703px;
 	height: 80px;
-}/*프로필과 지구본, 에어비앤비를 감싸는 div*/
+}/*�봽濡쒗븘怨� 吏�援щ낯, �뿉�뼱鍮꾩븻鍮꾨�� 媛먯떥�뒗 div*/
 #areaair{
 	width: 232px;
 	height: 42px;
 	margin: 29px auto 0px 29px;	
-}/*에어비앤비하세요 감싸는 div*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 媛먯떥�뒗 div*/
 #areaair > a > strong{
 	font-size: 14px;
 	text-align: center;
 	margin: 0px auto 0px 15px;
 	color: black;
 	border-radius: 11px;
-}/*에어비앤비하세요 글씨*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 湲��뵪*/
 #areaair > a > strong:hover{
 	background-color: rgb(247,247,247);
-}/*에어비앤비하세요 글씨 선택했을 떄*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 湲��뵪 �꽑�깮�뻽�쓣 �뻹*/
 #globe{
 	width: 33px;
     height: 47px;
     margin: 16px 25px 0 0px;
     border-radius: 100%;
-}/*통화,화폐 지구본 감싸는 div*/
+}/*�넻�솕,�솕�룓 吏�援щ낯 媛먯떥�뒗 div*/
 #globe:hover{
 	cursor: pointer;
 	background-color: rgb(247,247,247);
-}/*통화,화폐 지구본 감싸는 div를 선택했을 때 css*/
+}/*�넻�솕,�솕�룓 吏�援щ낯 媛먯떥�뒗 div瑜� �꽑�깮�뻽�쓣 �븣 css*/
 #globe > img{
 	width: 16px;
 	height: 16px;
 	top : 50%;
 	left : 50%;
 	transform : translate(47% , 98%);
-}/*지구본 이미지*/
+}/*吏�援щ낯 �씠誘몄�*/
 .currency_language_background{
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
@@ -205,7 +208,7 @@ body{
 	border-radius: 15px;
 	display: none;
 	z-index: 4;
-}/*통화 화폐를 감싸고 있는 div*/
+}/*�넻�솕 �솕�룓瑜� 媛먯떥怨� �엳�뒗 div*/
 .close_div{
 	width: 32px;
 	height: 32px;
@@ -216,7 +219,7 @@ body{
     background-color: white;
     cursor: pointer;
     border-radius: 100%;
-}/*닫기버튼*/
+}/*�떕湲곕쾭�듉*/
 .close_div:hover{
 	background-color: rgb(247,247,247);
 }
@@ -226,12 +229,12 @@ body{
 	margin: 66px auto 0 auto;
 	overflow-x: hidden;
     overflow-y: scroll;
-}/*통화 전체 div*/
+}/*�넻�솕 �쟾泥� div*/
 #currency_top{
 	width: 980px;
 	height: 50px;
 	border-bottom: 1px solid #dddddd;
-}/*언어와 지역, 통화 버튼을 감싸는 div*/
+}/*�뼵�뼱�� 吏��뿭, �넻�솕 踰꾪듉�쓣 媛먯떥�뒗 div*/
 .currency_button{
 	width: 92.98px;
 	height: 49px;
@@ -241,7 +244,7 @@ body{
 	font-weight: 600;
 	cursor: pointer;
 	background-color: white;
-}/*통화 버튼*/
+}/*�넻�솕 踰꾪듉*/
 .currency_button:hover{
 	background-color: rgb(247,247,247);
 }
@@ -254,7 +257,7 @@ body{
 	color: grey;
 	cursor: pointer;
 	background-color: white;
-}/*언어 버튼*/
+}/*�뼵�뼱 踰꾪듉*/
 .language_button:hover{
 	background-color: rgb(247,247,247);
 }
@@ -271,34 +274,34 @@ body{
 	border-radius: 41px;
 	text-align: center;
 	cursor: pointer;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div > ul > li:hover{
 	background-color: rgb(247,247,247);
-}/*각 list들 공통 :hover css*/
+}/*媛� list�뱾 怨듯넻 :hover css*/
 #currency_center > div > ul > li > div{
 	width: 154.59px;
 	height: 18px;
 	font-size: 14px;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div > ul > li > div:nth-child(2){
 	color: #717171;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div:nth-child(1){
 	width: 967px;
 	height: 130px;
 	margin-top: 24px;
 	padding-bottom: 24px;
-}/*추천 언어 및 지역 전체를 감싸는 div*/
+}/*異붿쿇 �뼵�뼱 諛� 吏��뿭 �쟾泥대�� 媛먯떥�뒗 div*/
 #currency_center > div:nth-child(2){
 	width: 967px;
 	height: 1426px;
 	margin-top: 24px;
 	padding-bottom: 24px;
-}/*언어와 지역을 선택하세요 를 감싸는 전체 div*/
+}/*�뼵�뼱�� 吏��뿭�쓣 �꽑�깮�븯�꽭�슂 瑜� 媛먯떥�뒗 �쟾泥� div*/
 #currency_center > div:nth-child(1) > h2{
 	font-size: 22px;
 	font-weight: 600;
-}/*추천 언어 및 지역*/
+}/*異붿쿇 �뼵�뼱 諛� 吏��뿭*/
 #profile{
 	width: 86px;
 	height: 40px;
@@ -306,7 +309,7 @@ body{
 	border: 1px solid #ddd;
 	border-radius: 50px;
 	margin: 20px 0 0 0;
-}/*프로필 감싸고 있는 div*/
+}/*�봽濡쒗븘 媛먯떥怨� �엳�뒗 div*/
 #profile:hover{
 	cursor: pointer;
 	box-shadow: 0px 0px 7px 1px grey;
@@ -317,7 +320,7 @@ body{
 	top : 50%;
 	left : 50%;
 	transform : translate(123% ,-76%);
-}/*list이미지*/
+}/*list�씠誘몄�*/
 #profile > img:nth-child(2){
 	width: 32px;
 	height: 32px;
@@ -325,7 +328,7 @@ body{
 	top: 50%;
     left: 50%;
     transform: translate(68% , 10%);
-}/*프로필 이미지*/
+}/*�봽濡쒗븘 �씠誘몄�*/
 #notice{
 	background-color: red;
 	color: white;
@@ -341,7 +344,7 @@ body{
     left: 66%;
     transform: translate(50% , 50%);
     position: relative;
-}/*프로필 이미지 위쪽에 뜨는 알림 개수*/
+}/*�봽濡쒗븘 �씠誘몄� �쐞履쎌뿉 �쑉�뒗 �븣由� 媛쒖닔*/
 .profile_list{
 	width: 240px;
 	min-height: 80px;
@@ -350,7 +353,7 @@ body{
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px -2px grey;
 	display: none;
-}/*프로필 버튼을 눌렀을 때 나오는 div*/
+}/*�봽濡쒗븘 踰꾪듉�쓣 �닃���쓣 �븣 �굹�삤�뒗 div*/
 .profile_list > div > form > input{
 	width: 240px;
 	height: 43.75px;
@@ -358,7 +361,7 @@ body{
 	background-color: white;
 	text-align: left;
 	padding-left: 15px;
-}/*각 input태그들*/
+}/*媛� input�깭洹몃뱾*/
 .Logout{
 	width: 240px;
 	height: 43.75px;
@@ -397,45 +400,45 @@ body{
 	width: 100%;
 	height: 1102.02px;
 	padding: 80px 0;
-}/*본문*/
+}/*蹂몃Ц*/
 #content > div{
 	width: 1080px;
 	margin: 60px auto 0 auto;
 	height: 909.02px;
-}/*본문을 감싸고 있는 전체 div*/
+}/*蹂몃Ц�쓣 媛먯떥怨� �엳�뒗 �쟾泥� div*/
 #content_top{
 	width: 1016px;
 	height: 68px;
 	margin-left: 41px;
-}/*계정과 이름을 감싸고 있는 div*/
+}/*怨꾩젙怨� �씠由꾩쓣 媛먯떥怨� �엳�뒗 div*/
 #content_top > div:nth-child(1){
 	width: 1016px;
 	height: 36px;
 	font-size: 32px;
 	font-weight: 600;
 	text-align: left;
-}/*계정*/
+}/*怨꾩젙*/
 #content_top > div:nth-child(2){
 	width: 1016px;
 	height: 24px;
 	margin-top: 8px;
-}/*계정 밑 설명을 감싸고 있는 div*/
+}/*怨꾩젙 諛� �꽕紐낆쓣 媛먯떥怨� �엳�뒗 div*/
 #content_top > div:nth-child(2) > div{
 	width: 66.25px;
 	height: 23px;
 	font-size: 18px;
 	font-weight: 600;
-}/*민영 이,*/
+}/*誘쇱쁺 �씠,*/
 #content_top > div:nth-child(2) > span{
 	font-size: 18px;
 	font-weight: 500;
-}/*lmy9237@naver.com ·*/
+}/*lmy9237@naver.com 쨌*/
 #content_top > div:nth-child(2) > a{
 	font-size: 18px;
 	text-decoration: underline;
 	font-weight: 600;
 	color: black;
-}/*프로필로 이동*/
+}/*�봽濡쒗븘濡� �씠�룞*/
 #content_center{
 	width: 1032px;
 	height: 688px;
@@ -444,14 +447,14 @@ body{
 #content_center > div{
 	width: 1032px;
 	height: 172px;
-}/*표에서 테이블로 치면 tr*/
+}/*�몴�뿉�꽌 �뀒�씠釉붾줈 移섎㈃ tr*/
 #content_center > div > a{
 	width: 328px;
 	height: 172px;
-}/*tr들을 하나씩 감싸는 a태그*/
+}/*tr�뱾�쓣 �븯�굹�뵫 媛먯떥�뒗 a�깭洹�*/
 #content_center > div > a:not(:nth-child(3)){
 	margin-right: 24px;
-}/*a태그 사이에 여백*/
+}/*a�깭洹� �궗�씠�뿉 �뿬諛�*/
 #content_center > div > a > div{
 	width: 328px;
 	height: 156px;
@@ -462,24 +465,24 @@ body{
     border: 1px solid grey;
     cursor: pointer;
     color: black;
-}/*a태그 안에 글씨들을 감쌀 div*/
+}/*a�깭洹� �븞�뿉 湲��뵪�뱾�쓣 媛먯� div*/
 .svg{
 	width: 296px;
 	height: 32px;
 	margin: 0 auto;
-}/*모든 svg클래스*/
+}/*紐⑤뱺 svg�겢�옒�뒪*/
 .explain46{
 	width: 296px;
 	height: 46px;
 	margin: 47px auto;
-}/*svg밑에 있는 설명들을 감싼 div*/
+}/*svg諛묒뿉 �엳�뒗 �꽕紐낅뱾�쓣 媛먯떬 div*/
 .explain46 > div:nth-child(1){
 	width: 296px;
 	height: 20px;
 	text-align: left;
 	font-size: 16px;
 	font-weight: 600;
-}/*개인정보*/
+}/*媛쒖씤�젙蹂�*/
 .explain46 > div:nth-child(2){
 	width: 296px;
 	height: 18px;
@@ -488,19 +491,19 @@ body{
 	color: #717171;
 	font-weight: 500;
 	margin-top: 8px;
-}/*개인정보 및 연락처를 알려주세요*/
+}/*媛쒖씤�젙蹂� 諛� �뿰�씫泥섎�� �븣�젮二쇱꽭�슂*/
 .explain64{
 	width: 296px;
 	height: 64px;
 	margin: 28px auto;
-}/*svg밑에 있는 설명들을 감싼 div*/
+}/*svg諛묒뿉 �엳�뒗 �꽕紐낅뱾�쓣 媛먯떬 div*/
 .explain64 > div:nth-child(1){
 	width: 296px;
 	height: 20px;
 	text-align: left;
 	font-size: 16px;
 	font-weight: 600;
-}/*설명 중 제목*/
+}/*�꽕紐� 以� �젣紐�*/
 .explain64 > div:nth-child(2){
 	width: 296px;
 	height: 36px;
@@ -509,7 +512,7 @@ body{
 	color: #717171;
 	font-weight: 500;
 	margin-top: 8px;
-}/*설명의 설명*/
+}/*�꽕紐낆쓽 �꽕紐�*/
 #content_bottom{
 	width: 1032px;
 	height: 45.02px;
@@ -520,7 +523,7 @@ body{
 	height: 18px;
 	font-size: 14px;
 	text-align: center;
-}/*계정을 비활성화하셔야 하나요?*/
+}/*怨꾩젙�쓣 鍮꾪솢�꽦�솕�븯�뀛�빞 �븯�굹�슂?*/
 #content_bottom > a{
 	width: 74.56px;
 	height: 16px;
@@ -529,7 +532,7 @@ body{
 	font-weight: 600;
 	margin-left: 478px;
 	color: black;
-}/*지금 처리하기*/
+}/*吏�湲� 泥섎━�븯湲�*/
 #footer{
 	width: 100%;
 	height: 469.13px;

@@ -5,12 +5,14 @@ public class GetRoomByHostIdxVo {
 	private String roomLocation;
 	private double roomScore;
 	private String img1;
+	private int roomIdx;
 	
-	public GetRoomByHostIdxVo(String roomName, String roomLocation, double roomScore, String img1) {
+	public GetRoomByHostIdxVo(String roomName, String roomLocation, double roomScore, String img1, int roomIdx) {
 		this.roomName = roomName;
 		this.roomLocation = roomLocation;
 		this.roomScore = roomScore;
 		this.img1 = img1;
+		this.roomIdx = roomIdx;
 	}
 
 	public String getRoomName() {
@@ -29,4 +31,7 @@ public class GetRoomByHostIdxVo {
 		return img1;
 	}
 	
+	public int getRoomIdx() {
+		return roomIdx;
+	}
 }

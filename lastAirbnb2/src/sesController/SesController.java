@@ -16,6 +16,7 @@ import esAction.DoFollowAction;
 import esAction.DoUnfollowAction;
 import esAction.InsertReplyAction;
 import esAction.JoinAction;
+import esAction.JoinKakaoUserAction;
 import esAction.LoginAction;
 import esAction.LogoutAction;
 import esAction.OpenMessageAction;
@@ -62,6 +63,7 @@ public class SesController extends HttpServlet {
 		case "message": action = new OpenMessageAction(); break;
 		case "searchBytext" : action = new SearchBytextAction(); break;
 		case "showChat" : action = new ShowChatAction(); break;
+		case "joinKakao" : action = new JoinKakaoUserAction(); break;
 		}
 		action.execute(request, response);
 	}

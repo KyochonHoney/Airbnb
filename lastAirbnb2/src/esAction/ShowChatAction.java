@@ -26,10 +26,10 @@ public class ShowChatAction implements Action {
 		PrintWriter out = response.getWriter();
 		MessageDao messDao = new MessageDao();
 		
-		int userIdx = Integer.parseInt(request.getParameter("userIdx"));
+		//int userIdx = Integer.parseInt(request.getParameter("userIdx"));
 		int msgListIdx = Integer.parseInt(request.getParameter("msgListIdx"));
 		
-		ArrayList<ChatDetailVo> chatList = messDao.showChatList(userIdx, msgListIdx);
+		ArrayList<ChatDetailVo> chatList = messDao.showChatList(msgListIdx);
 		
 		JSONArray arr = new JSONArray();
 		for(ChatDetailVo vo : chatList) {
@@ -41,7 +41,6 @@ public class ShowChatAction implements Action {
 			obj.put("msg", vo.getMsg());
 			obj.put("dateTime", vo.getDateTime());
 			obj.put("msgIdx", vo.getMsg_idx());
-			
 			arr.add(obj);
 		}
 		out.println(arr);

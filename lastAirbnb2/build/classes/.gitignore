@@ -1,5 +1,15 @@
+/action/
 /common/
-/esVo/
-/esDao/
 /esAction/
+/esDao/
+/esVo/
+/imyController/
+/lswController/
+/myAction/
+/myDao/
+/myVo/
 /sesController/
+/swAction/
+/swDao/
+/swVo/
+/websocket/

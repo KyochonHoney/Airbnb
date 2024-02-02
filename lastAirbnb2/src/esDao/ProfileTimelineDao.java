@@ -180,7 +180,7 @@ public class ProfileTimelineDao {
 	}
 	//?Ç¨?ö©?ûêÍ∞? ?ò∏?ä§?ä∏?ù∏ ?àô?ÜåÎ¶¨Ïä§?ä∏ 2Í∞? Í∞??†∏?ò§Í∏?
 	public List<GetRoomByHostIdxVo> getRoomByHostIdx(int hostIdx){
-		String sql = "SELECT ar.room_name, ar.room_location, ar.room_score, ri.img1"
+		String sql = "SELECT ar.room_name, ar.room_location, ar.room_score, ri.img1, ar.room_idx"
 				+ " FROM airbnb_room ar, room_image ri "
 				+ " WHERE ar.room_idx = ri.room_idx AND ar.user_idx = ? AND ROWNUM <= 2";
 	
@@ -195,8 +195,9 @@ public class ProfileTimelineDao {
 				String roomLocation = rs.getString("room_location");
 				double roomScore = rs.getDouble("room_score");
 				String img1 = rs.getString("img1");
-			
-				list.add(new GetRoomByHostIdxVo(roomName, roomLocation, roomScore, img1));
+				int roomIdx = rs.getInt("room_idx");
+				
+				list.add(new GetRoomByHostIdxVo(roomName, roomLocation, roomScore, img1, roomIdx));
 			}
 			rs.close();
 			pstmt.close();

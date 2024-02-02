@@ -584,3 +584,54 @@
 1월 28, 2024 18:49:00.902 ERROR: Couldn't read tbsCertificate as SEQUENCE
 1월 28, 2024 18:49:00.902 ERROR: Failed parsing Certificate
 1월 28, 2024 18:49:00.904 
+2월 01, 2024 18:27:57.147 ERROR: Client requested cancel during Invoke()
+2월 01, 2024 18:36:34.25 [13996:8540:0201/183634.025:ERROR:connection_factory_impl.cc(471)] ConnectionHandler failed with net error: -2
+2월 01, 2024 18:36:38.101 [13996:8540:0201/183638.101:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -105
+2월 01, 2024 18:39:16.463 [13996:13324:0201/183916.463:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+2월 02, 2024 10:59:28.548 NEW SESSION
+2월 02, 2024 10:59:28.548 [9804:13892:0202/105928.543:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 12:26:27.779 [1672:13120:0202/122627.779:ERROR:device_event_log_impl.cc(192)] [12:26:27.779] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+2월 02, 2024 12:27:33.615 [1672:13120:0202/122733.614:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 12:47:55.498 [1672:13120:0202/124755.498:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 12:51:04.722 [1672:13120:0202/125104.721:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 13:00:26.505 [1672:13120:0202/130026.505:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 13:08:38.286 [1672:12440:0202/130838.286:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 13:09:01.781 [1672:12440:0202/130901.781:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 13:09:58.719 [1672:12440:0202/130958.719:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 13:11:36.188 [1672:12440:0202/131136.188:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 13:14:59.48 [1672:12440:0202/131459.048:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 13:21:43.989 [1672:12440:0202/132143.988:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 13:31:43.991 [1672:12440:0202/133143.991:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 14:20:27.638 [1672:12440:0202/142027.629:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 14:20:31.421 [1672:13120:0202/142031.420:ERROR:device_event_log_impl.cc(192)] [14:20:31.421] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+2월 02, 2024 14:20:58.569 [1672:13120:0202/142058.568:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 14:26:01.598 [1672:13120:0202/142601.597:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 14:40:46.731 [10396:8796:0202/144046.730:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 15:21:22.691 [11248:11936:0202/152122.691:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 15:37:03.307 [11248:11936:0202/153703.306:ERROR:CONSOLE(1)] "Request Network.loadNetworkResource failed. {"code":-32602,"message":"Unsupported URL scheme"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+2월 02, 2024 15:37:08.804 [11248:11936:0202/153708.804:ERROR:CONSOLE(1)] "Request Network.loadNetworkResource failed. {"code":-32602,"message":"Unsupported URL scheme"}", source: devtools://devtools/bundled/devtools-frontend/front_end/core/protocol_client/protocol_client.js (1)
+2월 02, 2024 15:50:02.148 [15316:3864:0202/155002.147:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 15:54:26.522 [15316:3864:0202/155426.521:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 15:54:52.781 [15316:3864:0202/155452.781:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 15:55:34.99 [15316:3864:0202/155534.099:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 15:57:04.453 [15316:3864:0202/155704.452:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 16:00:16.480 [15316:3864:0202/160016.480:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 16:06:32.252 [15316:3864:0202/160632.252:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 16:16:32.253 [15316:3864:0202/161632.253:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 16:34:38.470 [15316:3864:0202/163438.469:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+2월 02, 2024 16:34:52.827 [15316:4972:0202/163452.826:ERROR:device_event_log_impl.cc(192)] [16:34:52.827] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+2월 02, 2024 16:42:12.726 [15316:4972:0202/164212.726:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 16:58:26.428 [15316:4972:0202/165826.428:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 17:05:21.969 [15316:4972:0202/170521.969:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 17:10:20.217 [15316:4972:0202/171020.217:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 17:10:56.585 [15316:4972:0202/171056.584:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 17:12:10.139 [15316:4972:0202/171210.139:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 17:26:59.108 [15316:4972:0202/172659.107:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 17:52:28.478 [15316:4972:0202/175228.477:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 18:30:30.168 [15316:4972:0202/183030.167:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 18:38:36.381 [15316:4972:0202/183836.379:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 18:38:59.350 [15316:4972:0202/183859.349:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 19:06:11.690 [15316:4972:0202/190611.689:ERROR:interface_endpoint_client.cc(702)] Message 1 rejected by interface blink.mojom.WidgetHost
+2월 02, 2024 19:15:03.634 [15316:4972:0202/191503.633:ERROR:CONSOLE(355)] "Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('chrome-untrusted://new-tab-page') does not match the recipient window's origin ('chrome://new-tab-page').", source: chrome://new-tab-page/shared.rollup.js (355)
+2월 02, 2024 19:17:33.350 [15316:4972:0202/191733.350:ERROR:interface_endpoint_client.cc(702)] Message 0 rejected by interface blink.mojom.WidgetHost

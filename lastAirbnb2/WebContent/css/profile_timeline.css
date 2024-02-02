@@ -5,13 +5,16 @@
 	text-decoration: none;
 	border-collapse: collapse;
 }
+a{
+	color: black;
+}
 body{	
 	margin: 0;
 	padding: 0;
 }
 .fl{ float: left; }
 .fr{ float: right;}
-/*스켈레톤코드*/
+/*�뒪耳덈젅�넠肄붾뱶*/
 #header{
 	width: 100%;
 	height: 80px;
@@ -19,8 +22,8 @@ body{
 	position: fixed;
 	background-color: white;
 	z-index: 2;
-}/*머리말*/
-/*회원가입 팝업*/
+}/*癒몃━留�*/
+/*�쉶�썝媛��엯 �뙘�뾽*/
 #joinmember_outer{
    background-color:rgba(0,0,0,0.5);
    position: fixed;
@@ -135,57 +138,57 @@ body{
    border-radius: 8px;
    margin-top:26px;
 }
-/*회원가입팝업끝*/
+/*�쉶�썝媛��엯�뙘�뾽�걹*/
 #header_left{
 	width: 500px;
 	height: 80px;
-}/*로고 감싸는 쪽*/
+}/*濡쒓퀬 媛먯떥�뒗 履�*/
 #header_left > a > img{
 	margin-right: 89px;
     margin-top: 25px;
     width: 99px;
     height: 31px;
-}/*airbnb로고*/
+}/*airbnb濡쒓퀬*/
 #header_center{
 	width: 700px;
 	height: 80px;
-}/*검색창을 감싸는 div*/
+}/*寃��깋李쎌쓣 媛먯떥�뒗 div*/
 #header_right{
 	width: 703px;
 	height: 80px;
-}/*프로필과 지구본, 에어비앤비를 감싸는 div*/
+}/*�봽濡쒗븘怨� 吏�援щ낯, �뿉�뼱鍮꾩븻鍮꾨�� 媛먯떥�뒗 div*/
 #areaair{
 	width: 232px;
 	height: 42px;
 	margin: 29px auto 0px 29px;	
-}/*에어비앤비하세요 감싸는 div*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 媛먯떥�뒗 div*/
 #areaair > a > strong{
 	font-size: 14px;
 	text-align: center;
 	margin: 0px auto 0px 15px;
 	color: black;
 	border-radius: 11px;
-}/*에어비앤비하세요 글씨*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 湲��뵪*/
 #areaair > a > strong:hover{
 	background-color: rgb(247,247,247);
-}/*에어비앤비하세요 글씨 선택했을 떄*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 湲��뵪 �꽑�깮�뻽�쓣 �뻹*/
 #globe{
 	width: 33px;
     height: 47px;
     margin: 16px 25px 0 0px;
     border-radius: 100%;
-}/*통화,화폐 지구본 감싸는 div*/
+}/*�넻�솕,�솕�룓 吏�援щ낯 媛먯떥�뒗 div*/
 #globe:hover{
 	cursor: pointer;
 	background-color: rgb(247,247,247);
-}/*통화,화폐 지구본 감싸는 div를 선택했을 때 css*/
+}/*�넻�솕,�솕�룓 吏�援щ낯 媛먯떥�뒗 div瑜� �꽑�깮�뻽�쓣 �븣 css*/
 #globe > img{
 	width: 16px;
 	height: 16px;
 	top : 50%;
 	left : 50%;
 	transform : translate(47% , 98%);
-}/*지구본 이미지*/
+}/*吏�援щ낯 �씠誘몄�*/
 .currency_language_background{
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
@@ -205,7 +208,7 @@ body{
 	border-radius: 15px;
 	display: none;
 	z-index: 4;
-}/*통화 화폐를 감싸고 있는 div*/
+}/*�넻�솕 �솕�룓瑜� 媛먯떥怨� �엳�뒗 div*/
 .close_div{
 	width: 32px;
 	height: 32px;
@@ -216,7 +219,7 @@ body{
     background-color: white;
     cursor: pointer;
     border-radius: 100%;
-}/*닫기버튼*/
+}/*�떕湲곕쾭�듉*/
 .close_div:hover{
 	background-color: rgb(247,247,247);
 }
@@ -226,12 +229,12 @@ body{
 	margin: 66px auto 0 auto;
 	overflow-x: hidden;
     overflow-y: scroll;
-}/*통화 전체 div*/
+}/*�넻�솕 �쟾泥� div*/
 #currency_top{
 	width: 980px;
 	height: 50px;
 	border-bottom: 1px solid #dddddd;
-}/*언어와 지역, 통화 버튼을 감싸는 div*/
+}/*�뼵�뼱�� 吏��뿭, �넻�솕 踰꾪듉�쓣 媛먯떥�뒗 div*/
 .currency_button{
 	width: 92.98px;
 	height: 49px;
@@ -241,7 +244,7 @@ body{
 	font-weight: 600;
 	cursor: pointer;
 	background-color: white;
-}/*통화 버튼*/
+}/*�넻�솕 踰꾪듉*/
 .currency_button:hover{
 	background-color: rgb(247,247,247);
 }
@@ -254,7 +257,7 @@ body{
 	color: grey;
 	cursor: pointer;
 	background-color: white;
-}/*언어 버튼*/
+}/*�뼵�뼱 踰꾪듉*/
 .language_button:hover{
 	background-color: rgb(247,247,247);
 }
@@ -271,34 +274,34 @@ body{
 	border-radius: 41px;
 	text-align: center;
 	cursor: pointer;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div > ul > li:hover{
 	background-color: rgb(247,247,247);
-}/*각 list들 공통 :hover css*/
+}/*媛� list�뱾 怨듯넻 :hover css*/
 #currency_center > div > ul > li > div{
 	width: 154.59px;
 	height: 18px;
 	font-size: 14px;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div > ul > li > div:nth-child(2){
 	color: #717171;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div:nth-child(1){
 	width: 967px;
 	height: 130px;
 	margin-top: 24px;
 	padding-bottom: 24px;
-}/*추천 언어 및 지역 전체를 감싸는 div*/
+}/*異붿쿇 �뼵�뼱 諛� 吏��뿭 �쟾泥대�� 媛먯떥�뒗 div*/
 #currency_center > div:nth-child(2){
 	width: 967px;
 	height: 1426px;
 	margin-top: 24px;
 	padding-bottom: 24px;
-}/*언어와 지역을 선택하세요 를 감싸는 전체 div*/
+}/*�뼵�뼱�� 吏��뿭�쓣 �꽑�깮�븯�꽭�슂 瑜� 媛먯떥�뒗 �쟾泥� div*/
 #currency_center > div:nth-child(1) > h2{
 	font-size: 22px;
 	font-weight: 600;
-}/*추천 언어 및 지역*/
+}/*異붿쿇 �뼵�뼱 諛� 吏��뿭*/
 #profile{
 	width: 86px;
 	height: 40px;
@@ -306,7 +309,7 @@ body{
 	border: 1px solid #ddd;
 	border-radius: 50px;
 	margin: 20px 0 0 0;
-}/*프로필 감싸고 있는 div*/
+}/*�봽濡쒗븘 媛먯떥怨� �엳�뒗 div*/
 #profile:hover{
 	cursor: pointer;
 	box-shadow: 0px 0px 7px 1px grey;
@@ -317,7 +320,7 @@ body{
 	top : 50%;
 	left : 50%;
 	transform : translate(123% ,-76%);
-}/*list이미지*/
+}/*list�씠誘몄�*/
 #profile > img:nth-child(2){
 	width: 32px;
 	height: 32px;
@@ -325,7 +328,7 @@ body{
 	top: 50%;
     left: 50%;
     transform: translate(68% , 10%);
-}/*프로필 이미지*/
+}/*�봽濡쒗븘 �씠誘몄�*/
 #notice{
 	background-color: red;
 	color: white;
@@ -341,7 +344,7 @@ body{
     left: 66%;
     transform: translate(50% , 50%);
     position: relative;
-}/*프로필 이미지 위쪽에 뜨는 알림 개수*/
+}/*�봽濡쒗븘 �씠誘몄� �쐞履쎌뿉 �쑉�뒗 �븣由� 媛쒖닔*/
 .profile_list{
 	width: 240px;
 	min-height: 80px;
@@ -350,7 +353,7 @@ body{
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px -2px grey;
 	display: none;
-}/*프로필 버튼을 눌렀을 때 나오는 div*/
+}/*�봽濡쒗븘 踰꾪듉�쓣 �닃���쓣 �븣 �굹�삤�뒗 div*/
 .Logout{
 	width: 240px;
 	height: 43.75px;
@@ -382,7 +385,7 @@ body{
 	background-color: white;
 	text-align: left;
 	padding-left: 15px;
-}/*각 input태그들*/
+}/*媛� input�깭洹몃뱾*/
 .profile_list > div > form > input:hover{
 	cursor: pointer;
 	background-color: rgb(247,247,247);
@@ -403,7 +406,7 @@ body{
 	width: 1743px;
 	height: 2650px;
 	margin: 0 auto;
-}/*본문들을 감싸고 있을 div*/
+}/*蹂몃Ц�뱾�쓣 媛먯떥怨� �엳�쓣 div*/
 #profile_left{
 	width: 342px;
 	height: 487.56px;
@@ -411,7 +414,7 @@ body{
 	top: 80px;
 	margin-left: 50px;
 	margin-top: 50px;
-}/*프로필과 소개를 감싸고 있는 div*/
+}/*�봽濡쒗븘怨� �냼媛쒕�� 媛먯떥怨� �엳�뒗 div*/
 #profile_left > section{
 	width: 342px;
 	height: 239.53px;
@@ -455,7 +458,7 @@ section > div:nth-child(1){
 	border-radius: 100%;
 	object-fit: cover;
 	margin: 21px 0 0 61px;
-}/*프로필 사진*/
+}/*�봽濡쒗븘 �궗吏�*/
 #profile_left > section > div > svg{
 	width: 104px;
 	height: 104px;
@@ -468,11 +471,11 @@ section > div:nth-child(1){
 	font-size: 31.9px;
 	font-weight: 600;
 	text-align: right;
-}/*프로필 이름*/
+}/*�봽濡쒗븘 �씠由�*/
 #follow_li{
 	width: 170px;
 	height: 172.52px;
-}/*프로필 사진 옆 팔로워들 수*/
+}/*�봽濡쒗븘 �궗吏� �쁿 �뙏濡쒖썙�뱾 �닔*/
 #following_{
 	width: 150px;
 	margin: 3px auto;
@@ -481,7 +484,7 @@ section > div:nth-child(1){
     border-radius: 10px;
     border: 3px solid rgb(300, 150, 150);
     cursor: pointer;
-}/*팔로잉 수 감싸고 있는 div*/
+}/*�뙏濡쒖엵 �닔 媛먯떥怨� �엳�뒗 div*/
 #following_:hover{
 	background-color: #dddddd;
 }
@@ -492,14 +495,14 @@ section > div:nth-child(1){
 	width: 88px;
 	height: 30px;
 	margin-top: 12px;
-}/*팔로잉*/
+}/*�뙏濡쒖엵*/
 #following_ > div:nth-child(2){
 	font-size: 22px;
 	font-weight: 500;
 	text-align: center;
 	width: 50px;
 	margin-top: 12px;
-}/*팔로잉 숫자*/
+}/*�뙏濡쒖엵 �닽�옄*/
 #follower_{
 	width: 150px;
 	margin: 3px auto;
@@ -508,7 +511,7 @@ section > div:nth-child(1){
     border-radius: 10px;
     border: 3px solid rgb(300, 150, 150);
     cursor: pointer;
-}/*팔로워를 감싸는 div*/
+}/*�뙏濡쒖썙瑜� 媛먯떥�뒗 div*/
 #follower_:hover{
 	background-color: #dddddd;
 }
@@ -519,14 +522,14 @@ section > div:nth-child(1){
 	width: 88px;
 	height: 30px;
 	margin-top: 12px;
-}/*팔로워*/
+}/*�뙏濡쒖썙*/
 #follower_ > div:nth-child(2){
 	font-size: 21px;
 	font-weight: 500;
 	text-align: center;
 	width: 50px;
 	margin-top: 12px;
-}/*팔로워 숫자*/
+}/*�뙏濡쒖썙 �닽�옄*/
 #post_{
 	width: 150px;
 	margin: 0 auto;
@@ -535,7 +538,7 @@ section > div:nth-child(1){
     border-radius: 10px;
 	border: 3px solid rgb(300, 150, 150);	
 	cursor: pointer;
-}/*게시글을 감싸는 div*/
+}/*寃뚯떆湲��쓣 媛먯떥�뒗 div*/
 #post_:hover{
 	background-color: #dddddd;
 }
@@ -572,20 +575,20 @@ section > div:nth-child(1){
 	width: 88px;
 	height: 30px;
 	margin-top: 12px;
-}/*게시글*/
+}/*寃뚯떆湲�*/
 #post_ > div:nth-child(2){
 	font-size: 21px;
 	font-weight: 500;
 	text-align: center;
 	width: 50px;
 	margin-top: 12px;
-}/*게시글 숫자*/
+}/*寃뚯떆湲� �닽�옄*/
 section > div:nth-child(3){
 	width: 342px;
 	height: 67px;
 	position: absolute;
     margin-top: 168px;
-}/*메시지 보내기와 팔로잉 버튼을 감싸고 있는 div*/
+}/*硫붿떆吏� 蹂대궡湲곗� �뙏濡쒖엵 踰꾪듉�쓣 媛먯떥怨� �엳�뒗 div*/
 section > div:nth-child(3) > button:nth-child(1){
 	height: 30px;
 	width: 160px;
@@ -595,7 +598,7 @@ section > div:nth-child(3) > button:nth-child(1){
 	border-radius: 20px;
 	cursor: pointer;
 	display: none;
-}/*팔로잉 버튼*/
+}/*�뙏濡쒖엵 踰꾪듉*/
 section > div:nth-child(3) > button:nth-child(1):hover{
 	background-color: white;
 	border: 2px solid black;
@@ -609,7 +612,7 @@ section > div:nth-child(3) > button:nth-child(3){
 	margin-left: 2px;
 	border-radius: 20px;
 	cursor: pointer;
-}/*메시지 보내기 버튼*/
+}/*硫붿떆吏� 蹂대궡湲� 踰꾪듉*/
 section > div:nth-child(3) > button:nth-child(3):hover{
 	background-color: white;
 	border: 2px solid black;
@@ -634,17 +637,17 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	box-shadow: 5px 5px 9px -2px gray;
 	border-top: 1px solid gray;
 	padding: 10px;
-}/*소개를 감싸고 있는 div*/
+}/*�냼媛쒕�� 媛먯떥怨� �엳�뒗 div*/
 #introduce_ > span{
 	display: inline-block;
 	width: 342px;
 	height: 40px;
 	text-align: center;
 	font-size: 13px;
-}/*소개*/
+}/*�냼媛�*/
 #introduce_ > span:not(:nth-child(6)){
 	margin-bottom: 1px;
-}/*각 소개마다 여백*/
+}/*媛� �냼媛쒕쭏�떎 �뿬諛�*/
 #timeline{
 	width: 850px;
 	height: 2400px;
@@ -657,7 +660,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	border-radius: 10px;
 	border: 1px solid #BEC3C9;
 	background-color: white;
-}/*"게시글"을 포함한 div*/
+}/*"寃뚯떆湲�"�쓣 �룷�븿�븳 div*/
 #timeline > div:nth-child(1) > span{
 	display: inline-block;
 	width: 60px;
@@ -665,7 +668,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	font-size: 20px;
 	font-weight: 600;
 	margin: 16px 0 0 15px;
-}/*게시글*/
+}/*寃뚯떆湲�*/
 #timeline > div:not(div:nth-child(1)){
 	width: 800px;
 	/*height: 752.62px;*/
@@ -674,36 +677,36 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	border-radius: 10px;
 	border: 1px solid #BEC3C9;
 	background-color: white;
-}/*게시글들*/
+}/*寃뚯떆湲��뱾*/
 .post_top{
 	width: 800px;
 	height: 47.97px;
 	padding: 12px 30px 0;
-}/*첫번째 게시글 머릿말*/
+}/*泥ル쾲吏� 寃뚯떆湲� 癒몃┸留�*/
 .post_top > a > img{
 	width: 40px;
 	height: 40px;
 	object-fit: cover;
 	border-radius: 100%;
-}/*첫번째 게시글 머릿말 프로필 사진*/
+}/*泥ル쾲吏� 寃뚯떆湲� 癒몃┸留� �봽濡쒗븘 �궗吏�*/
 .post_top > span:nth-child(2){
 	font-size: 15px;
 	color: #65676B;
 	font-weight: 500;
 	margin-left: 15px;
-}/*첫번째 게시글 머릿말 이름과 알림*/
+}/*泥ル쾲吏� 寃뚯떆湲� 癒몃┸留� �씠由꾧낵 �븣由�*/
 .post_top > span:nth-child(3){
 	font-size: 15px;
 	color: #65676B;
 	font-weight: 500;
 	margin: 18px 0 0 -258px;
     position: absolute;
-}/*첫번째 게시글 시간*/
+}/*泥ル쾲吏� 寃뚯떆湲� �떆媛�*/
 .post_top > span > strong{
 	color: black;
 	font-size: 15px;
 	font-weight: 600;
-}/*사용자 이름*/
+}/*�궗�슜�옄 �씠由�*/
 .post_top > span > strong > a{
 	color: black;
 }
@@ -717,13 +720,13 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	padding: 20px;
 	font-size: 20px;
 	font-weight: 600;    
-}/*첫번째 게시글 본문 감싸고 있는 div*/
+}/*泥ル쾲吏� 寃뚯떆湲� 蹂몃Ц 媛먯떥怨� �엳�뒗 div*/
 .post_center > img:nth-child(1){
 	width: 798px;
 	height: 219.99px;
 	object-fit: cover;	
 	border-bottom: 1px solid #ddd;
-}/*배경화면*/
+}/*諛곌꼍�솕硫�*/
 .post_center > img:nth-child(2){
 	width: 400px;
 	height: 400px;
@@ -731,15 +734,15 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	border: 2px solid white;
 	position: absolute;
 	margin: 25px 0 0 -600px;
-}/*1번 게시글 배경화면 아래 화면*/
+}/*1踰� 寃뚯떆湲� 諛곌꼍�솕硫� �븘�옒 �솕硫�*/
 .post_footer{
 	width: 800px;
 	height: 243.95px;
-}/*게시글 1번 하단부분*/
+}/*寃뚯떆湲� 1踰� �븯�떒遺�遺�*/
 .post_footer > div:nth-child(1){
 	height: 41.74px;
 	width: 800px;
-}/*좋아요버튼 있는 div*/
+}/*醫뗭븘�슂踰꾪듉 �엳�뒗 div*/
 .post_footer > div:nth-child(1) > span:nth-child(2){
 	width: 190px;
 	height: 20px;
@@ -748,7 +751,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	color: #65676B;
 	margin-left: 10px;
 	margin-top: 10px;
-}/*좋아요 개수*/
+}/*醫뗭븘�슂 媛쒖닔*/
 .post_footer > div:nth-child(1) > div:nth-child(3){
 	font-size: 15px;
 	color: #65676B;
@@ -761,7 +764,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	margin: 0 auto;
 	border-bottom: 1px solid #ddd;
 	border-top: 1px solid #ddd;
-}/*좋아요 댓글 공유 버튼 감싸고 있는 div*/
+}/*醫뗭븘�슂 �뙎湲� 怨듭쑀 踰꾪듉 媛먯떥怨� �엳�뒗 div*/
 /*-------------------------------*/
 .like_{
 	width: 250px;
@@ -769,7 +772,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	margin: 0 5px;
 	border-radius: 10px;
 	cursor: pointer;
-}/*좋아요버튼*/
+}/*醫뗭븘�슂踰꾪듉*/
 .like_:hover{
 	background-color: rgb(247,247,247);
 }
@@ -794,7 +797,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	margin-right: 5px;
 	border-radius: 10px;
 	cursor: pointer;
-}/*댓글달기 버튼*/
+}/*�뙎湲��떖湲� 踰꾪듉*/
 .comment_:hover{
 	background-color: rgb(247,247,247);
 }
@@ -805,13 +808,13 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 .comment_ > div > div{
 	font-size: 20px;
 	font-weight: 500;
-}/*댓글달기*/
+}/*�뙎湲��떖湲�*/
 .share_{
 	width: 250px;
 	height: 43.98px;
 	border-radius: 10px;
 	cursor: pointer;
-}/*공유하기 버튼*/
+}/*怨듭쑀�븯湲� 踰꾪듉*/
 .share_:hover{
 	background-color: rgb(247,247,247);
 }
@@ -822,12 +825,12 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 .share_ > div > div{
 	font-size: 20px;
 	font-weight: 500;
-}/*공유하기*/
+}/*怨듭쑀�븯湲�*/
 .see_more{
 	width: 770px;
 	height:	31.99px;
 	margin: 0 auto;
-}/*댓글 더보기를 감싼 div*/
+}/*�뙎湲� �뜑蹂닿린瑜� 媛먯떬 div*/
 .see_more_but{
 	width: 83.26px;
 	height: 11px;
@@ -837,7 +840,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	color: #65676B;
 	margin: 5px 0 0 13px;
 	cursor: pointer;
-}/*댓글 더보기*/
+}/*�뙎湲� �뜑蹂닿린*/
 .see_more_but:hover{
 	text-decoration: underline;
 }
@@ -858,7 +861,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	height: 60px;
 	width: 770px;
 	margin : 18px auto 1px auto;
-}/*첫번째 댓글*/
+}/*泥ル쾲吏� �뙎湲�*/
 .profile_pic_in_comment{
 	width: 40px;
 	height: 60px;
@@ -889,36 +892,36 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	font-size: 15px;
 	margin-left: 10px;
     margin-right: 19px;
-}/*댓글본문*/
+}/*�뙎湲�蹂몃Ц*/
 .detail_comment > div:nth-child(1){
 	font-size: 12px;
 	color: #65676B;
 	margin-left: 10px;
 	max-width: fit-content;
-}/*2년*/
+}/*2�뀈*/
 .detail_comment > button{
 	font-size: 10px;
 	color: #65676B;
 	display: inline-block;
 	border: none;
 	background-color: white;
-}/*좋아요*/
+}/*醫뗭븘�슂*/
 .comment_date{
 	width: 730px;
 	height: 15px;
-}/*댓글 시간, 좋아요버튼*/
+}/*�뙎湲� �떆媛�, 醫뗭븘�슂踰꾪듉*/
 .comment_date > div:nth-child(1){
 	font-size: 12px;
 	color: #65676B;
 	margin-left: 10px;
-}/*2년*/
+}/*2�뀈*/
 .comment_date > button{
 	font-size: 10px;
 	color: #65676B;
 	display: inline-block;
 	border: none;
 	background-color: white;
-}/*좋아요*/
+}/*醫뗭븘�슂*/
 .new_comment_in_comment_detail{
 	width: 770px;
 	height: 75px;
@@ -955,113 +958,113 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 .comment_list{
 	width: 800px;
 	height: 121px;
-}/*댓글 미리보기*/
+}/*�뙎湲� 誘몃━蹂닿린*/
 .comment_list > div:nth-child(1){
 	height: 60px;
 	width: 770px;
 	margin : 0 auto 1px auto;
-}/*첫번째 댓글*/
+}/*泥ル쾲吏� �뙎湲�*/
 .comment_list > div:nth-child(1) > div:nth-child(1){
 	width: 40px;
 	height: 60px;
-}/*프로필 사진*/
+}/*�봽濡쒗븘 �궗吏�*/
 .comment_list > div:nth-child(1) > div:nth-child(1) > img{
 	width: 30px;
 	height: 30px;
 	border-radius: 100%;
 	margin-left: 4px;
-}/*프로필 사진크기*/
+}/*�봽濡쒗븘 �궗吏꾪겕湲�*/
 .comment_list > div:nth-child(1) > div:nth-child(2){
 	width: 730px;
 	height: 45px;
-}/*댓글내용을 감싸고 있는 div*/
+}/*�뙎湲��궡�슜�쓣 媛먯떥怨� �엳�뒗 div*/
 .comment_list > div:nth-child(1) > div:nth-child(2) > div{
 	max-width: fit-content;
     height: 45px;
     padding-top: 3px;
     background-color: #dddddd;
     border-radius: 25px;
-}/*댓글내용*/
+}/*�뙎湲��궡�슜*/
 .comment_list > div:nth-child(1) > div:nth-child(2) > div > span{
 	font-weight: 600;
 	font-size: 13px;
 	margin-left: 13px;
-}/*이름*/
+}/*�씠由�*/
 .comment_list > div:nth-child(1) > div:nth-child(2) > div > div{
 	font-weight: 500;
     font-size: 15px;
     margin-left: 13px;
     margin-right: 21px;
-}/*댓글본문*/
+}/*�뙎湲�蹂몃Ц*/
 .comment_list > div:nth-child(1) > div:nth-child(3){
 	width: 730px;
 	height: 15px;
-}/*댓글 시간, 좋아요버튼*/
+}/*�뙎湲� �떆媛�, 醫뗭븘�슂踰꾪듉*/
 .comment_list > div:nth-child(1) > div:nth-child(3) > div:nth-child(1){
 	font-size: 12px;
 	color: #65676B;
 	margin-left: 10px;
-}/*2년*/
+}/*2�뀈*/
 .comment_list > div:nth-child(1) > div:nth-child(3) > button{
 	font-size: 10px;
 	color: #65676B;
 	display: inline-block;
 	border: none;
 	background-color: white;
-}/*좋아요*/
+}/*醫뗭븘�슂*/
 .comment_list > div:nth-child(2){
 	height: 60px;
 	width: 770px;
 	margin: 0 auto;
 	margin-top: 4px;
-}/*두번째 댓글*/
+}/*�몢踰덉㎏ �뙎湲�*/
 .comment_list > div:nth-child(2) > div:nth-child(1){
 	width: 40px;
 	height: 60px;
-}/*프로필 사진*/
+}/*�봽濡쒗븘 �궗吏�*/
 .comment_list > div:nth-child(2) > div:nth-child(1) > img{
 	width: 30px;
 	height: 30px;
 	border-radius: 100%;
 	margin-left: 4px;
-}/*프로필 사진크기*/
+}/*�봽濡쒗븘 �궗吏꾪겕湲�*/
 .comment_list > div:nth-child(2) > div:nth-child(2){
 	width: 730px;
 	height: 45px;
-}/*댓글내용을 감싸고 있는 div*/
+}/*�뙎湲��궡�슜�쓣 媛먯떥怨� �엳�뒗 div*/
 .comment_list > div:nth-child(2) > div:nth-child(2) > div{
 	max-width: fit-content;
 	height: 45px;
 	padding-top: 3px;
 	background-color: #dddddd;
 	border-radius: 25px;
-}/*댓글내용*/
+}/*�뙎湲��궡�슜*/
 .comment_list > div:nth-child(2) > div:nth-child(2) > div > span{
 	font-weight: 600;
 	font-size: 13px;
 	margin-left: 10px;
-}/*이름*/
+}/*�씠由�*/
 .comment_list > div:nth-child(2) > div:nth-child(2) > div > div{
 	font-weight: 500;
 	font-size: 15px;
 	margin-left: 10px;
 	margin-right: 15px;
-}/*댓글본문*/
+}/*�뙎湲�蹂몃Ц*/
 .comment_list > div:nth-child(2) > div:nth-child(3){
 	width: 730px;
 	height: 15px;
-}/*댓글 시간, 좋아요버튼*/
+}/*�뙎湲� �떆媛�, 醫뗭븘�슂踰꾪듉*/
 .comment_list > div:nth-child(2) > div:nth-child(3) > div:nth-child(1){
 	font-size: 12px;
 	color: #65676B;
 	margin-left: 10px;
-}/*2년*/
+}/*2�뀈*/
 .comment_list > div:nth-child(2) > div:nth-child(3) > button{
 	font-size: 10px;
 	color: #65676B;
 	display: inline-block;
 	border: none;
-}/*좋아요*/
+}/*醫뗭븘�슂*/
 .new_comment{
 	width: 770px;
 	height: 75px;
@@ -1090,7 +1093,7 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	top: 80px;
 	margin-top: 150px;
 	margin-right: 80px;
-}/*프로필과 소개를 감싸고 있는 div*/
+}/*�봽濡쒗븘怨� �냼媛쒕�� 媛먯떥怨� �엳�뒗 div*/
 .right_top{
 	width: 342px;
 	height: 50px;
@@ -1098,33 +1101,33 @@ section > div:nth-child(3) > button:nth-child(2):hover{
     font-weight: 600;
     font-size: 23px;
     text-align: center;
-}/*민영 님의 숙소·체험*/
+}/*誘쇱쁺 �떂�쓽 �닕�냼쨌泥댄뿕*/
 .right_center{
 	width: 342px;
 	height: 500px;
-}/*숙소들을 감싸고 있는 div*/
+}/*�닕�냼�뱾�쓣 媛먯떥怨� �엳�뒗 div*/
 .house_list{
 	height: 245px;
 	width: 342px;
 	margin-bottom: 20px;
 	cursor: pointer;
-}/*첫번째 숙소 감싸고 있는 div*/
+}/*泥ル쾲吏� �닕�냼 媛먯떥怨� �엳�뒗 div*/
 .house_list > div:nth-child(1) > img{
 	width: 342px;
 	height: 185px;
 	border-radius: 10px;
-}/*첫번째 숙소 이미지*/
+}/*泥ル쾲吏� �닕�냼 �씠誘몄�*/
 .house_list > div:nth-child(2){
 	width: 342px;
 	height: 60px;
 	margin: -4px 0 0 0;
 	padding: 10px;
-}/*첫번째 숙소 이름과 별점*/
+}/*泥ル쾲吏� �닕�냼 �씠由꾧낵 蹂꾩젏*/
 .room_name{
 	font-weight: 600;
 	width: 100px;
 	margin-left: 10px;
-}/*숙소이름*/
+}/*�닕�냼�씠由�*/
 .room_name:hover{
 	text-decoration: underline;
 }
@@ -1132,14 +1135,14 @@ section > div:nth-child(3) > button:nth-child(2):hover{
 	color: #65676B;
 	width: 200px;
 	margin-left: 10px;
-}/*숙소 위치*/
+}/*�닕�냼 �쐞移�*/
 .room_explain_:hover{
 	text-decoration: underline;
 }
 .room_score_{
 	width:50px;
 	margin: -8px 0 0 0;	
-}/*숙소 별점*/
+}/*�닕�냼 蹂꾩젏*/
 #footer{
 	width: 100%;
 	height: 469.13px;

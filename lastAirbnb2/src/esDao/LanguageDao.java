@@ -16,7 +16,6 @@ public class LanguageDao {
 				+ " FROM language";
 		
 		Connection conn = DBConnection.getConnection();
-		System.out.println(conn);
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();

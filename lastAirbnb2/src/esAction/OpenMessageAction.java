@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,12 +13,16 @@ import esDao.MessageDao;
 import esVo.ChatListVo;
 import esVo.EmojiVo;
 
+@WebServlet("/OpenMessage")
 public class OpenMessageAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MessageDao messDao = new MessageDao();
-		int userIdx = (Integer)(request.getSession().getAttribute("userIdx"));
+		int userIdx = 0;
+		try {
+			userIdx = (Integer)(request.getSession().getAttribute("userIdx"));
+		} catch(NullPointerException e) {  } 
 		int thisUserIdx = 0;
 		try {
 			thisUserIdx = Integer.parseInt(request.getParameter("thisUserIdx"));
