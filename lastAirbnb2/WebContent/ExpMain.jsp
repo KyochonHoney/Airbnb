@@ -36,9 +36,7 @@
 		userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
 		userList = LoginDao.getUserInfoBy(userIdx);
 		howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
-	} catch (NullPointerException e){
-		e.printStackTrace();
-	}
+	} catch (NullPointerException e){ }
 	// Review
 	// ArrayList<ExpReviewVo> listExpReview = experienceDao.get
 %>
@@ -245,7 +243,7 @@
          <div class="jm_section">
             <h2>에어비엔비에 오신것을 환영합니다</h2>
          
-            <form id="jm_form" action="Controller" method="post">
+            <form id="jm_form" action="LswController" method="post">
                <div>
                   <label for="jm_form" id="code"></label> 
                   <select name="jm_code" class="jm_seclect_box">
@@ -273,7 +271,7 @@
                   style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; margin: 0 auto;">
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
-      		<form method="post" class="join_user_form" action="Controller">
+      		<form method="post" class="join_user_form" action="LswController">
       			이름 : <input type="text" placeholder="Ex) 김철수" name="user_id" required/> <br/><br/><br/>
       			비밀번호 : <input type="password" name="pw" required/> <br/><br/><br/>
       			비밀번호 확인 : <input type="password" class="check_pw" required/> <br/><br/><br/>
@@ -324,7 +322,7 @@
 
 					<div id="collection">
 						<% for(ExpCollectionVo vo : listColVo) { %>
-							<a class="col_cate" href="Collection?collection_idx=<%= vo.getCollectionIdx() %>">
+							<a class="col_cate" href="LswController?command=collection&collection_idx=<%= vo.getCollectionIdx() %>">
 								<img class="col_img" src="<%= vo.getImg() %>"/>
 								<p class="col_txt1">컬렉션</p>
 								<b class="col_txt2"><%= vo.getCollectionName() %></b>
@@ -375,7 +373,7 @@
 								<%
 								for(ExperienceVo vo : listExpVo1) {
 								%>
-									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="ExpInfo?exp_idx=<%=vo.getExpIdx()%>" target="_blank">
+									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="LswController?command=expInfo&exp_idx=<%=vo.getExpIdx()%>" target="_blank">
 										<img class="exp_img" src="<%=vo.getExpImg1()%>"/>
 										<svg class="heart_empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: rgba(0, 0, 0, 0.5);height: 24px;width: 24px; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
 										<img class="star" src="images/star.png"/>

@@ -25,6 +25,9 @@ import esAction.UpdatePhoneNumAction;
 import esAction.UpdateSecondNumAction;
 import myAction.main2Action;
 import myAction.main3Action;
+import swAction.CollectionAction;
+import swAction.ExpInfoAction;
+import swAction.PaymentAction;
 
 
 
@@ -56,6 +59,10 @@ import myAction.main3Action;
 			case "showNextTimeline" : action = new ShowNextTimelinePageAction(); break;
 			case "main2" : action = new main2Action(); break;
 		    case "main3" : action = new main3Action(); break;
+		    
+		    case "expInfo" : action = new ExpInfoAction(); break;
+		    case "collection" : action = new CollectionAction(); break;
+		    case "payment" : action = new PaymentAction(); break;
 			}
 			action.execute(request, response); 
 		}
