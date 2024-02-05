@@ -1,13 +1,16 @@
 package myDao;
 
-import java.sql.Connection; 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 import common.DBConnection;
+import esVo.UserInfoVo;
 import myVo.ConvenientVo;
 import myVo.ReviewVo;
 import myVo.RoomExplainVo;
@@ -15,10 +18,9 @@ import myVo.RoomImageVo;
 import myVo.RoomInfoVo;
 import myVo.RoomVo;
 import myVo.StayVo;
-import esVo.UserInfoVo;
 
 public class Main3Dao {
-   static Connection conn= DBConnection.getConnection();
+   public static Connection conn= DBConnection.getConnection();
    
    //?Œ·ëª„ì ™è¹‚ë?ë±? ï§ë¶¿ê½Œï¿½ë±?
    public RoomVo getRoom(int roomIdx) {
@@ -56,6 +58,8 @@ public class Main3Dao {
              
              roomvo = new RoomVo(room_idx, room_category_idx, room_name, room_score, room_location, country_idx, latitude, longitude, room_price, room_sale, room_type, room_info_idx, room_info_ex, max_member, bedroom, bed_total, bathroom, pet, immediately, self_check_in, building_type, convenient_idx, user_idx);
          }
+         rs.close();
+         pstmt.close();
       }catch(SQLException e) {
          e.printStackTrace();
       }
@@ -92,6 +96,8 @@ public class Main3Dao {
              
              uservo = new UserInfoVo(user_idx, user_id, user_regidence, user_image, introduce, interact, super_host, join_date, user_school, user_job, hometown, birthday, email, phone_number, second_number, password, active);
          }
+         rs.close();
+         pstmt.close();
       }catch(SQLException e) {
          e.printStackTrace();
       }
@@ -180,24 +186,19 @@ public class Main3Dao {
    // num : 11
    // getInside() ----> getRoomInfo() ï¿½ë¿‰ï¿½ê½Œï§ï¿½ ï¿½ê¶—ï¿½ìŠœï¿½ë¸¯ï¿½ë’— ï§ë¶¿ê½Œï¿½ë±?.
    private String getInside(String s, int num) {  // ex. s:"1(3)8(90)3(7)" , room_info_ex
-      System.out.println("--------------------------------------");
-      System.out.println("s : " + s);
       String[] s2 = s.split("\\)");
-      System.out.println(Arrays.toString(s2));   // "[1(3, 8(90, 3(7]"
       
       ArrayList<String> list1 = new ArrayList<String>();
       for(String str : s2) {
          list1.add(str.split("\\(")[0]);
          list1.add(str.split("\\(")[1]);
       }
-      System.out.println(list1);   // [1, 3, 8, 90, 3, 7]
       
       for(int i=0; i<=list1.size()-1; i+=2) {  // i: 0, 2, 4
          if(list1.get(i).equals(""+num)) {
             return list1.get(i+1);
          }
       }
-      System.out.println("--------------------------------------");
       return null;
    }
 
@@ -247,6 +248,8 @@ public class Main3Dao {
          if(rs.next()) {
             strRet = rs.getString(1);
          }
+         rs.close();
+         pstmt.close();
       } catch(SQLException e) {
          e.printStackTrace();
       }
@@ -280,11 +283,11 @@ public class Main3Dao {
     }
     
    
-   // ¸®ºä ºÒ·¯¿À´Â ¸Ş¼­µå
+   // ¸®ºä ºÒ·¯¿À´Â ¸Ş¼­µå(ÃÖ½Å¼ø)
    public ArrayList<ReviewVo> getReview(int roomIdx) {
       ArrayList<ReviewVo> reviewvo = new ArrayList<ReviewVo>();
       
-      String sql = "select r.*, u.* from review r,user_info u where r.room_idx=? And r.user_idx = u.user_idx order by r.review_idx";
+      String sql = "select r.*, u.* from review r,user_info u where r.room_idx=? And r.user_idx = u.user_idx order by written_date DESC";
       
       try {
          PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -311,19 +314,25 @@ public class Main3Dao {
       }
       return reviewvo;
    }
-	// ?›„ê¸°ê??ƒ‰
-	public ArrayList<ReviewVo> getSearch(int roomIdx, String searchText){//ï¿½ë“…ï¿½ì ™ï¿½ë¸³ ?”±?Šë’ªï¿½ë“ƒ?‘œï¿? è«›ì†ë¸˜ï¿½ê½? è«›ì„‘?†š
+   
+
+	// ÈÄ±â°Ë»ö¾î
+	public ArrayList<ReviewVo> getSearch(int roomIdx, String searchText, String searchOrderBy){ //searchOrderBy : "ÃÖ½Å¼ø", "³ôÀºÆòÁ¡¼ø"
 		ArrayList<ReviewVo> reviewList = new ArrayList<ReviewVo>();
-		String SQL ="SELECT * FROM review r, user_info u "
+		String sql ="SELECT * FROM review r, user_info u "
 				+ " WHERE r.user_idx = u.user_idx AND r.review IS NOT NULL "
 				+ " AND room_idx = ? ";
 		try {
 			PreparedStatement pstmt =null;
 			if(searchText != null && !searchText.equals("") ){ // ï¿½ì” å«„ï¿½ ?®?‡°?ˆƒ ï¿½ë¸ ï¿½êµ¹ï¿½ì‚©ï¿½ë–ï¿½ë?? ï¿½ì†¢ï§ï¿½?
-				SQL += " AND  review LIKE '%"+searchText.trim()+"%' ";
-			} 
-			SQL += " ORDER BY written_date DESC";
-			pstmt=conn.prepareStatement(SQL);
+				sql += " AND  review LIKE '%"+searchText.trim()+"%' ";
+			}
+			if("ÃÖ½Å¼ø".equals(searchOrderBy)) {
+				sql += " ORDER BY written_date DESC";
+			} else if("³ôÀºÆòÁ¡¼ø".equals(searchOrderBy)) {
+				sql += " ORDER BY score DESC";
+			}
+			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, roomIdx);
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
@@ -339,13 +348,15 @@ public class Main3Dao {
 				String user_image = rs.getString("user_image");
 				reviewList.add(new ReviewVo(room_idx, review_idx, review, user_idx, score, written_date, user_id, user_regidence, user_image));
 			}         
+			rs.close();
+			pstmt.close();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		return reviewList;
 	}
    
-   // ?Œ·ëª„ê½­?ºï¿½ï¿½ê½•ï§ï¿?(æ¹²ë‹¿ï¿?)
+   // ¹æ ¼³¸í
    public RoomExplainVo getRoomExplain(int roomIdx) {
       RoomExplainVo explainvo = null;
       String sql = " SELECT * FROM room_explain WHERE room_idx=?";
@@ -374,7 +385,7 @@ public class Main3Dao {
    
    
    
-   // ï¿½ë‹•ï¿½ëƒ¼ï¿½ì“½ ï¿½ì‘æ¹²ê³Œê°—ï¿½?‹” ï¿½ê½­ï¿½ë’— ï§ë¶¿ê½Œï¿½ë±?
+   // ÈÄ±â°³¼ö
    public int getCountReview(int roomIdx) {
       int cnt = 0;
       try {
@@ -393,6 +404,49 @@ public class Main3Dao {
       return cnt;
    }
    
-
+   // ³¯Â¥ ¸·±â --> °¡´ÉÇÑ ³¯Â¥ÀÎÁö ¸®ÅÏ(true:¿¹¾à°¡´ÉÇÔ). / date8ch = (ex.)"20240218"
+   public boolean checkRoomAvailable(int roomIdx, String date8ch) {
+	   int cnt = 0;
+	   try {
+		   String sql = "SELECT count(*) FROM room_resered WHERE room_idx=1"
+			   + " AND (to_date(check_in, 'yyyymmdd') <= to_date(?, 'yyyymmdd'))"
+			   + " AND (to_date(?, 'yyyymmdd') < to_date(check_out, 'yyyymmdd'))";
+		   PreparedStatement pstmt = conn.prepareStatement(sql);
+		   pstmt.setString(1, date8ch);
+		   pstmt.setString(2, date8ch);
+		   ResultSet rs = pstmt.executeQuery();
+		   if(rs.next()) {
+			   cnt = rs.getInt(1);
+		   }
+		   rs.close();
+		   pstmt.close();
+	   } catch(Exception e) { e.printStackTrace(); }
+	   return cnt==0;
+   }
    
+   // ¾ÈµÇ´Â³¯Â¥ 
+   public ArrayList<String> getListDate8chUnavailable(int roomIdx) {
+	   ArrayList<String> listUnavailable = new ArrayList<String>();
+	   // Test) 20240101 ~ 20241231.
+	   Calendar cal = Calendar.getInstance();
+	   cal.set(2024, 0, 1);
+	   for(int i=1; i<=366; i++) {
+		   String year = "" + cal.get(Calendar.YEAR);
+		   String month = "" + (cal.get(Calendar.MONTH)+1);
+		   if(month.length()==1) month = "0" + month;
+		   String date = "" + cal.get(Calendar.DATE);
+		   if(date.length()==1) date = "0" + date;
+		   //System.out.println(year + month + date);
+		   boolean available = checkRoomAvailable(roomIdx, year+month+date);
+		   if(month.charAt(0)=='0') month = "" + month.charAt(1);
+		   if(date.charAt(0)=='0') date = "" + date.charAt(1);
+		   if(!available) {
+			   listUnavailable.add(year + "-" + month + "-" + date);
+		   }
+		   cal.add(Calendar.DATE, 1);
+	   }
+	   return listUnavailable;
+   }
 }
+
+

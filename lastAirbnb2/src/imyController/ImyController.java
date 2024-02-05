@@ -43,6 +43,8 @@ public class ImyController extends HttpServlet {
 		case "main2": action = new main2Action(); break;
 		case "main3": action = new main3Action(); break;
 	    case "searchBytext" : action = new SearchBytextAction(); break;
+	    case "roomPayment" : action = new RoomPaymentAction(); break;
+	    case "filter_room" : action = new ShowRoomListsByFilterAction(); break;
 		}
 		action.execute(request, response);
 	}
