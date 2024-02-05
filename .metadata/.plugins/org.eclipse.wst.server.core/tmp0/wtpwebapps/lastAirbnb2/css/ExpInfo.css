@@ -26,8 +26,8 @@ img { object-fit: cover; }
 	position: fixed;
 	background-color: white;
 	z-index: 2;
-}/*머리말*/
-/*회원가입 팝업*/
+}/*癒몃━留�*/
+/*�쉶�썝媛��엯 �뙘�뾽*/
 #joinmember_outer{
    background-color:rgba(0,0,0,0.5);
    position: fixed;
@@ -142,57 +142,57 @@ img { object-fit: cover; }
    border-radius: 8px;
    margin-top:26px;
 }
-/*회원가입팝업끝*/
+/*�쉶�썝媛��엯�뙘�뾽�걹*/
 #header_left{
 	width: 500px;
 	height: 80px;
-}/*로고 감싸는 쪽*/
+}/*濡쒓퀬 媛먯떥�뒗 履�*/
 #header_left > a > img{
 	margin-right: 89px;
     margin-top: 25px;
     width: 99px;
     height: 31px;
-}/*airbnb로고*/
+}/*airbnb濡쒓퀬*/
 #header_center{
 	width: 700px;
 	height: 80px;
-}/*검색창을 감싸는 div*/
+}/*寃��깋李쎌쓣 媛먯떥�뒗 div*/
 #header_right{
 	width: 703px;
 	height: 80px;
-}/*프로필과 지구본, 에어비앤비를 감싸는 div*/
+}/*�봽濡쒗븘怨� 吏�援щ낯, �뿉�뼱鍮꾩븻鍮꾨�� 媛먯떥�뒗 div*/
 #areaair{
 	width: 232px;
 	height: 42px;
 	margin: 29px auto 0px 29px;	
-}/*에어비앤비하세요 감싸는 div*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 媛먯떥�뒗 div*/
 #areaair > a > strong{
 	font-size: 14px;
 	text-align: center;
 	margin: 0px auto 0px 15px;
 	color: black;
 	border-radius: 11px;
-}/*에어비앤비하세요 글씨*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 湲��뵪*/
 #areaair > a > strong:hover{
 	background-color: rgb(247,247,247);
-}/*에어비앤비하세요 글씨 선택했을 떄*/
+}/*�뿉�뼱鍮꾩븻鍮꾪븯�꽭�슂 湲��뵪 �꽑�깮�뻽�쓣 �뻹*/
 #globe{
 	width: 33px;
     height: 47px;
     margin: 16px 25px 0 0px;
     border-radius: 100%;
-}/*통화,화폐 지구본 감싸는 div*/
+}/*�넻�솕,�솕�룓 吏�援щ낯 媛먯떥�뒗 div*/
 #globe:hover{
 	cursor: pointer;
 	background-color: rgb(247,247,247);
-}/*통화,화폐 지구본 감싸는 div를 선택했을 때 css*/
+}/*�넻�솕,�솕�룓 吏�援щ낯 媛먯떥�뒗 div瑜� �꽑�깮�뻽�쓣 �븣 css*/
 #globe > img{
 	width: 16px;
 	height: 16px;
 	top : 50%;
 	left : 50%;
 	transform : translate(47% , 98%);
-}/*지구본 이미지*/
+}/*吏�援щ낯 �씠誘몄�*/
 .currency_language_background{
 	background-color: rgba(0, 0, 0, 0.5);
 	position: fixed;
@@ -212,7 +212,7 @@ img { object-fit: cover; }
 	border-radius: 15px;
 	display: none;
 	z-index: 4;
-}/*통화 화폐를 감싸고 있는 div*/
+}/*�넻�솕 �솕�룓瑜� 媛먯떥怨� �엳�뒗 div*/
 .close_div{
 	width: 32px;
 	height: 32px;
@@ -223,7 +223,7 @@ img { object-fit: cover; }
     background-color: white;
     cursor: pointer;
     border-radius: 100%;
-}/*닫기버튼*/
+}/*�떕湲곕쾭�듉*/
 .close_div:hover{
 	background-color: rgb(247,247,247);
 }
@@ -233,12 +233,12 @@ img { object-fit: cover; }
 	margin: 66px auto 0 auto;
 	overflow-x: hidden;
     overflow-y: scroll;
-}/*통화 전체 div*/
+}/*�넻�솕 �쟾泥� div*/
 #currency_top{
 	width: 980px;
 	height: 50px;
 	border-bottom: 1px solid #dddddd;
-}/*언어와 지역, 통화 버튼을 감싸는 div*/
+}/*�뼵�뼱�� 吏��뿭, �넻�솕 踰꾪듉�쓣 媛먯떥�뒗 div*/
 .currency_button{
 	width: 92.98px;
 	height: 49px;
@@ -248,7 +248,7 @@ img { object-fit: cover; }
 	font-weight: 600;
 	cursor: pointer;
 	background-color: white;
-}/*통화 버튼*/
+}/*�넻�솕 踰꾪듉*/
 .currency_button:hover{
 	background-color: rgb(247,247,247);
 }
@@ -261,7 +261,7 @@ img { object-fit: cover; }
 	color: grey;
 	cursor: pointer;
 	background-color: white;
-}/*언어 버튼*/
+}/*�뼵�뼱 踰꾪듉*/
 .language_button:hover{
 	background-color: rgb(247,247,247);
 }
@@ -278,34 +278,34 @@ img { object-fit: cover; }
 	border-radius: 41px;
 	text-align: center;
 	cursor: pointer;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div > ul > li:hover{
 	background-color: rgb(247,247,247);
-}/*각 list들 공통 :hover css*/
+}/*媛� list�뱾 怨듯넻 :hover css*/
 #currency_center > div > ul > li > div{
 	width: 154.59px;
 	height: 18px;
 	font-size: 14px;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div > ul > li > div:nth-child(2){
 	color: #717171;
-}/*각 list들 공통 css*/
+}/*媛� list�뱾 怨듯넻 css*/
 #currency_center > div:nth-child(1){
 	width: 967px;
 	height: 130px;
 	margin-top: 24px;
 	padding-bottom: 24px;
-}/*추천 언어 및 지역 전체를 감싸는 div*/
+}/*異붿쿇 �뼵�뼱 諛� 吏��뿭 �쟾泥대�� 媛먯떥�뒗 div*/
 #currency_center > div:nth-child(2){
 	width: 967px;
 	height: 1426px;
 	margin-top: 24px;
 	padding-bottom: 24px;
-}/*언어와 지역을 선택하세요 를 감싸는 전체 div*/
+}/*�뼵�뼱�� 吏��뿭�쓣 �꽑�깮�븯�꽭�슂 瑜� 媛먯떥�뒗 �쟾泥� div*/
 #currency_center > div:nth-child(1) > h2{
 	font-size: 22px;
 	font-weight: 600;
-}/*추천 언어 및 지역*/
+}/*異붿쿇 �뼵�뼱 諛� 吏��뿭*/
 #profile{
 	width: 86px;
 	height: 40px;
@@ -313,7 +313,7 @@ img { object-fit: cover; }
 	border: 1px solid #ddd;
 	border-radius: 50px;
 	margin: 20px 0 0 0;
-}/*프로필 감싸고 있는 div*/
+}/*�봽濡쒗븘 媛먯떥怨� �엳�뒗 div*/
 #profile:hover{
 	cursor: pointer;
 	box-shadow: 0px 0px 7px 1px grey;
@@ -324,7 +324,7 @@ img { object-fit: cover; }
 	top : 50%;
 	left : 50%;
 	transform : translate(123% ,-76%);
-}/*list이미지*/
+}/*list�씠誘몄�*/
 #profile > img:nth-child(2){
 	width: 32px;
 	height: 32px;
@@ -332,7 +332,7 @@ img { object-fit: cover; }
 	top: 50%;
     left: 50%;
     transform: translate(68% , 10%);
-}/*프로필 이미지*/
+}/*�봽濡쒗븘 �씠誘몄�*/
 #notice{
 	background-color: red;
 	color: white;
@@ -348,7 +348,7 @@ img { object-fit: cover; }
     left: 66%;
     transform: translate(50% , 50%);
     position: relative;
-}/*프로필 이미지 위쪽에 뜨는 알림 개수*/
+}/*�봽濡쒗븘 �씠誘몄� �쐞履쎌뿉 �쑉�뒗 �븣由� 媛쒖닔*/
 .profile_list{
 	width: 240px;
 	min-height: 80px;
@@ -357,7 +357,7 @@ img { object-fit: cover; }
 	border-radius: 10px;
 	box-shadow: 0px 0px 10px -2px grey;
 	display: none;
-}/*프로필 버튼을 눌렀을 때 나오는 div*/
+}/*�봽濡쒗븘 踰꾪듉�쓣 �닃���쓣 �븣 �굹�삤�뒗 div*/
 .profile_list > div > form > input{
 	width: 240px;
 	height: 43.75px;
@@ -365,7 +365,7 @@ img { object-fit: cover; }
 	background-color: white;
 	text-align: left;
 	padding-left: 15px;
-}/*각 input태그들*/
+}/*媛� input�깭洹몃뱾*/
 .Logout{
 	width: 240px;
 	height: 43.75px;
@@ -778,11 +778,44 @@ img { object-fit: cover; }
 #calendar {
 	width: 661px;
 	height: 394px;
-	/*display: flex;
-	align-items: center;*/
+	display: flex;
 	position: absolute;
 	top: 77px;
 }
+/*datepicker*/
+#ui-datepicker-div{
+	width:390px; height: 343px;
+}
+.ui-datepicker table {
+    width: 380px;
+    height:300px;
+    font-size: .9em;
+    border-collapse: collapse;
+    margin: 0 0 0.4em;
+}
+#dp1>div,#dp2>div{
+	border:none;
+	width:316px;
+	height: 343px;
+	margin: 0 7px;
+}
+#dp1>div>div,#dp2>div>div{
+	background:white;
+	border:none;
+}
+.ui-datepicker td{boder:none;}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+  border:0px;
+  background: none;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 100%;
+  padding:0;
+  margin: 0 auto;
+}
+
 #srd_bottom {
 	width: 169px;
 	height: 48px;
@@ -896,6 +929,14 @@ img { object-fit: cover; }
 .gc_button > svg {
 	color: #DDD;
 }
+.gc_num {
+	width: 19px;
+    height: 22px;
+    border: none;
+    font-size: 15px;
+    text-align: center;
+}
+
 #sg_save {
 	width: 80px;
 	height: 48px;
@@ -2136,7 +2177,7 @@ div#host_etc > div:nth-child(2) {
    column-gap: 16px;
    grid-template-columns: 252px 252px;
    grid-auto-rows: minmax(min-content, max-content);
-   overflow-x:hidden; /* 스크롤 */
+   overflow-x:hidden; /* �뒪�겕濡� */
    overflow-y: auto;
    
    
@@ -2299,7 +2340,7 @@ div#host_etc > div:nth-child(2) {
 }
 .pop_section2{
    width: 631px;  height:803px;
-   overflow-x:hidden; /* 스크롤 */
+   overflow-x:hidden; /* �뒪�겕濡� */
    /* background-color:pink; */
    overflow-y: scroll;
    position:relative;

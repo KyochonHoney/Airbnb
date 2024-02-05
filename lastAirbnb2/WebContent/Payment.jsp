@@ -15,6 +15,43 @@
 		<title>확인 및 결제 &middot; 에어비앤비</title>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/Payment.css"/>
+		<link rel="stylesheet" href="css/dd.css"/>
+		<script src="js/jqeury.dd.min.js"></script>
+		<script src="js/jquery-3.7.1.min.js"></script>
+		<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+		<script>
+			$(function() {
+				$("#confirm").click(function() {
+				    var IMP = window.IMP; 
+				    IMP.init('imp55540225'); 
+				    IMP.request_pay({
+				    	pg : "kakaopay", 
+				        pay_method : 'card',
+				        merchant_uid : 'merchant_' + new Date().getTime(),
+				        name : '에어비앤비 결제',
+				        amount : <%= vo.getExpPrice() %>,
+				        buyer_email : '구매자 이메일',
+				        buyer_name : '구매자 이름',
+				        buyer_tel : '구매자 번호',
+				        buyer_addr : '구매자 주소',
+				        buyer_postcode : '구매자 주소'
+				    }, function(rsp) {
+				        if ( rsp.success ) {
+				            var msg = '결제가 완료되었습니다.';
+				            alert(msg);
+				            location.href='LswController';
+				            
+				            // 결제내역을 DB에 insert. (ajax) ------> Ex. 구매목록을 보여주는 페이지? 등으로.
+				            
+				        } else {
+				            var msg = '결제에 실패하였습니다.';
+				            rsp.error_msg;
+				            
+				        }
+				    });
+				});
+			});
+		</script>
 	</head>
 	<body>
 		<div id="header">
@@ -100,13 +137,23 @@
 								<img src="images/naverpayLogo.png"/>
 							</div>
 						</div>
-						<div id="pay_select">
-							<div>
+						<form id="pay_select" action="#">
+							<!-- <label for="ps_pay">
+								<div class="fl"><img src="images/kakaopayLogo.png"/></div>
+								<div class="fl">카카오페이</div>
+								<svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 16px; width: 16px; fill: rgb(72, 72, 72);"><path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" fill-rule="evenodd"></path></svg>
+							</label> -->
+							<select name="payment" id="ps_pay">
+							<option data-thumbnail="images/kakaopay.png' height=9" value="kakaopay">
 								<div><img src="images/kakaopayLogo.png"/></div>
 								<div>카카오페이</div>
-							</div>
-							<svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 16px; width: 16px; fill: rgb(72, 72, 72);"><path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" fill-rule="evenodd"></path></svg>
-						</div>
+							</option>
+							<option value="naverpay">
+								<div><img src="images/naverpayLogo.png"/></div>
+								<div>네이버페이</div>
+							</option>
+							</select>
+						</form>
 						<div id="coupon">
 							<a href="#" style="color: #222; text-decoration: underline;"><b>쿠폰 입력</b></a>
 						</div>

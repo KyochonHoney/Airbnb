@@ -1,13 +1,13 @@
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="esVo.LanguageVo"%>
-<%@page import="dao.LanguageDao"%>
-<%@page import="dao.LoginDao"%>
+<%@page import="esDao.LanguageDao"%>
+<%@page import="esDao.LoginDao"%>
 <%@page import="swVo.ExpOnlineVo"%>
 <%@page import="swVo.ExpReviewVo"%>
 <%@page import="swVo.ExpCateVo"%>
 <%@page import="swVo.ExperienceVo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="dao.ExperienceDao"%>
+<%@page import="swDao.ExperienceDao"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
@@ -51,10 +51,12 @@
 		<link rel="stylesheet" href="slick/slick-theme.css"/>
 		<link rel="stylesheet" href="slick/slick.css"/>
 		<link rel="stylesheet" href="css/ExpInfo.css"/>
-		<!-- <link rel="stylesheet" href="JS/jquery-ui.min.css"/>
-		<script src="JS/jquery-ui.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="JS/jquery-ui.min.css"/>
 		<script src="js/jquery-3.7.1.min.js"></script>
 		<script src="js/ExpInfo.js"></script>
+		<script src="JS/jquery-ui.min.js"></script>
 		
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -357,7 +359,7 @@
 								</div>
 								<div class="fl res_detail">
 									<b class="rd_price">최저가 ₩<%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <a>일행당</a>
-									<a class="res_button1" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+									<a class="res_button1" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 								</div>
 								<div style="clear:both;"></div>
 							</div>
@@ -369,7 +371,7 @@
 								</div>
 								<div class="fl res_detail">
 									<b>최저가 ₩<%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <a>일행당</a>
-									<a class="res_button1" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+									<a class="res_button1" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 								</div>
 								<div style="clear:both;"></div>
 							</div>
@@ -409,7 +411,8 @@
 								<div></div>
 							</div>
 							<div id="calendar">
-								<input type="text" id="dp1" class="datepicker" placeholder="날짜입력">
+								<div id="dp1" name="dp1" class="datepicker"></div>
+								<div id="dp2" name="dp2" class="datepicker2"></div>
 							</div>
 							<div id="srd_bottom">
 								<div><b>날짜 지우기</b></div>
@@ -434,6 +437,7 @@
 								<div style="clear:both;"></div>
 								<div></div>
 							</div>
+							
 							<div id="guest_count">
 								<div class="gc_count">
 									<div class="gc_age">
@@ -442,11 +446,11 @@
 									</div>
 									<div class="gc_cnt">
 										<div class="gc_button">
-											<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
+											<svg class="gc_minus" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
 										</div>
-										<div>1</div>
+										<input type="text" class="gc_num" value="1"/>
 										<div class="gc_button">
-											<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
+											<svg class="gc_plus" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
 										</div>
 									</div>
 								</div>
@@ -457,11 +461,11 @@
 									</div>
 									<div class="gc_cnt">
 										<div class="gc_button">
-											<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
+											<svg class="gc_minus" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
 										</div>
-										<div>0</div>
+										<input type="text" class="gc_num" value="0"/>
 										<div class="gc_button">
-											<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
+											<svg class="gc_plus" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
 										</div>
 									</div>
 								</div>
@@ -472,11 +476,11 @@
 									</div>
 									<div class="gc_cnt">
 										<div class="gc_button">
-											<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
+											<svg class="gc_minus" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m.75 6.75h10.5v-1.5h-10.5z"></path></svg>
 										</div>
-										<div>0</div>
+										<input type="text" class="gc_num" value="0"/>
 										<div class="gc_button">
-											<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
+											<svg class="gc_plus" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 12px; width: 12px; fill: currentcolor;"><path d="m6.75.75v4.5h4.5v1.5h-4.5v4.5h-1.5v-4.5h-4.5v-1.5h4.5v-4.5z"></path></svg>
 										</div>
 									</div>
 								</div>
@@ -611,7 +615,7 @@
 					<a>오전 8:00-오전 8:45 (KST)</a><br>
 					<a class="private">프라이빗 예약만 가능</a>
 					<div class="rs_price"><b>최저가 ₩ <%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <a>일행당</a></div>
-					<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+					<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 				</div>
 				<div class="fl rs_select">
 					<b>11월 29일 (수)</b><br>
@@ -624,14 +628,14 @@
 					<a>오전 7:00-오전 7:45 (KST)</a><br>
 					<a class="private">프라이빗 예약만 가능</a>
 					<div class="rs_price"><b>최저가 ₩ <%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <a>일행당</a></div>
-					<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+					<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 				</div>
 				<div class="fl rs_select">
 					<b>11월 29일 (수)</b><br>
 					<a>오전 7:00-오전 7:45 (KST)</a><br>
 					<a class="private">프라이빗 예약만 가능</a>
 					<div class="rs_price"><b>최저가 ₩ <%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <a>일행당</a></div>
-					<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+					<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 				</div>
 				<div style="clear:both;"></div>
 				<div id="date_more_view"><b>날짜 더 보기</b></div>
@@ -855,7 +859,7 @@
 											<span>오전 7:00-오전 7:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -878,7 +882,7 @@
 											<span>오전 8:00-오전 8:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -902,7 +906,7 @@
 											<span>오전 7:00-오전 7:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -925,7 +929,7 @@
 											<span>오전 8:00-오전 8:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -949,7 +953,7 @@
 											<span>오전 7:00-오전 7:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -972,7 +976,7 @@
 											<span>오전 8:00-오전 8:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -996,7 +1000,7 @@
 											<span>오전 7:00-오전 7:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
@@ -1019,7 +1023,7 @@
 											<span>오전 8:00-오전 8:45 (KST)</span><br/>
 											<b>최저가 ₩</b><b><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></b> <span>일행당</span>
 										</div>
-										<a class="rs_button" href="Payment?exp_idx=<%= idx %>"><b>선택</b></a>
+										<a class="rs_button" href="LswController?command=payment&exp_idx=<%= idx %>"><b>선택</b></a>
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
