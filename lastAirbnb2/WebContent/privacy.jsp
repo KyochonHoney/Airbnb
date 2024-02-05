@@ -106,8 +106,10 @@
 				<div class="profile_list">
 					<% if(userIdx > 0) { %> 
 					<div class="profile_list_top">
-						<form action="message.jsp" method="post">
+						<form action="SesController" method="post">
 							<input type="submit" value="메시지"/>
+							<input type="hidden" name="thisUserIdx" value="0"/>
+							<input type="hidden" name="command" value="message"/>
 						</form>
 						<form action="notification.jsp" method="post">
 							<input type="submit" value="알림"/>
@@ -159,7 +161,7 @@
          <div class="jm_section">
             <h2>에어비엔비에 오신것을 환영합니다</h2>
          
-            <form id="jm_form" action="Controller" method="post">
+            <form id="jm_form" action="SesController" method="post">
                <div>
                   <label for="jm_form" id="code"></label> 
                   <select name="jm_code" class="jm_seclect_box">
@@ -187,7 +189,7 @@
                   style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; margin: 0 auto;">
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
-      		<form method="post" class="join_user_form" action="Controller?command=join">
+      		<form method="post" class="join_user_form" action="SesController?command=join">
       			이름 : <input type="text" placeholder="Ex) 김철수" name="user_id" required/> <br/><br/><br/>
       			비밀번호 : <input type="password" name="pw" required/> <br/><br/><br/>
       			비밀번호 확인 : <input type="password" class="check_pw" required/> <br/><br/><br/>
@@ -223,7 +225,7 @@
 		            <button class="edit_button1">수정</button>
 		         </div>
 		         
-		         <form action="Controller" style="display: none;" method="get">
+		         <form action="SesController" style="display: none;" method="get">
 		            <div class="section_content1-2">
 		            <% if(userList != null) {%>
 		               <div class="section_content_input">
@@ -261,7 +263,7 @@
 		            <button class="edit_button2">수정</button>
 		         </div>
 		          <% if(userList != null) {%>
-		          <form class="fom1" action="Controller" style="display: none;" method="get">
+		          <form class="fom1" action="SesController" style="display: none;" method="get">
 		            <input type="text" id="email" class="ani_box" name="email" required />
 		            <label for="email" class="title2"><span>이메일 주소</span></label>
 		         </form>
@@ -296,7 +298,7 @@
 		            <% } %>
 		         </div>
 		      </div>
-		      	<form class="edit_phone_num" action="Controller" style="display: none;" method="get">
+		      	<form class="edit_phone_num" action="SesController" style="display: none;" method="get">
 		      	<% if(userList != null) {%>
 		            <input type="text" name="phone_num" id="phone_num" class="ani_box" value="<%=userList.getPhone_number() %>" required />
 		            <label for="phone_num" class="title2"><span>전화번호</span></label><br/>
@@ -325,7 +327,7 @@
 		         </div>
 		         
 		         <div class="section_content1-5" style="display: none;"><!--ë¹¨ê°  -->
-		            <form id="form2" action="Controller?command=updateAddress" method="get">
+		            <form id="form2" action="SesController?command=updateAddress" method="get">
 		               <div>
 		               		<input type="hidden" name="command" value="updateAddress"/>
 		                    <select name="languages" id="lang">
@@ -388,7 +390,7 @@
 		            <button class="cancel_button5">취소</button>
 		            <button class="edit_button5">수정</button>
 		         </div>
-		         <form id="form3" action="Controller?command=updateSecondNum" style="display: none;" method="get">
+		         <form id="form3" action="SesController?command=updateSecondNum" style="display: none;" method="get">
 		            <div>
 		               <div class="section_content_input2" >
 		               	  <input type="hidden" name="command" value="updateSecondNum"/>

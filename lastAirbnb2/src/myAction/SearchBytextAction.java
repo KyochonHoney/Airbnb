@@ -1,6 +1,6 @@
 package myAction;
 
-import java.io.IOException;
+import java.io.IOException;  
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -14,18 +14,21 @@ import org.json.simple.JSONObject;
 import action.Action;
 import myDao.Main3Dao;
 import myVo.ReviewVo;
-import myVo.SearchReviewByTextVo;
 
 public class SearchBytextAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String orderBy = request.getParameter("orderby");  // "최신순", "높은평점순"
 		String searchText = request.getParameter("searchText");
 		int roomIdx = Integer.valueOf(request.getParameter("roomIdx")); 
+		System.out.println(searchText);
+		System.out.println(roomIdx);
 		
 		Main3Dao dao = new Main3Dao();
-		ArrayList<ReviewVo> reviewList = dao.getSearch(roomIdx, searchText);
-		
+System.out.println("orderBy : " + orderBy);		
+		ArrayList<ReviewVo> reviewList = dao.getSearch(roomIdx, searchText, orderBy);
+
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json"); // MIME , 응답형식지정
 		PrintWriter out = response.getWriter(); //pritwirter 객체얻음
@@ -46,5 +49,5 @@ public class SearchBytextAction implements Action{
 		}
 		out.print(array);
 	}
-
+	
 }

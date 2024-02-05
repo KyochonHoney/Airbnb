@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import common.DBConnection;
+import esVo.ChatDetailVo;
 import esVo.ChatListVo;
 import esVo.EmojiVo;
 
@@ -54,7 +55,7 @@ public class MessageDao {
 				String userId = rs.getString("user_id");
 				int msgListIdx = rs.getInt("msg_list_idx");
 				int userIdx1 = rs.getInt("user_idx");
-				
+
 				list.add(new ChatListVo(userImage, userId, msgListIdx, userIdx1));
 			}
 			rs.close();
@@ -79,9 +80,70 @@ public class MessageDao {
 			if(rs.next()) {
 				chat = rs.getString(1);
 			}
+			rs.close();
+			pstmt.close();
 		} catch(Exception e) { e.printStackTrace(); }
 		
 		return chat;
+	}
+	//채팅방이 기존에 있는지 없는지 체크
+	public boolean checkChatList(int userIdx, int thisUserIdx) {
+		String sql = "SELECT count(*) FROM message_list WHERE host_idx = ? AND partner_idx = ?";
+		String check = "0";
+		String cnt = "";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(userIdx, thisUserIdx);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				cnt = rs.getString(1);
+			}
+			rs.close();
+			pstmt.close();
+		} catch(Exception e) { e.printStackTrace(); }
+		
+		return check.equals(cnt); 
+	}
+	//채팅방 없는 거 추가하기
+	public void addChatList(int userIdx, int thisUserIdx) {
+		String sql = "INSERT INTO message_list(msg_list_idx, partner_idx, host_idx) VALUES (msg_list_idx.nextval, ?, ?)";
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userIdx);
+			pstmt.setInt(2, thisUserIdx);
+			pstmt.executeUpdate();
+			pstmt.close();
+		} catch(Exception e) { e.printStackTrace(); }
+	}
+	//채팅한 내용 가져오기
+	public ArrayList<ChatDetailVo> showChatList(int userIdx1, int msgListIdx1){
+		String sql ="SELECT ui.user_id, ui.user_image, m.*"
+				+ " FROM user_info ui, message m"
+				+ " WHERE ui.user_idx = m.user_idx AND m.user_idx = ?  AND msg_list_idx = ?"
+				+ " ORDER BY m.msg_idx ASC";
+		ArrayList<ChatDetailVo> list = new ArrayList<ChatDetailVo>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, userIdx1);
+			pstmt.setInt(2, msgListIdx1);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				String userId = rs.getString("user_id");
+				String userImage = rs.getString("user_image");
+				int msgListIdx = rs.getInt("msg_list_idx");
+				int userIdx = rs.getInt("user_idx");
+				String msg = rs.getString("msg");
+				String dateTime = rs.getString("date_time");
+				int msgIdx = rs.getInt("msg_idx");
+				
+				list.add(new ChatDetailVo(userId, userImage, msgListIdx, userIdx, msg, dateTime, msgIdx));
+			}
+		} catch(Exception e) { e.printStackTrace(); }
+		
+		return list;
 	}
 	
 }

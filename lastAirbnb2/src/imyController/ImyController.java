@@ -13,7 +13,7 @@ import esAction.*;
 import myAction.*;
 import swAction.*;
 
-@WebServlet("/ImyController")
+@WebServlet("/lmyController")
 public class ImyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,57 +25,26 @@ public class ImyController extends HttpServlet {
 			command = "element";
 		Action action = null;
 		switch (command) {
-		case "element":
-			action = new main2Action();
-			break;
-		case "logout":
-			action = new LogoutAction();
-			break;
-		case "login":
-			action = new LoginAction();
-			break;
-		case "join":
-			action = new JoinAction();
-			break;
-		case "updateName":
-			action = new UpdateNameAction();
-			break;
-		case "updateEmail":
-			action = new UpdateEmailAction();
-			break;
-		case "updatePhoneNum":
-			action = new UpdatePhoneNumAction();
-			break;
-		case "updateAddress":
-			action = new UpdateAddressAction();
-			break;
-		case "updateSecondNum":
-			action = new UpdateSecondNumAction();
-			break;
-		case "deleteNotification":
-			action = new DeleteNotificationAction();
-			break;
-		case "clickLike":
-			action = new ClickLikeInTimelineAction();
-			break;
-		case "insertReply":
-			action = new InsertReplyAction();
-			break;
-		case "unfollowing":
-			action = new DoUnfollowAction();
-			break;
-		case "following":
-			action = new DoFollowAction();
-			break;
-		case "showNextTimeline":
-			action = new ShowNextTimelinePageAction();
-			break;
-		case "main2":
-			action = new main2Action();
-			break;
-		case "main3":
-			action = new main3Action();
-			break;
+		case "element": action = new main2Action(); break;
+		case "logout": action = new LogoutAction(); break;
+		case "login": action = new LoginAction(); break;
+		case "join": action = new JoinAction(); break;
+		case "updateName": action = new UpdateNameAction(); break;
+		case "updateEmail": action = new UpdateEmailAction(); break;
+		case "updatePhoneNum": action = new UpdatePhoneNumAction(); break;
+		case "updateAddress": action = new UpdateAddressAction(); break;
+		case "updateSecondNum": action = new UpdateSecondNumAction(); break;
+		case "deleteNotification": action = new DeleteNotificationAction(); break;
+		case "clickLike": action = new ClickLikeInTimelineAction(); break;
+		case "insertReply": action = new InsertReplyAction(); break;
+		case "unfollowing": action = new DoUnfollowAction(); break;
+		case "following": action = new DoFollowAction(); break;
+		case "showNextTimeline": action = new ShowNextTimelinePageAction(); break;
+		case "main2": action = new main2Action(); break;
+		case "main3": action = new main3Action(); break;
+	    case "searchBytext" : action = new SearchBytextAction(); break;
+	    case "roomPayment" : action = new RoomPaymentAction(); break;
+	    case "filter_room" : action = new ShowRoomListsByFilterAction(); break;
 		}
 		action.execute(request, response);
 	}

@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+C:\Users\pink_\OneDrive\πŸ≈¡ »≠∏È\lastair2\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3314862302.index
-3061852151.index
-3998890518.index
-4185673453.index
-4189782481.index
-3681860267.index
-645959900.index

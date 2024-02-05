@@ -6,20 +6,34 @@ import java.sql.DriverManager;
 public class DBConnection {
 	static Connection conn; 
 	
+<<<<<<< HEAD
 //	static String driver = "oracle.jdbc.driver.OracleDriver";
 //	static String url = "jdbc:oracle:thin:@localhost:1521:xe";
 //	static String dbId = "airbnb";
 //	static String dbPw = "1234";
+=======
+	static String driver = "oracle.jdbc.driver.OracleDriver";
+	static String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	static String dbId = "airbnb";
+	static String dbPw = "1234";
+>>>>>>> main
 	
 //	static String driver = "oracle.jdbc.driver.OracleDriver";
 //	static String url = "jdbc:oracle:thin:@localhost:1521:xe";
 //	static String dbId = "airbnbOwn";
 //	static String dbPw = "1234";
 	
+<<<<<<< HEAD
 	static String driver = "oracle.jdbc.driver.OracleDriver";
 	static String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	static String dbId = "airbnbtest";
 	static String dbPw = "123123";
+=======
+//	static String driver = "oracle.jdbc.driver.OracleDriver";
+//	static String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//	static String dbId = "airbnbtest";
+//	static String dbPw = "123123";
+>>>>>>> main
 	
 	public static Connection getConnection() {
 		if(conn==null) {

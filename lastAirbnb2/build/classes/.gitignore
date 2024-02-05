@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 /lswController/
 /swAction/
+=======
+/common/
+/esVo/
+/esDao/
+/esAction/
+/sesController/
+>>>>>>> main

@@ -38,7 +38,7 @@ LoginDao LoginDao = new LoginDao();
 	} catch (NullPointerException e){
 		e.printStackTrace();
 	}
-		ArrayList<PostVo> postLists = profileTimeline.getPostList(thisUserIdx , 1);
+		ArrayList<PostVo> postLists = profileTimeline.getPostList(thisUserIdx);
 		List<GetFollowerListsVo> followerLists = profileTimeline.getFollowerLists(thisUserIdx);
 		List<GetFollowerListsVo> followingLists = profileTimeline.getFollowingLists(thisUserIdx);
 		boolean followingCheck = profileTimeline.checkFollowing(userIdx, thisUserIdx);
@@ -129,8 +129,10 @@ LoginDao LoginDao = new LoginDao();
 				<div class="profile_list">
 					<% if(userIdx > 0) { %> 
 					<div class="profile_list_top">
-						<form action="message.jsp" method="post">
+						<form action="SesController" method="post">
 							<input type="submit" value="메시지"/>
+							<input type="hidden" name="thisUserIdx" value="0"/>
+							<input type="hidden" name="command" value="message"/>
 						</form>
 						<form action="notification.jsp" method="post">
 							<input type="submit" value="알림"/>
@@ -184,7 +186,7 @@ LoginDao LoginDao = new LoginDao();
          <div class="jm_section">
             <h2>에어비엔비에 오신것을 환영합니다</h2>
          
-            <form id="jm_form" action="Controller" method="post">
+            <form id="jm_form" action="SesController" method="post">
                <div>
                   <label for="jm_form" id="code"></label> 
                   <select name="jm_code" class="jm_seclect_box">
@@ -212,7 +214,7 @@ LoginDao LoginDao = new LoginDao();
                   style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible; margin: 0 auto;">
                   <path d="m6 6 20 20M26 6 6 26"></path></svg>
             </button>
-      		<form method="post" class="join_user_form" action="Controller">
+      		<form method="post" class="join_user_form" action="SesController">
       			이름 : <input type="text" placeholder="Ex) 김철수" name="user_id" required/> <br/><br/><br/>
       			비밀번호 : <input type="password" name="pw" required/> <br/><br/><br/>
       			비밀번호 확인 : <input type="password" class="check_pw" required/> <br/><br/><br/>
@@ -536,7 +538,7 @@ LoginDao LoginDao = new LoginDao();
 					$.ajax({
 						type : 'post',
 						data : {"postIdx":postIdx, "thisUserIdx": thisUserIdx , "checkLike": checkLike, "command" : command},
-						url : 'Controller',
+						url : 'SesController',
 						success : function(obj){	
 							check.text(obj.likeCount+ "개");
 							
@@ -568,7 +570,7 @@ LoginDao LoginDao = new LoginDao();
 					$.ajax({
 						type : 'post',
 						data : { "postIdx" : postIdx, "userIdx" : userIdx, "content" : content,"thisUserIdx" : thisUserIdx ,"command" : command },
-						url : 'Controller',
+						url : 'SesController',
 						success : function(obj){
 							if(obj.replyResult){
 								alert("댓글이 달렸습니다.");
@@ -610,7 +612,7 @@ LoginDao LoginDao = new LoginDao();
 						let userIdx = <%=userIdx%>;
 						let thisUserIdx = <%=thisUserIdx%>;
 						$.ajax({
-							url : 'Controller',
+							url : 'SesController',
 							data : {"command" : command, "userIdx" : userIdx, "thisUserIdx" : thisUserIdx},
 							type : 'post',
 							success : function(obj){
@@ -634,7 +636,7 @@ LoginDao LoginDao = new LoginDao();
 					let userIdx = <%=userIdx%>;
 					let thisUserIdx = <%=thisUserIdx%>;
 					$.ajax({
-						url : 'Controller',
+						url : 'SesController',
 						data : {"command" : command, "userIdx" : userIdx, "thisUserIdx" : thisUserIdx},
 						type : 'post',
 						success : function(obj){
@@ -649,151 +651,6 @@ LoginDao LoginDao = new LoginDao();
 									+ "error : " + e);
 						}
 					});
-				});
-				let pageNum = 1;
-				$(window).scroll(function(){
-					  var scrollTop = $(window).scrollTop();
-					  var innerHeight = $(window).height();
-					  var scrollHeight = $(document).height();
-					  
-					  if (scrollTop + innerHeight >= scrollHeight){
-						  pageNum++;
-					      let command = 'showNextTimeline';
-						  let thisUserIdx = <%=thisUserIdx%>;
-						  let thisUserId = '<%=thisUserList.getUser_id()%>';
-						  let userImage = '<%=userList.getUser_image() %>';
-						  $.ajax({
-							 type : 'post',
-							 data : { "pageNum" : pageNum , "thisUserIdx" : thisUserIdx , "command" : command},
-							 url : 'Controller',
-							 success : function(obj){
-								 let totalStr = "";
-								 console.log(obj);
-								 for(let i = 0; i < obj.length - 1; i++){
-									 alert("!");
-									let postVo = obj[i].getPostList();
-									let writtenDate = postVo.getWrittenDate();
-									WrittenDate = replyLists.get(i).getWrittenDate().replaceFirst(" \\d{2}:\\d{2}:\\d{2}$", "");
-											replyWrittenDate = postWrittenDate.replaceFirst("-","년 ");
-											replyWrittenDate = postWrittenDate.replace("-","월 ");
-								    let str1 = "<div>"
-											+	  "<div class=\"post_top\">"
-											+	  	"<a href=\"profile_timeline.jsp\"><img class=\"fl\" src=\"" + userImg + "\"/></a>"
-											+ 	  	"<span class=\"fl\"><strong><a href=\"profile_timeline.jsp?thisUserIdx=" + thisUserIdx + "\">" + thisUserId + "</a></strong>님이 게시글을 올렸습니다.</span>"
-											+		"<span class=\"hide_date\">" + WrittenDate + "</span>"
-											+ 	  "</div>"
-											+ 	  "<div class=\"post_center\">"
-											+		postVo.getContent()
-											+ 	  "</div>"
-											+	  "<div class=\"post_idx\" style=\"display: none;\">" + postVo.getPostIdx +"</div>"
-											+	  	"<div class=\"post_footer\">"
-											+			"<div>"
-											+				"<div class=\"fl\" style=\"margin: 2px 0 0 17px;\"><svg aria-label=\"ì¢ìì\" style=\"margin-top: 10px; margin-left: 10px;\" fill=\"currentColor\" height=\"18\" role=\"img\" viewBox=\"0 0 24 24\" width=\"18\"><title>ì¢ìì</title><path d=\"M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z\"></path></svg></div>"
-											+				"<span class=\"fl\">" + obj[i].totalCountLike + "개</span>"
-											+				"<div class=\"fr\">댓글 " + obj[i].totalCountReply + "개</div>"
-											+			"</div>"
-											+			"<div>"
-											+				"<div class=\"like_ fl\">"
-											+					"<div>"
-											+						"<svg class=\"like_svg fl\" aria-label=\"ì¢ìì\" style=\"margin-top: 2px; margin-left: 10px; color: black;\" fill=\"currentColor\" height=\"22\" role=\"img\" viewBox=\"0 0 24 24\" width=\"22\"><title>ì¢ìì</title><path d=\"M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z\"></path></svg>"
-											+						"<svg class=\"like_svg_filled\" aria-label=\"ì¢ìì ì·¨ì\"  fill=\"currentColor\" height=\"24\" role=\"img\" viewBox=\"0 0 48 48\" width=\"24\"><title>ì¢ìì ì·¨ì</title><path d=\"M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z\"></path></svg>"
-											+						"<div>좋아요</div>"
-											+					"</div>"
-											+				"</div>"
-											+				"<div class=\"comment_ fl\">"
-											+					"<div>"
-											+						"<i data-visualcompletion=\"css-img\" class=\"fl\" style=\"background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/UqerxUYKLay.png&quot;); background-position: 0px -550px; background-size: auto; width: 22px; height: 22px; background-repeat: no-repeat; display: inline-block; margin-top: 2px; margin-left: 10px; color: #65676B;\"></i>"
-											+						"<div class=\"fl\">댓글 달기</div>"
-											+					"</div>"
-											+				"</div>"
-											+				"<div class=\"share_ fl\">"
-											+					"<div>"
-											+						"<i data-visualcompletion=\"css-img\" class=\"fl\" style=\"background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yp/r/UqerxUYKLay.png&quot;); background-position: 0px -886px; background-size: auto; width: 22px; height: 22px; background-repeat: no-repeat; display: inline-block; margin-top: 2px; margin-left: 10px;\"></i>"
-											+						"<div class=\"fl\">공유하기</div>"
-											+					"</div>"
-											+				"</div>"
-											+			"</div>"
-											+			"<div class=\"see_more\">"
-											+				"<button class=\"see_more_but\">댓글 더보기</button>"
-											+			"</div>"
-											+			"<div class=\"see_more_div\">";
-											
-									totalStr += str1;
-								 
-									obj[i].getReplyList().forEach((vo) => {
-										let replyWrittenDate = vo.getWrittenDate().replaceFirst(" \\d{2}:\\d{2}:\\d{2}$", "");
-												replyWrittenDate = postWrittenDate.replaceFirst("-","년 ");
-												replyWrittenDate = postWrittenDate.replace("-","월 ");
-												let str2 = 
-															"<div>"
-														+		"<div class=\"fl profile_pic_in_comment\">"
-														+			"<img src=\"" + (vo.getUserImage == null) ? "" : vo.getUserImage() + "\"/>"
-														+		"</div>"
-														+		"<div class=\"fl detail_comment\">"
-														+			"<div class=\"fl\">"
-														+				"<span>" + vo.getUserId() + "</span>"
-														+				"<div>" + vo.getContent() + "</div>"											
-														+			"</div>"
-														+		"</div>"
-														+		"<div class=\"fl comment_date\">"
-														+			"<div class=\"fl\">" + replyWrittenDate + "</div>"
-														+			"<button class=\"fl\">답글 달기</button>"
-														+		"</div>"
-														+	"</div>";
-												totalStr += str2;
-									})
-										
-									let str3 =
-											"<img class=\"fr hide_comment_div\" src=\"images/delete.png\" style=\"position: absolute; top:15px; right:15px; cursor: pointer;\"/>"
-											+	"</div>"
-											+	"<div class=\"comment_list\">";
-									totalStr += str3;
-								
-										for(let j = obj[i].replyList.size()-1; j >= ((obj[i].replyList.size()-2 == -1) ? obj[i].replyList.size()-1 : obj[i].replyList.size()-2); j--) { 
-											if(obj[i].replyList.size()==0) break;
-											let str4 = 
-												"<div>"
-											+		"<div class=\"fl\">"
-											+			"<img src=\"" + obj[i].replyList.get(j).getUserImage() + "\"/>"
-											+		"</div>"
-											+		"<div class=\"fl\">"
-											+			"<div class=\"fl\">"
-											+				"<span>"+ obj[i].replyList.get(j).getUserId() + "</span>"
-											+				"<div>" + obj[i].replyList.get(j).getContent() + "</div>"											
-											+			"</div>"
-											+		"</div>"
-											+		"<div class=\"fl\">"
-											+			"<div class=\"fl\">" + obj[i].replyList.get(j).getWrittenDate() + "</div>"
-											+			"<button class=\"fl\">답글 달기</button>"
-											+		"</div>"
-											+	"</div>"
-											totalStr += str4;
-										}
-									let str5 =
-												"<div class=\"new_comment\">"
-											+		"<div class=\"fl\"><img src=\"" + userImage + "\"/></div>"
-											+			"<div class=\"fl\">"
-											+				"<textarea class=\"new_reply\" placeholder=\"댓글을 입력하세요...\"></textarea>"
-											+				"<button class=\"send_button fr\"><img src=\"images/send.png\"/></button>"
-											+				"<div class=\"post_idx\" style=\"display: none;\">" + postVo.getPostIdx +"</div>"
-											+			"</div>"
-											+		"</div>"
-											+	"</div>"
-											+"</div>"
-											+"</div>";
-									totalStr += str5;
-								 }
-								$("#timeline").append(totalStr); /* 수정 */
-							 
-							 },
-							 error : function(r, s, e){
-									alert("[에러] code : " + r.status
-												+ "message :" + r.responseText
-												+ "error : " + e);
-							 }
-						  });
-						}
-					  
 				});
 			});
 	</script>
