@@ -9,6 +9,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	int roomIdx = Integer.parseInt(request.getParameter("roomIdx"));
 	RoomImageVo imagevo = (RoomImageVo)request.getAttribute("imagevo");
 	UserInfoVo uservo = (UserInfoVo)request.getAttribute("uservo");
 	RoomVo roomvo = (RoomVo)request.getAttribute("roomvo");
@@ -36,6 +37,8 @@
 			e.printStackTrace();
 		}
 	}
+	
+	ArrayList<String> listDatesUnavailable = dao3.getListDate8chUnavailable(roomIdx);
 %>
 <!DOCTYPE html>
 <html>
@@ -53,6 +56,46 @@
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   	<script>
   		let max_member =  <%=roomvo.getMax_member() %>;
+  		let petAllowed = <%=roomvo.getPet()%>;
+  		// 특정날짜들 배열
+  		// datepicker안되는날짜 막기
+  		//var disabledDays = ["2024-2-14", "2024-2-15"];//["2013-7-9","2013-7-24","2013-7-26"];
+  		let disabledDays = [
+<% for(int i=0; i<=listDatesUnavailable.size()-1; i++) { %>
+		"<%=listDatesUnavailable.get(i)%>"
+			<% if(i<listDatesUnavailable.size()-1) { %>
+				,
+			<% } %>
+<% } %>
+  		];
+  		// 특정일 선택막기
+  		function disableAllTheseDays(date) {
+  		    var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+  		    for (i = 0; i < disabledDays.length; i++) {
+  		        if($.inArray(y + '-' +(m+1) + '-' + d,disabledDays) != -1) {
+  		            return [false];
+  		        }
+  		    }
+  		    return [true];
+  		}
+  	   <%--  // 숙소 가격 계산
+  	    function CalcRoomPrice(){
+  	    	let roomPrice = <%=roomvo.getRoom_price()%>;
+  	    	let calcDate = 
+  	    	let Price = $(".priceCalc").replaceAll(",");
+  	    } --%>
+  	  // 숙소idx 파라미터 넘기기
+  	  let roomIdx = <%=roomvo.getRoom_idx()%>;
+  	  $(function() {
+    	$(".side1-1>button").click(function(){
+    	  	let guest = $(".side1-4sp").text();
+    	  	let date = $(".dateSelect").text();
+    	  	let date2 = $(".dateSelect2").text();
+    	  	let dates = date + date2;
+    		location.href="lmyController?command=roomPayment&roomIdx=" + roomIdx + "&guest=" + guest;
+    	 });
+    	
+  	  });
   	</script>
 </head>
 <body>
@@ -428,7 +471,7 @@
 			</div>
 
 		<!-- 숙박장소(이모티콘버전) 44,47, -->	
-<%-- 		<%for(StayVo sv : stayvo){ %>
+<%-- 	<%for(StayVo sv : stayvo){ %>
 		<%if(sv.getStay_img()!= null){ %> --%>
 		<div class="info_inner7Svg"> 
 			<div>숙박 장소</div>
@@ -477,20 +520,21 @@
 			</div>
 				
 			<!-- 9  -->	
-			<div class="info_inner9">
+			<div class="info_inner9" id="info_inner9">
 				<h2>
 				<%
 				String str = roomvo.getRoom_location();
 				String[] str2 = str.split(",");
 				%>
 				<%=str2[0] %>에서 
-				<span>4522</span>박
+				<span class="dateCalc"></span>
 				</h2>
-				<div>2024년 9월 1일 - 2024년 9월 6일</div>
+				<span class ="dateSelect">일정을 선택하세요</span> 
+				<span class="dateSelect2"></span>
 				
 				<div class="info_inner9-1">
-					<div id="dp1" name="dp1" class="datepicker"></div>
-					<div id="dp2" name="dp2" class="datepicker2"></div>
+					 <div id="dp3" name="dp3" class="datepicker3"></div>
+					 <div id="dp4" name="dp4" class="datepicker4"></div>
 				</div>
 				
 				<div class="info_inner9-2">
@@ -507,7 +551,7 @@
 				<!-- 사이드 팝업 -->
 				<div class="side_date_pop" style="display:none;">
 					<div class="side_date_pop1">
-					 <span id="dateCalc">ㅇㅇㅅㅇ</span>박 <br> 
+					 <span class="dateCalc"></span> <br> 
 					 <span class="side_date_pop_sp">
 					 <span id="checkinDate"></span>
 					  - 
@@ -587,7 +631,7 @@
 						<%}%>
 						<%if(roomvo.getRoom_sale()==0){ %>
 							<span style="display: none;"></span>
-							<span>₩<%=decimalFormat.format(roomvo.getRoom_price())%></span>
+							<span class="noneSalePrice">₩<%=decimalFormat.format(roomvo.getRoom_price())%></span>
 							<span> /박</span>
 						<%} %> 
 						<%if (countriveiw != 0){ %>
@@ -627,8 +671,12 @@
 				<div class="side1-6">
 					
 						<div class="side1-7">
-							<span class="sp1">₩291,822 x 5박</span>
-							<span>₩1,459,110</span>
+							<span class="sp1">
+							<span  class="priceCalc">₩<%=new DecimalFormat("###,###").format(roomvo.getRoom_price())%> x </span>
+							<span class="dateCalc"></span>
+							</span>
+							
+							<span class="noneSalePrice"></span>
 						</div>
 						
 						<div class="side1-8">
@@ -643,7 +691,7 @@
 						
 						<div class="side1-10">
 							<span>총 합계</span>
-							<span>₩1,426,529</span>
+							<span class="totalPrice"></span>
 						</div>
 				</div>
 				<!-- 인원세부창 -->
@@ -1056,18 +1104,17 @@
 						<div>후기 <%=countriveiw %>개</div>
 						
 						<div class="pop_section2-1-1">
-						최신순
+						<span>최신순</span>
+						<span style="display:none;">높은 평점순</span>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: #222222; stroke-width: 5.33333; overflow: visible; margin-left: 5px;"><path fill="none" d="M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12"></path></svg>
 						</div>
 						
-						<div class="pop_section2-1-1" style="display:none">
-						높은 평점순
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 12px; width: 12px; stroke: #222222; stroke-width: 5.33333; overflow: visible;"><path fill="none" d="M28 12 16.7 23.3a1 1 0 0 1-1.4 0L4 12"></path></svg>
-						</div> 
+					
 					</div>
 					
 					<div class="pop_section2-2">
 						<form id="test1" onsubmit="return false">
+							<input type="hidden" id="input_orderby" name="orderby" value="최신순"/>
 							<input type="text" id = "searchText" placeholder="후기검색" name="searchText">
 							<input type="hidden" name="command" value="searchBytext">
 							<input type="hidden" name="roomIdx" value="<%= roomvo.getRoom_idx() %>">
@@ -1079,6 +1126,7 @@
 				</div>
 				
 				<div id="review-container"><!-- 오렌지  -->
+			<%-- // 최신순일때	<% if() %> --%>
 				<%for(ReviewVo review : reviewvo){ %>
 					<div class="pop_section2-3">
 						<div>
@@ -1122,7 +1170,8 @@
 						</div>
 					</div>
 					<%} %>
-
+					<!-- 높은 평점순일때 -->
+					
 				</div>
 				
 			</div><!-- pink끝 -->
@@ -1189,7 +1238,7 @@
 				<span class="wish_sp2">0개 저장됨</span>
 			</div>
 		</div>
-		<div class="wish_content_outer">
+<!-- 		<div class="wish_content_outer">
 			<div class="wish_content1">
 				<img src="https://a0.muscache.com/im/pictures/032392ef-892e-4e85-bad1-2881905f67f0.jpg?im_w=1200"/>
 				<span class="wish_sp1">경기도 안양시</span><br>
@@ -1203,21 +1252,15 @@
 				<span class="wish_sp2">0개 저장됨</span>
 			</div>
 		</div>
-<!-- 	<div class="wish_content_outer">
-			<div class="wish_content1">
-				<img src="images/wish.png"/>
-				<span class="wish_sp1">경기도 안양시</span><br>
-				<span class="wish_sp2">0개 저장됨</span>
-			</div>
-		</div>
 		<div class="wish_content_outer">
 			<div class="wish_content1">
 				<img src="images/wish.png"/>
 				<span class="wish_sp1">경기도 안양시</span><br>
 				<span class="wish_sp2">0개 저장됨</span>
 			</div>
-		</div> 
-		 -->
+		</div> -->
+		
+		 
 	
 	
 	</div> <!-- inner1끝 -->
@@ -1227,6 +1270,26 @@
 </div>
 <!-- 위시팝업 끝 -->
 
+<!-- 위시 카테고리 만들기 -->
+<div id="make_wish_back"></div>
+<div id="make_wish">
+	<div class="make_wish_header">
+		<button>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;position:absolute;top: 20px;"><path d="m6 6 20 20M26 6 6 26"></path></svg>
+		</button>
+		<span>위시리스트 만들기</span>
+	</div>
+	<div class="make_wish_section">
+		<form method="get">
+			<input type="text" maxlength='7' name="wishlist_name" placeholder="제목입력"/>
+		</form>
+	</div>
+	<div class="make_wish_footer">
+		<span>지우기</span>
+		<button>새로 만들기</button>
+	</div>
+</div>
+<!-- 위시 카테고리 만들기끝 -->
 <!-- 공유하기 팝업 -->
 <div id="share_outer"></div>
 <div id="share">

@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="esVo.UserInfoVo"%>
 <%@page import="esVo.LanguageVo"%>
 <%@page import="java.util.ArrayList"%>
@@ -22,12 +23,14 @@
 	int userIdx = 0;
 	UserInfoVo userList = null;
 	int howManyAlarm = 0;
-	try{
-		userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
-		userList = LoginDao.getUserInfoBy(userIdx);
-		howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
-	} catch (NullPointerException e){
-		e.printStackTrace();
+	if(request.getSession().getAttribute("userIdx") != null) {
+		try{
+			userIdx = (Integer)request.getSession().getAttribute("userIdx"); //--> 로그인창 만들면 이걸로 적용하기	
+			userList = LoginDao.getUserInfoBy(userIdx);
+			howManyAlarm = (Integer)LoginDao.getCountAlarm(userIdx);
+		} catch (NullPointerException e){
+			e.printStackTrace();
+		}
 	}
 %>
 <!DOCTYPE html>
@@ -525,10 +528,12 @@
 				</div>
 				<div class="ps">
 					<div><%= r.getRoomName()%></div>
-					<span>★<%= r.getRoomScore()%></span>
+				<%-- 	<%if(r.getRoomScore() != null){ %> --%>
+						<span>★<%= r.getRoomScore()%></span>
+			<%-- 		<%} %> --%>
 					<div>광화문에서 <%=distance %>km</div>
 					<div>12월 3일~8일</div>
-					<div><b>₩<%= r.getRoomPrice()%></b> /박</div>
+					<div><b>₩<%= new DecimalFormat("###,###").format(r.getRoomPrice()) %></b> /박</div>
 				</div>
 				<div class="room_idx" style="display:none;"><%=r.getRoomIdx()%></div>
 			<%-- 	<div class="host_idx" style="display:none;"><%=r.getHost_idx()%></div> --%>
@@ -555,7 +560,7 @@
 				<span class="wish_sp2">0개 저장됨</span>
 			</div>
 		</div>
-		<div class="wish_content_outer">
+<!-- 		<div class="wish_content_outer">
 			<div class="wish_content1">
 				<img src="https://a0.muscache.com/im/pictures/032392ef-892e-4e85-bad1-2881905f67f0.jpg?im_w=1200"/>
 				<span class="wish_sp1">경기도 안양시</span><br>
@@ -569,29 +574,23 @@
 				<span class="wish_sp2">0개 저장됨</span>
 			</div>
 		</div>
-<!-- 	<div class="wish_content_outer">
+	 	<div class="wish_content_outer">
 			<div class="wish_content1">
 				<img src="images/wish.png"/>
 				<span class="wish_sp1">경기도 안양시</span><br>
 				<span class="wish_sp2">0개 저장됨</span>
 			</div>
 		</div>
-		<div class="wish_content_outer">
-			<div class="wish_content1">
-				<img src="images/wish.png"/>
-				<span class="wish_sp1">경기도 안양시</span><br>
-				<span class="wish_sp2">0개 저장됨</span>
-			</div>
-		</div> 
-		 -->
-	
-	
+	-->
+		
 	</div> <!-- inner1끝 -->
 	<div class="wish_inner2">
 		<div class="wish_content2">새로운 위시리스트 만들기</div>
 	</div>
 </div>
 <!-- 위시팝업 끝 -->
+
+
 
 <!--필터팝업  -->
 <div id="filter_outer" style="display:hidden;"></div>
@@ -611,71 +610,87 @@
 			</div>
 		</div>
 		
-		<div class="filter_content2">
-			<h1>가격범위</h1>
-			<span>1박 요금(수수료 및 세금 포함)</span>
-			<div class="filter_content2-2">
-				<div class="filter_price">
-				
-					<div class="filter_price_input">
-						<span class="filter_span">최저</span><br>
-						<span class="filter_span2">R</span>
-						<input type="text" id="fist_price">
-					</div>
-					<span></span>
-					<div class="filter_price_input">
-						<span class="filter_span">최고</span><br>
-						<span class="filter_span2">R</span>
-						<input type="text" id="fist_price">
-					</div>
+		<form action="lmyController" method="post">
+			<input type="hidden" name="command" value="filter_room"/>
+			<input type="hidden" name="category_idx" value="<%=paramCate%>"/>
+			<div class="filter_content2">
+				<h1>가격범위</h1>
+				<span>1박 요금(수수료 및 세금 포함)</span>
+				<div class="filter_content2-2">
+					<div class="filter_price">
 					
+						<div class="filter_price_input">
+							<span class="filter_span">최저</span><br>
+							<span class="filter_span2">R</span>
+							<input type="text" id="fist_price" name="min_price">
+						</div>
+						<span></span>
+						<div class="filter_price_input">
+							<span class="filter_span">최고</span><br>
+							<span class="filter_span2">R</span>
+							<input type="text" id="fist_price" name="max_price">
+						</div>
+						
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="filter_content3">
-			<h1>침실과 침대</h1>
-			<span>침실</span>
-			<div class="fil3_btns">
-				<button>상관없음</button>
-				<button>1</button>
-				<button>2</button>
-				<button>3</button>
-				<button>4</button>
-				<button>5</button>
-				<button>6</button>
-				<button>7</button>
-				<button>8+</button>
-			</div>
 			
-			<span>침대</span>
-			<div class="fil3_btns2">
-				<button>상관없음</button>
-				<button>1</button>
-				<button>2</button>
-				<button>3</button>
-				<button>4</button>
-				<button>5</button>
-				<button>6</button>
-				<button>7</button>
-				<button>8+</button>
-			</div>
+			<script>
+				$(function() {
+					$(".fil3_btns > button").click(function() {
+						let txt = $(this).text();
+						if(txt!="상관없음") 
+							$("input[name='fil3_btns']").val(txt);
+						else 
+							$("input[name='fil3_btns']").val("0");
+					});
+				});
+			</script>
 			
+			<div class="filter_content3">
+				<input type="hidden" name="fil3_btns" value="0"/>
+				<h1>침실과 침대</h1>
+				<span>침실</span>
+				<div class="fil3_btns">
+					<button type="button">상관없음</button>
+					<button type="button">1</button>
+					<button type="button">2</button>
+					<button type="button">3</button>
+					<button type="button">4</button>
+					<button type="button">5</button>
+					<button type="button">6</button>
+					<button type="button">7</button>
+					<button type="button">8+</button>
+				</div>
 				
-			<span>욕실</span>
-			<div class="fil3_btns3">
-				<button>상관없음</button>
-				<button>1</button>
-				<button>2</button>
-				<button>3</button>
-				<button>4</button>
-				<button>5</button>
-				<button>6</button>
-				<button>7</button>
-				<button>8+</button>
+				<span>침대</span>
+				<div class="fil3_btns2">
+					<button type="button">상관없음</button>
+					<button type="button">1</button>
+					<button type="button">2</button>
+					<button type="button">3</button>
+					<button type="button">4</button>
+					<button type="button">5</button>
+					<button type="button">6</button>
+					<button type="button">7</button>
+					<button type="button">8+</button>
+				</div>
+				
+					
+				<span>욕실</span>
+				<div class="fil3_btns3">
+					<button type="button">상관없음</button>
+					<button type="button">1</button>
+					<button type="button">2</button>
+					<button type="button">3</button>
+					<button type="button">4</button>
+					<button type="button">5</button>
+					<button type="button">6</button>
+					<button type="button">7</button>
+					<button type="button">8+</button>
+				</div>
 			</div>
-		</div>
-		
+<!-- 		
 		<div class="filter_content4">
 			<h1>최고 수준의 숙소</h1>
 			<div class="filter_content4-1">
@@ -753,7 +768,7 @@
 				</label>
 			</div>
 			<div style="clear: both;"></div>
-			<!--더보기 내용  -->
+			더보기 내용 
 			<div class="fil_pop" style="display:none;">	
 				<div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
@@ -899,7 +914,7 @@
 				</div>
 				<div style="clear: both;"></div>
 				<div class="filter_content6-3" style="display:none;"><span>접기</span></div>
-			</div><!-- 팝업창끝 -->
+			</div>
 			
 			<div style="clear: both;"></div>
 			
@@ -993,64 +1008,66 @@
 					<span>일본어</span>
 				</label>
 			</div>
-			<!-- 더보기 -->
+			더보기
 			<div style="clear: both;"></div>
 			<div class="fil_pop2" style="display:none;">	
 				<div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
 					<input type="checkbox" class="fil_check">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg>
-					<span>무선 전화기</span>
+					<span>일본어</span>
 				</label>
 				</div>
 				<div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
 					<input type="checkbox" class="fil_check">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg>
-					<span>무선 전화기</span>
+					<span>일본어</span>
 				</label>
 				</div>
 				<div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
 					<input type="checkbox" class="fil_check">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg>
-					<span>무선 전화기</span>
+					<span>일본어</span>
 				</label>
 				</div>
 				<div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
 					<input type="checkbox" class="fil_check">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg>
-					<span>무선 전화기</span>
+					<span>일본어</span>
 				</label>
 				</div>
 				<div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
 					<input type="checkbox" class="fil_check">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg>
-					<span>무선 전화기</span>
+					<span>일본어</span>
 				</label>
 				</div><div class="filter_content6-1">
 				<label for="fil_check" class="fil_label">
 					<input type="checkbox" class="fil_check">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style=" fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m4 16.5 8 8 16-16"></path></svg>
-					<span>무선 전화기</span>
+					<span>일본어</span>
 				</label>
 				</div>
 				<div style="clear: both;"></div>
 				<div class="filter_content6-5" style="display:none;"><span>접기</span></div>
 			</div>
-			<!-- 더보기끝 -->
+			더보기끝
 			<div style="clear: both;"></div>
 			<div class="filter_content6-4"><span>더보기</span></div>
 		</div>
-	</div><!-- section끝 -->
+	</div>section끝 -->
 	
 	<div class="filter_footer">
-		<div class="filter_footer1"><span>전체 해제</span></div>
-		<div>숙소 n개 보기</div>
+		<!-- <div class="filter_footer1"><span>전체 해제</span></div> -->
+		<!-- <div>숙소 n개 보기</div> -->
+		<input type="reset" value="전체 해제" id="reset"/>
+		<input type="submit" value="속소 보기" id="Show_all_lists"/>
 	</div>
-	
+	</form>
 	
 </div>
 

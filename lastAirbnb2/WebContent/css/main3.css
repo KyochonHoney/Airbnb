@@ -653,12 +653,12 @@
 /*----설명------------*/
 #info_outer{
 	width:1897px;
-	min-height:1000px;
+	min-height:900px;
 	/* background-color:pink; */
 }
 #info{
 	width:1120px;
-	height:2250.44px;
+	min-height: 2253.44px;
 	margin:0 auto;
 	/* background-color:skyblue; */
 	border-bottom: 1px solid #DDDDDD;
@@ -799,6 +799,7 @@
 	font-weight:600;
 	display: block;
     margin-bottom: 3px;
+    width: 400px;
 }
 .info_inner3>div>span:nth-child(2){
 	font-size: 14px;
@@ -1147,14 +1148,15 @@
 .info_inner9{
 	width:693.328px;; height:518px;
 	padding: 48px 0;
-	/* background-color:olive; */
+	font-size: 14px;
+	font-weight: 400;
 }
 .info_inner9>h2{
 	font-size: 22px;
 	font-weight:600;
 	line-height:26px;
 }
-.info_inner9>div:nth-child(2){
+.dateSelect,.dateSelect2{
 	font-size: 14px;
 	font-weight: 400;
 	height:44px;
@@ -1162,12 +1164,13 @@
 	padding-top: 8px;
 	color: rgb(113, 113, 113);
 }
+
 .info_inner9-1{
 	width: 688.328px;
     height: 330px;
     position: relative;
     display: flex;
-	
+	justify-content: space-between;
 }
 .info_inner9-1>img{
 	position:absolute;
@@ -2700,6 +2703,7 @@
 	bottom:0;
 	left:0;
 	right:0;
+	
 	display: none;
 }
 #wish{
@@ -2801,7 +2805,63 @@
 	background-color:black;
 	line-height: 20px;	
 }
-
+/*위시 카테고리 만들기*/
+#make_wish_back{
+	background-color:rgba(0,0,0,0.5);
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	bottom:0;
+	left:0;
+	right:0;
+	display: none;
+}
+#make_wish{
+	width:568px; height:  273px; 
+	border-radius: 12px;
+	background-color:white;
+	overflow-x:hidden;
+	box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px 0px;
+	z-index :4;
+	position:fixed;
+	top: 400px;
+    left: 665px;
+    display: none;
+}
+.make_wish_header{
+	width:568px; height: 64px; 
+	padding: 0 24px;
+/* 	background-color:orange; */
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 20px;
+	position:relative;
+	border-bottom:1px solid rgb(235, 235, 235);
+}
+.make_wish_header>button{
+	width:32px; height: 32px; 
+	cursor: pointer;
+	margin-top:20px;
+	margin-top: 12px;
+    padding-left: 7px;
+    border-radius:100%;
+}
+.make_wish_header>button:hover{
+	background-color:rgb(244, 244, 244);
+}
+.make_wish_header>span{
+	position:absolute;
+	top: 20px;
+    left: 225px;
+}
+.make_wish_section{
+	width:568px; height: 128px; 
+	padding: 24px 24px;
+}
+.make_wish_section > form> input{
+	width:520px; height: 56px; 
+	border-radius: 10px;
+}
 /*공유하기 팝업*/
 #share_outer{
 	background-color:rgba(0,0,0,0.5);
@@ -3162,16 +3222,7 @@
     border-collapse: collapse;
     margin: 0 0 0.4em;
 }
-#dp1>div,#dp2>div{
-	border:none;
-	width:336px;
-	height: 343px;
-	margin: 0 7px;
-}
-#dp1>div>div,#dp2>div>div{
-	background:white;
-	border:none;
-}
+
 .ui-datepicker td{boder:none;}
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
   /* 일자 기본영역 */
