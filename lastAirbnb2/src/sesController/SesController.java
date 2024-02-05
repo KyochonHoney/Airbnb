@@ -19,6 +19,7 @@ import esAction.JoinAction;
 import esAction.LoginAction;
 import esAction.LogoutAction;
 import esAction.OpenMessageAction;
+import esAction.ShowChatAction;
 import esAction.ShowNextTimelinePageAction;
 import esAction.UpdateAddressAction;
 import esAction.UpdateEmailAction;
@@ -60,6 +61,7 @@ public class SesController extends HttpServlet {
 		case "main3": action = new main3Action(); break;
 		case "message": action = new OpenMessageAction(); break;
 		case "searchBytext" : action = new SearchBytextAction(); break;
+		case "showChat" : action = new ShowChatAction(); break;
 		}
 		action.execute(request, response);
 	}
