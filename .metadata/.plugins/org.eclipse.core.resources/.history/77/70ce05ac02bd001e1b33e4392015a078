@@ -1,0 +1,40 @@
+package servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.ExMemberDao;
+import vo.MemberVo;
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		ExMemberDao dao = new ExMemberDao();// dao °´Ã¼»ý¼º
+		boolean result = dao.loginCheck(id, pw);
+		System.out.println(result);
+		
+		ArrayList<MemberVo> memberList = dao.getMember(id, pw);
+		System.out.println(membervo);
+		
+		request.setAttribute("result", result); 
+		request.setAttribute("id", id);
+		request.setAttribute("membervo",membervo);
+		request.getSession().setAttribute("id", id);
+		request.getSession().setAttribute("pw", pw);
+		request.getRequestDispatcher("ExLoginResult.jsp").forward(request, response); //result jsp·Îº¸³¿
+	}
+}
+
+
+
