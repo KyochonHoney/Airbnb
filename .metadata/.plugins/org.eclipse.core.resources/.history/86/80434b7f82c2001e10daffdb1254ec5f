@@ -1,0 +1,9 @@
+package myAction;
+
+import action.Action;
+
+public class RoomPaymentAction implements Action{
+
+
+
+}

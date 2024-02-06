@@ -82,7 +82,7 @@ public class LoginDao {
 	}
 	
 	public int getCountAlarm(int userIdx) {
-		String sql = "SELECT count(*) FROM notification WHERE receiver = ?";
+		String sql = "SELECT count(*) FROM notification WHERE user_idx= ?";
 		int howManyAlarm = 0;
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);

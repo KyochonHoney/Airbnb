@@ -1,0 +1,9 @@
+127.0.0.1 - - [31/Jan/2024:22:29:45 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:47 +0900] "GET /lastAirbnb2/js/main2.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:47 +0900] "GET /lastAirbnb2/css/main2.css HTTP/1.1" 200 46558
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:48 +0900] "GET /lastAirbnb2/lmyController HTTP/1.1" 200 186714
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:48 +0900] "GET /lastAirbnb2/css/ajax-loader.gif HTTP/1.1" 404 846
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:51 +0900] "GET /lastAirbnb2/lmyController?command=main3&roomIdx=2 HTTP/1.1" 200 461910
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:51 +0900] "GET /lastAirbnb2/css/main3.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:29:51 +0900] "GET /lastAirbnb2/js/main3.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [31/Jan/2024:22:31:05 +0900] "GET /lastAirbnb2/lmyController?searchText=%EC%9A%B0&command=searchBytext&roomIdx=2 HTTP/1.1" 200 25185
