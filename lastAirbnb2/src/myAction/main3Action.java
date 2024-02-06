@@ -71,6 +71,7 @@ public class main3Action implements Action{
       
       RequestDispatcher rd = request.getRequestDispatcher("main3.jsp");
       rd.forward(request, response);
+      
    }
    
    

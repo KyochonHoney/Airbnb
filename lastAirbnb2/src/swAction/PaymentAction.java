@@ -4,20 +4,18 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import action.Action;
 import swDao.PaymentDao;
 import swVo.ExpReviewVo;
 import swVo.ExperienceVo;
 
-@WebServlet("/Payment")
-public class PaymentServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class PaymentAction implements Action {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ExperienceVo experienceVO = null;
 		ExpReviewVo expreviewVO = null;
 		int idx = Integer.parseInt(request.getParameter("exp_idx"));
@@ -32,4 +30,5 @@ public class PaymentServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("Payment.jsp");
 		rd.forward(request, response);
 	}
+
 }

@@ -19,15 +19,15 @@ public class SearchBytextAction implements Action{
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String orderBy = request.getParameter("orderby");  // "최신순", "높은평점순"
 		String searchText = request.getParameter("searchText");
 		int roomIdx = Integer.valueOf(request.getParameter("roomIdx")); 
 		System.out.println(searchText);
 		System.out.println(roomIdx);
 		
 		Main3Dao dao = new Main3Dao();
-//		ArrayList<ReviewVo> reviewAllList = new ArrayList<ReviewVo>();
-		ArrayList<ReviewVo> reviewList = dao.getSearch(roomIdx, searchText);
-System.out.println("reviewList.size() : " + reviewList.size());
+System.out.println("orderBy : " + orderBy);		
+		ArrayList<ReviewVo> reviewList = dao.getSearch(roomIdx, searchText, orderBy);
 
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json"); // MIME , 응답형식지정

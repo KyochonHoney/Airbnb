@@ -1370,14 +1370,14 @@ row-gap: 2px;
 	display: none;
 }
 #filter{
-	width:780px; height:865px; 
+	width:780px; height: 794px;
 	border-radius: 12px;
 	background-color:white;
 	overflow-x:hidden;
 	box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px 0px;
 	z-index :4;
 	position:fixed;
-	top: 43px;
+	top: 77px;
     left: 611px;
     display: none;
 }
@@ -2148,7 +2148,7 @@ row-gap: 2px;
 	box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px 0px;
 	z-index :4;
 	position:fixed;
-	top: 74px;
+	top: 89px;
     left: 665px;
     display: none;
 }

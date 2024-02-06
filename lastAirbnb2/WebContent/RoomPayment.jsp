@@ -1,11 +1,12 @@
-<%@page import="swVo.ExpReviewVo"%>
 <%@page import="java.text.DecimalFormat"%>
-<%@page import="swVo.ExperienceVo"%>
+<%@page import="myVo.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%
-	ExperienceVo vo = (ExperienceVo)request.getAttribute("experienceVO");
-	ExpReviewVo rVo = (ExpReviewVo)request.getAttribute("expreviewVO");
+	RoomVo roomvo = (RoomVo)request.getAttribute("roomvo");
+	int countriveiw =(Integer)request.getAttribute("countReview");
+	RoomImageVo imagevo = (RoomImageVo)request.getAttribute("imagevo");
+	String guest = (String)request.getAttribute("guest");
 %>
 
 <!DOCTYPE html>
@@ -14,7 +15,8 @@
 		<meta charset="UTF-8">
 		<title>확인 및 결제 &middot; 에어비앤비</title>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/Payment.css"/>
+		<link rel="stylesheet" href="css/RoomPayment.css"/>
+		<script src = "js/jquery-3.7.1.min.js"></script>
 	</head>
 	<body>
 		<div id="header">
@@ -29,67 +31,33 @@
 		<div id="payment_body">
 			<div id="pb_inner">
 				<div id="pbi_left">
-					<div id="notice">
-						<div id="notice_icon" class="fl">
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false" style="color: #FFF; height: 16px; width: 16px; fill: currentcolor;"><path d="M8.8 0v1h.11a5.22 5.22 0 0 1 2.97 1.67 5.31 5.31 0 0 1 1.35 3.4v4.47l1.48 2.24a.53.53 0 0 1-.38.82h-4.25v.18c0 .54-.21 1.05-.58 1.44-.36.4-.86.62-1.4.65H8c-.55 0-1.08-.22-1.47-.61a2.1 2.1 0 0 1-.6-1.48v-.18h-4.2a.52.52 0 0 1-.45-.25.53.53 0 0 1-.02-.52l.03-.05 1.48-2.24V6.05A5.26 5.26 0 0 1 7.2 1V0z"></path></svg>
-						</div>
-						<div id="notice_text" class="fl">
-							<div><b><%= vo.getLanguage() %></b><b>로 진행되는 체험입니다</b></div>
-							<span>예약하기 전에 진행 언어가 적합한지 확인 하세요.</span>
-						</div>
-						<div style="clear:both;"></div>
-					</div>
-					
-					<div id="airbnb_or_exp"><b>체험</b></div>
-					
 					<div id="date">
 						<b>날짜</b><br/>
-						<div><span>12월 5일 (화)</span> <span>오전 7:00 - 오전 7:45 (KST)</span></div>
+						<span>12월 5일 (화)</span>
 					</div>
 					
-					<div id="private">
-						<div id="private_title">
-							<b>내 일행만 참여하는 체험 예약하기</b>
-							<div>
-								<div class="fr"><svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="color: #DDD; height: 12px; width: 12px; fill: currentcolor;"><path d="m10.5 1.939 1.061 1.061-7.061 7.061-.53-.531-3-3-.531-.53 1.061-1.061 3 3 5.47-5.469z"></path></svg></div>
-								<div style="clear:both;"></div>
-							</div>
-						</div>
-						<div id="private_text">
-							<span>프라이빗 예약만을 위한 날짜와 시간입니다.</span> 
-							<span><%= vo.getExpHostId() %></span>
-							<span>님은 최대</span> 
-							<span><%= vo.getN() %></span>
-							<span>명까지 모든 규모의 프라이빗 예약을 호스팅할 수 있습니다. 프라이빗 예약 최저 요금: <br/>₩</span>
-							<span><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></span> 
-							<a href="#" style="color: #222; text-decoration: underline;"><b>자세히 알아보기</b></a>
-						</div>
-					</div>
 					
 					<div id="guest">
 						<div><b>게스트</b><br/></div>
 						<div>
-							<span>게스트 1명</span>
+							<span><%=guest %></span>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" transform="rotate(90)" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 4; overflow: visible;"><path fill="none" d="m12 4 11.3 11.3a1 1 0 0 1 0 1.4L12 28"></path></svg>
 						</div>
 					</div>
 					
 					<div id="caution">
-						<div><b>알아두어야 할 사항</b></div>
+						<h1>필수 입력란</h1>
 						<div>
-							<b>게스트 필수조건</b><br/>
-							<div>
-								<span><%= vo.getAge() %>세 이상의 게스트 최대</span> 
-								<span><%= vo.getN() %></span>
-								<span>명 참여 가능</span> 
-								<a href="#" style="color: #222; text-decoration: underline"><b>자세히 알아보기</b></a>
-							</div>
+							<span >호스트에게 메시지 보내기</span>
+							<span>여행 목적, 동반 일행, 이 숙소를 선택한 이유 등을 알려주세요.</span>
+							<input type="text">
 						</div>
+					
 					</div>
 					
 					<div id="company">
-						<b>회사 행사로 예약하시나요?</b>
-						<div><div></div></div>
+						<h1>환불정책</h1>
+						<span>부분 환불: 취소 후 나머지 숙박일에 대한 요금 중 50%를 환불받으실 수 있습니다. 현지 시각 기준으로 오후 12:00 후에 취소하면, 해당 날짜에 대한 숙박료는 환불되지 않습니다. 이미 숙박한 날짜에 대한 요금과 서비스 수수료는 환불되지 않습니다.</span>
 					</div>
 					
 					<div id="pay">
@@ -101,11 +69,21 @@
 							</div>
 						</div>
 						<div id="pay_select">
-							<div>
-								<div><img src="images/kakaopayLogo.png"/></div>
-								<div>카카오페이</div>
-							</div>
-							<svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 16px; width: 16px; fill: rgb(72, 72, 72);"><path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" fill-rule="evenodd"></path></svg>
+							<form action="#">
+								<label for ="payselect"></label>
+								<select name= "payment" id="payselect">
+									<svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 16px; width: 16px; fill: rgb(72, 72, 72);"><path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" fill-rule="evenodd"></path></svg>
+									<option value="kakao">
+										<img src="images/kakaopayLogo.png"/>
+										<span>카카오페이</span>
+									</option>
+									<option value="naver">
+										<img src="images/kakaopayLogo.png"/>네이버페이
+									</option>
+								</select>
+							</form>
+							
+							
 						</div>
 						<div id="coupon">
 							<a href="#" style="color: #222; text-decoration: underline;"><b>쿠폰 입력</b></a>
@@ -130,16 +108,15 @@
 				
 				<div id="pbi_right">
 					<div id="pbir_top">
-						<img class="fl" src="<%= vo.getExpImg1() %>"/>
+						<img class="fl" src="<%= imagevo.getImg1() %>"/>
 						<div id="info" class="fl">
-							<div>온라인 &middot; <%=vo.getTime() %></div>
 							<div>
-								<div><%= vo.getExpName() %></div>
-								<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
+								<span><%= roomvo.getRoom_name() %></span>
+								<div><%=roomvo.getRoom_location() %></div>
 							</div>
 							<div>
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="height: 12px; width: 12px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
-								<span><span><%= rVo == null ? 0 : rVo.getAvg() %></span> <span>(후기</span> <span><%= rVo == null ? 0 : rVo.getCnt() %></span><span>개)</span></span>
+								<span><span><%=roomvo.getRoom_score()%></span> <span>(후기</span> <span><%=countriveiw %></span><span>개)</span></span>
 							</div>
 						</div>
 						<div style="clear:both;"></div>
@@ -149,26 +126,18 @@
 						<div><b>요금 세부정보</b></div>
 						<div>
 							<span>프라이빗 예약 요금</span>
-							<span><span>₩</span><span><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></span></span>
 						</div>
 					</div>
 					
 					<div id="total_price">
 						<span><b>총 합계</b> <a href="#" style="color: #222; text-decoration: underline;"><b>(KRW)</b></a></span>
-						<span><b><span>₩</span><span><%= new DecimalFormat("###,###").format(vo.getExpPrice()) %></span></b></span>
 					</div>
 					
-					<div id="refund">
-						<div><b>환불 정책</b></div>
-						<div>
-							<span>12월 4일</span> <span>오전 7:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span>
-							<a href="#" style="color: #222; text-decoration: underline;"><b>자세히 알아보기</b></a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 		
+		<!-- footer -->
 		<div id="payment_footer">
 			<div id="footer_inner">
                <div id="footer_under_top">

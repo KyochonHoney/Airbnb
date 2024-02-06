@@ -10,12 +10,17 @@ import common.DBConnection;
 import esVo.LanguageVo;
 
 public class LanguageDao {
+	static Connection conn = DBConnection.getConnection();
 	public ArrayList<esVo.LanguageVo> getLanguage() {
 		ArrayList<esVo.LanguageVo> langdao = new ArrayList<LanguageVo>();
 		String sql = "SELECT language_idx, location, language"
 				+ " FROM language";
 		
+<<<<<<< HEAD
 		Connection conn = DBConnection.getConnection();
+=======
+		System.out.println(conn);
+>>>>>>> main
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();

@@ -10,11 +10,11 @@ import myVo.RepresentRoomListVo;
 import myVo.RoomCategoryVo;
 
 public class Main2Dao {
+   static Connection conn = DBConnection.getConnection();
    
    // Ïπ¥ÌÖåÍ≥†Î¶¨ Î©îÏÑú?ìú
    public static ArrayList<RoomCategoryVo> getCateAll(){
       ArrayList<RoomCategoryVo> list1 = new ArrayList<RoomCategoryVo>();// Í∞ùÏ≤¥ ?Éù?Ñ±
-      Connection conn = DBConnection.getConnection();
       
       String sql = "SELECT room_category_idx,category_name,category_icon" + 
             " FROM room_category" + 
@@ -41,13 +41,7 @@ public class Main2Dao {
    // Ïπ¥ÌÖåÍ≥†Î¶¨Î≥ÑÎ°ú ?àô?ÜåÎ∂àÎü¨?ò§Í∏?
    public static ArrayList<RepresentRoomListVo> getRoom(int cateIdx){
       ArrayList<RepresentRoomListVo> list2 = new ArrayList<RepresentRoomListVo>(); //arraylistÍ∞ùÏ≤¥?Éù?Ñ±
-      Connection conn = DBConnection.getConnection();
       
-      /*
-      String sql ="SELECT room_idx,room_name, room_score,room_price "  
-            + " FROM airbnb_room " 
-            + " WHERE room_category_idx = ?";
-      */
       String sql= " SELECT i.img1, r.room_name, r.room_score,r.room_price, r.room_idx, r.longitude, r.latitude"  
             + " FROM airbnb_room r, room_image i"  
             + " WHERE r.room_category_idx = ? AND i.room_idx = r.room_idx";
@@ -73,7 +67,7 @@ public class Main2Dao {
       return list2;
    }
    
-   // Í±∞Î¶¨ Íµ¨ÌïòÍ∏?
+   // ∞≈∏Æ±∏«œ±‚
    public double checkDistance(double currentLatitude , double currentLongitude , double roomLatitude, double roomLongitude) {
       double Abstractlongitude = currentLongitude - roomLongitude;
       double distance = (Math.sin(3.14*(currentLatitude)) * Math.sin(3.14*(roomLatitude)))
@@ -102,5 +96,35 @@ public class Main2Dao {
       double distance = Math.sqrt(Math.pow(currentLatitude + roomLatitude, 2) + Math.pow(currentLongitude+roomLongitude, 2));
       return Math.round(distance);
    }
-   
+   //« ≈Õø° ∏¬¥¬ º˜º“µÈ ∞°¡Æø¿±‚
+   public ArrayList<RepresentRoomListVo> showRoomListsByFilter(int minPrice,int maxPrice,int roomCategory){
+	   ArrayList<RepresentRoomListVo> list = new ArrayList<RepresentRoomListVo>();
+	   String sql = "SELECT i.img1, r.room_name, r.room_score,r.room_price, r.room_idx, r.longitude, r.latitude " + 
+	   		" FROM airbnb_room r, room_image i" + 
+	   		" WHERE r.room_category_idx = ? AND i.room_idx = r.room_idx AND r.room_price BETWEEN ? AND ?";
+	   
+	   try {
+		   PreparedStatement pstmt = conn.prepareStatement(sql);
+		   pstmt.setInt(1, roomCategory);
+		   pstmt.setInt(2, minPrice);
+		   pstmt.setInt(3, maxPrice);
+		   ResultSet rs = pstmt.executeQuery();
+		   while(rs.next()) {
+			   String roomImg1 = rs.getString("img1");
+	            int roomIdx = rs.getInt("room_idx");
+	            String roomName = rs.getString("room_name");
+	            double roomScore = rs.getDouble("room_score");
+	            int roomPrice = rs.getInt("room_price");
+	            double latitude = rs.getDouble("latitude");
+	            double longitude = rs.getDouble("longitude");
+	            list.add(new RepresentRoomListVo(roomImg1, roomName, roomScore, roomPrice, latitude, longitude, roomIdx));
+		   }
+		   rs.close();
+		   pstmt.close();
+	   } catch(Exception e) { e.printStackTrace(); }
+	   
+	   return list;
+	   
+   }
+
 }

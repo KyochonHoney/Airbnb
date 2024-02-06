@@ -104,13 +104,54 @@ $(function(){
 	$("#select_res_date > .select > div:nth-child(4)").click(function() {
 		$("#select_res_date").css("display","none");
 	})
-	/*$(".datepicker").datepicker({
-       monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-       monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-       dayNamesMin: ['일','월','화','수','목','금','토'],
-       dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
-    });*/
-//    $('.datepicker').datepicker('setDate', 'today');
+	
+	//달력(플러그인)
+	var currentDate = new Date();
+    var nextMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+                
+     $(".datepicker").datepicker({
+			minDate: 0,
+	
+    	    monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+    	    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    	    dayNamesMin: ['일','월','화','수','목','금','토'],
+    	    dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
+    // 달력날짜 상단바에 표시	 
+	onSelect:function( d ){
+			var arr = d.split("/");
+			$("#year").text(arr[0].trim());
+			$("#month").text(arr[1].trim());
+			$("#day").text(arr[2].trim());
+			//alert(dateval);s
+			$(".select_detail:nth-child(1) > .detail_content").text(d);
+		}
+	
+	
+    });
+    $(".datepicker2").datepicker({
+	    monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+	    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+	    dayNamesMin: ['일','월','화','수','목','금','토'],
+	    dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
+		defaultDate: nextMonth, //다음달부터 시작
+		
+		//주말선택못하게하기
+		/*beforeShowDay: function(date) {
+                    var day = date.getDay();
+                    // 주말 (토요일: 6, 일요일: 0)인 경우에는 선택할 수 없도록 설정
+                    return [day !== 6 && day !== 0];
+         },*/
+		
+		// 달력날짜 상단바에 표시// 달력날짜 상단바에 표시
+		onSelect:function( d ){
+			var arr = d.split("/");
+			$("#year").text(arr[0].trim());
+			$("#month").text(arr[1].trim());
+			$("#day").text(arr[2].trim());
+			$(".select_detail:nth-child(1) > .detail_content").text(d);
+		}
+		
+	});
 	
 	$(".select > .select_detail:nth-child(2)").click(function() {
 		$("#select_guest").css("display","block");
@@ -119,6 +160,43 @@ $(function(){
 		$("#select_guest").css("display","none");
 	})
 	
+	// 인원수 +버튼
+	$(".gc_plus").parent().click(function(){
+		$(this).parent().find(".gc_num").val(Number($(this).parent().find(".gc_num").val()) + 1);
+		$(this).parent().find(".gc_button:nth-child(1)").css("border","1px solid rgb(176, 176, 176)");
+		$(this).parent().find(".gc_minus").css("color"," rgb(113, 113, 113)");
+		
+		if( Number($(this).parent().find(".gc_num").val())>=16 ){
+			$(this).parent().find(".gc_num").val(16);
+			$(this).parent().find(".gc_button:nth-child(3)").css("border","1px solid rgb(235, 235, 235)");
+			$(this).parent().find(".gc_plus").css("color"," rgb(235, 235, 235)");
+		}
+		// 인원수대로 텍스트 변경
+		let adultVAL = $(".gc_count:nth-child(1) input").val();
+		let kidVAL = $(".gc_count:nth-child(2) input").val();
+		let babyVAL = $(".gc_count:nth-child(3) input").val();
+		let guestCnt = '게스트 ' + (Number(adultVAL) + Number(kidVAL) + Number(babyVAL)) +'명';
+		$(".select_detail:nth-child(2) > .detail_content").text(guestCnt);
+	});
+	
+	// 인원수 -버튼
+	$(".gc_minus").parent().click(function(){
+		$(this).parent().find(".gc_num").val(Number($(this).parent().find(".gc_num").val()) - 1);
+		$(this).parent().find(".gc_button:nth-child(3)").css("border","1px solid rgb(176, 176, 176)");
+		$(this).parent().find(".gc_plus").css("color"," rgb(113, 113, 113)");
+		
+		if( Number($(this).parent().find(".gc_num").val())>=16 ){
+			$(this).parent().find(".gc_num").val(16);
+			$(this).parent().find(".gc_button:nth-child(3)").css("border","1px solid rgb(235, 235, 235)");
+			$(this).parent().find(".gc_plus").css("color"," rgb(235, 235, 235)");
+		}
+		// 인원수대로 텍스트 변경
+		let adultVAL = $(".gc_count:nth-child(1) input").val();
+		let kidVAL = $(".gc_count:nth-child(2) input").val();
+		let babyVAL = $(".gc_count:nth-child(3) input").val();
+		let guestCnt = '게스트 ' + (Number(adultVAL) + Number(kidVAL) + Number(babyVAL)) +'명';
+		$(".select_detail:nth-child(2) > .detail_content").text(guestCnt);
+	});
 	
 	$("#report").click(function() {
 		$("#report_body").css("display","flex");

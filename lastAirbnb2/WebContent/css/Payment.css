@@ -264,7 +264,7 @@ img { object-fit: cover; }
 	display: flex;
 	align-items: center;
 }
-#pay_select > div > div:nth-child(1) {
+#pay_select > label > div:nth-child(1) {
 	width: 33px;
 	height: 24px;
 	margin-right: 16px;
@@ -274,6 +274,16 @@ img { object-fit: cover; }
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+#ps_pay {
+	width: 100%;
+	height: 54px;
+	padding: 16px;
+	font-size: 16px;
+	color: #484848;
+	display: flex;
+	align-items: center;
+	border: none;
 }
 
 #coupon {
@@ -299,6 +309,7 @@ img { object-fit: cover; }
 	width: 100%;
 	height: 120px;
 	padding: 16px 0 48px;
+	cursor: pointer;
 }
 #confirm > div {
 	width: 162px;
