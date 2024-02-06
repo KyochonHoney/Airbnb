@@ -1,0 +1,20 @@
+package esAction;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import action.Action;
+
+public class JoinKakaoUserAction implements Action{
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//KakaoVo kakaoVo = (KakaoVo)(request.getParameter("kakaoAccount"));
+		Gson gson = new Gson();
+		KakaoAccount kakaoAccount = gson.fromJson(request.getParameter("kakaoAccount"), KakaoAccount.class);
+
+	}
+}

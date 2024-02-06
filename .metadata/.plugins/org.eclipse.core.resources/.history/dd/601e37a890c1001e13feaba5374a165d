@@ -1,0 +1,25 @@
+package esAction;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONObject;
+
+import action.Action;
+
+public class JoinKakaoUserAction implements Action{
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//KakaoVo kakaoVo = (KakaoVo)(request.getParameter("kakaoAccount"));
+		String kakaoAccountJson = request.getParameter("kakaoAccount");
+
+	    JSONObject kakaoAccountObject = new JSONObject(kakaoAccountJson);
+	    String profileNickname = kakaoAccountObject.getString("profileNickname");
+	    String profileImage = kakaoAccountObject.getString("profileImage");
+
+	}
+}
