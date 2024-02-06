@@ -1,10 +1,6 @@
-<<<<<<< HEAD
+/esAction/
 /lswController/
 /swAction/
-=======
-/common/
-/esVo/
+/swVo/
+/myDao/
 /esDao/
-/esAction/
-/sesController/
->>>>>>> main
