@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+import myDao.Main3Dao;
+
+public class TestYG {
+
+	public static void main(String[] args) {
+		Main3Dao mDao = new Main3Dao();
+		Scanner sc = new Scanner(System.in);
+		System.out.print("input room_idx(ex.1) : ");
+		System.out.print("input date8ch(ex.20240215) : " );
+		boolean b = mDao.checkRoomAvailable(1, date8ch)
+	}
+
+}

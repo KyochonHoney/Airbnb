@@ -1,0 +1,8 @@
+package myAction;
+
+
+public class RoomPaymentAction implements action{
+
+
+
+}
