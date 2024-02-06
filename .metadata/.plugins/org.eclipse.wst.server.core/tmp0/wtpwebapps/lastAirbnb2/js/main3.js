@@ -109,6 +109,22 @@ $(function(){
 	});
 	*/
 	
+	// 높은 평점순 클릭
+	$(".pop_section_sort3").click(function(){
+		$("#input_orderby").val('높은평점순');
+		$(".pop_section2-1-1 > span:nth-child(1)").css("display","none");
+		$(".pop_section2-1-1 > span:nth-child(2)").css("display","block");
+		$(".pop_section_sort").css("display","none");
+		test1();
+	});
+	// 다시 최신순 클릭
+	$(".pop_section_sort2").click(function(){
+		$("#input_orderby").val('최신순');
+		$(".pop_section2-1-1 > span:nth-child(1)").css("display","block");
+		$(".pop_section2-1-1 > span:nth-child(2)").css("display","none");
+		$(".pop_section_sort").css("display","none");
+		test1();
+	});
 	// 후기제목 밑 후기버튼 클릭
 	 $(".sp2").click(function(){
 		$("#bg_popup").css("display", "block");
@@ -168,17 +184,26 @@ $(function(){
 	});
 	
 	// 인원수+버튼
-	$(".side11_btn2").click(function(){
+	$(".side11_btn2").click(function(e){
+		e.stopPropagation();
 		let current_member = Number($(".side1-12>div:nth-child(1) input").val())
 							+ Number($(".side1-12>div:nth-child(2) input").val())
 							+ Number($(".side1-12>div:nth-child(3) input").val());
 		if(current_member == max_member) {
-			alert("꽉참");
 			return;
 		}
+		
 		$(this).parent().find(".side11_input").val(Number($(this).parent().find(".side11_input").val()) + 1);
 		$(this).parent().find(".side11_btn1").css("border","1px solid rgb(176, 176, 176)");
 		$(this).parent().find(".side11_btn1>svg").css("color"," rgb(113, 113, 113)");
+
+		current_member = Number($(".side1-12>div:nth-child(1) input").val())
+							+ Number($(".side1-12>div:nth-child(2) input").val())
+							+ Number($(".side1-12>div:nth-child(3) input").val());
+		if(current_member == max_member) {
+			$(".side11_btn2").css("border","1px solid rgb(235, 235, 235)");
+			$(".side11_btn2>svg").css("color"," rgb(235, 235, 235)");
+		}
 		
 		if( Number($(this).parent().find(".side11_input").val())>=16 ){
 			$(this).parent().find(".side11_input").val(16);
@@ -206,8 +231,9 @@ $(function(){
 	});
 	
 	// 인원수-버튼
-	$(".side11_btn1").click(function(){
-		 	$(this).parent().find(".side11_input").val(Number($(this).parent().find(".side11_input").val()) - 1);
+	$(".side11_btn1").click(function(e){
+		e.stopPropagation();
+	 	$(this).parent().find(".side11_input").val(Number($(this).parent().find(".side11_input").val()) - 1);
 	
 		if( Number($(this).parent().find(".side11_input").val())<16 ){
 			$(this).parent().find(".side11_btn2").css("border","1px solid rgb(176, 176, 176)");
@@ -218,7 +244,7 @@ $(function(){
 			$(this).parent().find(".side11_btn1").css("border","1px solid rgb(235, 235, 235)");
 			$(this).parent().find(".side11_btn1>svg").css("color"," rgb(235, 235, 235)");
 		}
-			let adultVAL = $(".side1-12>div:nth-child(1) input").val();
+		let adultVAL = $(".side1-12>div:nth-child(1) input").val();
 		let kidVAL = $(".side1-12>div:nth-child(2) input").val();
 		let babyVAL = $(".side1-12>div:nth-child(3) input").val();
 		let petVAL = $(".side1-12>div:nth-child(4) input").val();
@@ -310,21 +336,8 @@ $(function(){
 		$("body").css("overflow-y","scroll");
 	});
 });
-// 체크인,체크아웃
 $(function(){
-	$(".side1-3>button>div:nth-child(1)").click(function(){
-		$(".side_date_pop").css("display","block");
-		$(".side_date_popbtn>div:nth-child(1)").css("border","2.5px solid black");
-		$(".side_date_popbtn>div:nth-child(2)").css("border","0.7px solid rgb(113, 113, 113)");
-		
-	});
-	
-	$(".side1-3>button>div:nth-child(2)").click(function(){
-		$(".side_date_pop").css("display","block");
-		$(".side_date_popbtn>div:nth-child(2)").css("border","2.5px solid black");
-		$(".side_date_popbtn>div:nth-child(1)").css("border","0.7px solid rgb(113, 113, 113)");
-	
-	});
+
 	$(".side_date_popbtn>div:nth-child(1)").click(function(){
 		$(".side_date_popbtn>div:nth-child(1)").css("border","2.5px solid black");
 		$(".side_date_popbtn>div:nth-child(2)").css("border","0.7px solid rgb(113, 113, 113)");
@@ -338,34 +351,25 @@ $(function(){
 	$(".side_date_pop3-1>div").click(function(){
 		$(".side_date_pop").css("display","none");
 	});
-/*	
-	// 바깥눌렀을때 체크인팝업끄기
-	$(".side1-3>button>div:nth-child(1)").on("click",function(event){
-		event.preventDefault();
-		event.stopPropagation();
-		return false;
-	});
-	$("#info_outer").click(function(){
-		if($(".side_date_pop").css("display") == "block"){
-			$(".side_date_pop").css("display" , "none");
-		}
-	});
-	*/
+
+	
 	
 });
 // 인원선택 
 $(function(){
+	$(".side1-11").click(function(e) {
+		e.stopPropagation();
+	});
 	$(".side1-4").click(function(e){
 		e.stopPropagation();
-		
 		if ($(".side1-11").css("display")=="none"){
 			$(".side1-11").css("display","block");
-			$(".side1-4").css({"border":"2px solid black","border-radius":"8px"})
+			$(".side1-4").css({"border":"2px solid black","border-radius":"8px"});
 			$(".side1-3>button").css("border-bottom","none");
 		}
 		else {
-			$(".side1-11").css("display","none");
 			$(".side1-4").css({"border":"none"});
+			$(".side1-11").css("display","none");
 			$(".side1-3>button").css("border-bottom","1px solid black");
 		}
 	});
@@ -416,31 +420,10 @@ $(function(){
 				}
 			}
 		});
-/*		console.log($('.report_btn'))
-	  if ($('.report_btn').prop("checked")) {
-	    alert('다른 버튼 체크');
-	  }
-	  else if ($("#report_btn2").prop("checked")) {
-		alert('라디오 버튼 체크');
-	    $("#report2_outer").css("display","block");
-		$("#report2").css("display","block");
-		$("body").css("overflow-y","hidden");
-  		}*/
-	});
+
 	
 	
-/*	// !!오류신고기타이유팝업
-		$(".report_content2").click(function(){ // 다음버튼누르면
-			//let check = 
-			if( $("#report_popup").prop("checked",true) ){
-				$("#report2_outer").css("display","block");
-				$("#report2").css("display","block");
-				$("body").css("overflow-y","hidden");
-			}else {
-				$( ("input[name='repot_btn'][value='alt2']").prop("checked", true));
-				alret("접수되었습니다");
-			}
-		});*/
+
 		
 	
 	// 신고기타이유버튼 닫기
@@ -488,30 +471,7 @@ $(function(){
 	var currentDate = new Date();
     var nextMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
                 
-     $(".datepicker").datepicker({
-			minDate: 0, //전날짜 선택못함
-    	    monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-    	    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-    	    dayNamesMin: ['일','월','화','수','목','금','토'],
-    	    dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
-    });
-    $(".datepicker2").datepicker({
-	    monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-	    monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-	    dayNamesMin: ['일','월','화','수','목','금','토'],
-	    dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
-		defaultDate: "+1m", //다음달부터 시작
-		
-		//주말선택못하게하기
-		/*beforeShowDay: function(date) {
-                    var day = date.getDay();
-                    // 주말 (토요일: 6, 일요일: 0)인 경우에는 선택할 수 없도록 설정
-                    return [day !== 6 && day !== 0];
-         },*/
-		
-	
-		
-	});
+
 	// side datepicker
 	   $(".datepicker3").datepicker({
 		minDate: 0,
@@ -519,7 +479,7 @@ $(function(){
     	monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
     	dayNamesMin: ['일','월','화','수','목','금','토'],
     	dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
-    	
+    	beforeShowDay: disableAllTheseDays,
 		// 선택한 달력날짜 상단바에 표시	 
 		onSelect:function( d ){
 			var arr = d.split("/");
@@ -527,8 +487,9 @@ $(function(){
 			$("#month").text(arr[1].trim());
 			$("#day").text(arr[2].trim());
 			$(".dateInfo_inner").text(d);
-			$(".dateInfo").text(d);
+			$(".dateInfo").text(d );
 			$("#checkinDate").text(d);
+			$(".dateSelect").text(d + "~") ;
 		}
 
 	});
@@ -538,7 +499,7 @@ $(function(){
 	    dayNamesMin: ['일','월','화','수','목','금','토'],
 	    dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
 		defaultDate: "+1m", //다음달부터 시작
-		
+		beforeShowDay: disableAllTheseDays,
 		// 선택한 달력날짜 표시	 
 		onSelect:function( d ){
 			var arr = d.split("/");
@@ -548,6 +509,7 @@ $(function(){
 			$(".dateInfo_inner2").text(d);
 			$(".dateInfo2").text(d);
 			$("#checkoutDate").text(d);
+			$(".dateSelect2").text(d);
 			calc();
 		}
        });
@@ -561,11 +523,26 @@ $(function(){
 		});
 
 	
+	$(".side1-3 > button").click(function(e) {
+		var offset = $("#info_inner9").offset(); //해당 위치 반환
+		$("html, body").animate({scrollTop: offset.top},400); // 선택한 위치로 이동. 두번째 인자는 0.4초를 의미한다.
+	})
+	
 	// 댓글 엔터키 검색
 	$("#searchText").keyup(function(e){if(e.keyCode === 13) test1();})
 
+	// 위시 카테고리 만들기
 	
+	$(".wish_content2").click(function(){
+	  $("#wish_outer").css("display","none");
+      $("#wish").css("display","none");
+
+	  $("#make_wish_back").css("display","block");
+      $("#make_wish").css("display","block");
+      $("body").css("overflow-y","hidden");
+	});
 }); 
+});
 
 //  후기 ajax
 function test1(){
@@ -588,10 +565,12 @@ function test1(){
 						"<div>" +
 							"<img src= \"" + obj[i].user_image + "\"/>" +
 							"<div>" + 
-								"<span class='re-sp1'>" + obj[i].user_id + "<br></span>" +
+								"<span class='re-sp1'>" + obj[i].user_id + "<br></span>"; 
 								/*user_regidence가 null일때*/
-								"<span class='re-sp2'>" + obj[i].user_regidence + "</span>" +
-							"</div>" +
+				if( obj[i].user_regidence != null){ 
+					str += "<span class='re-sp2'>" + obj[i].user_regidence + "</span>";
+				}
+				str +=			"</div>" +
 						"</div>" +
 						
 						"<div>" +
@@ -621,8 +600,9 @@ function test1(){
 function calc(){	
 	let depart =  $(".dateInfo_inner").text();
 	let arrive = $(".dateInfo_inner2").text();
-	let dateCalc = $("#dateCalc");
+	let dateCalc = $(".dateCalc");
 	let datePrice = $(".side1-2>span:nth-child(2)").text();
+
 	
     let ar1 = depart.split('/');
     let ar2 = arrive.split('/');
@@ -631,16 +611,23 @@ function calc(){
     let dif = da2 - da1;
     let cDay = 24 * 60 * 60 * 1000;// 시 * 분 * 초 * 밀리세컨
 
-    let date = parseInt(dif/cDay);
+    let date = parseInt(dif/cDay); 
 	
  	/*console.log(date);
  	console.log(da1);
  	console.log(da2);*/
 	
-	dateCalc.text(date);
-	console.log(datePrice * date);
+	dateCalc.text(date + "박");
+	
+	//숙소가격계산
+	let price = $(".noneSalePrice");
+	let totalPrice = $(".totalPrice");
+	let roomPrice = $(".priceCalc").text().replace(",","").replace("₩","").replace("x","");
+	let roomPriceCalc = (roomPrice*date); // 오른가격
+	price.text("₩"+roomPriceCalc.toLocaleString());
+	totalPrice.text("₩"+(roomPriceCalc-145910+113329).toLocaleString());
 }
 	
-$(document).ready(function(){
+/*$(document).ready(function(){
 	calc();
-});
+});*/

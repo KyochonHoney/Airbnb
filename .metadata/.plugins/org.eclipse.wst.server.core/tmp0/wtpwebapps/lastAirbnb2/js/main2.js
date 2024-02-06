@@ -220,6 +220,7 @@ $(function(){
 	});
 	$(".head_content2").click(function(){
 		$("#head_pop2").css("display","block");
+		
 	});
 	$(".head_content3").click(function(){
 		$("#head_pop2").css("display","block");
@@ -360,7 +361,7 @@ $(function(){
 		defaultDate: nextMonth, //다음달부터 시작
 		
 		//주말선택못하게하기
-		/*beforeShowDay: function(date) {
+	/*	beforeShowDay: function(date) {
                     var day = date.getDay();
                     // 주말 (토요일: 6, 일요일: 0)인 경우에는 선택할 수 없도록 설정
                     return [day !== 6 && day !== 0];
