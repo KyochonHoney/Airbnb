@@ -182,6 +182,7 @@
 	               <input type="submit" class="jm_submit" value="로그인"><br/>
                <div class="join_user" style="padding-top: 16px;">회원 가입</div>
                <a href="javascript:kakaoLogin();" class="kakao_login"><img style="width: 524px; height: 48px; margin-top: 20px; border-radius: 10px; object-fit: cover;" src="images/kakaoLogin.png"/></a>
+               <a href="javascript:kakaoLogout();">asdf</a>
             </form>
          </div>
       </div>
@@ -388,7 +389,7 @@
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script>
 	//4b56ad3e26ac9d9a979a707d8d0d8e4f
-	window.Kakao.init("4b56ad3e26ac9d9a979a707d8d0d8e4f");
+	window.Kakao.init("a5934a74febf80525e652bd24301e73d");
 	function kakaoLogin(){
 		window.Kakao.Auth.login({
 			scope : 'profile_nickname, profile_image',
@@ -397,9 +398,9 @@
 				window.Kakao.API.request({
 					url : '/v2/user/me',
 					success : res => {
-						const kakaoAccount = res.kakao_account;
-						console.log(kakaoAccount);
-						let command = 'joinKakao';
+						//const kakaoAccount = res.kakao_account;
+						//console.log(kakaoAccount);
+						/* let command = 'joinKakao';
 						$.ajax({
 							url : 'SesController',
 							data : {'command' : command, 'kakaoAccount', kakaoAccount},
@@ -414,16 +415,25 @@
 										+ "message :" + r.responseText
 										+ "error : " + e);
 							}		
-						});
+						}); */
 					} 
 				});
 			}
 		});
 	}
-	function kakaoLogout(){
+	/* function kakaoLogout(){
 		window.Kakao.Auth.logout(function() {
 			  console.log(window.Kakao.Auth.getAccessToken());
 		});
-	}
+	} */
+	 function kakaoLogout() {
+        if (!Kakao.Auth.getAccessToken()) {
+          alert("Not logged in.");
+          return;
+        }
+        Kakao.Auth.logout(function () {
+          alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
+        });
+      }
 	</script>
 </html>
