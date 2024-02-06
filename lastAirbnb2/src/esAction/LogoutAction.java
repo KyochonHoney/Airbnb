@@ -17,7 +17,7 @@ public class LogoutAction implements Action {
 		request.getSession().removeAttribute("userList");
 		String url = request.getParameter("url");
 		
-		request.getRequestDispatcher(url).forward(request, response);
+		request.getRequestDispatcher("LswController?command=main2").forward(request, response);
 	}
 
 }

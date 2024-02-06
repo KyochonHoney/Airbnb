@@ -69,8 +69,9 @@ $(function() {
    $(".Logout").click(function(){
 	    var result = confirm("정말 로그아웃 하시겠습니까?");
         if(!result){return false;}
-        else{ location.href = "Controller?command=logout&url=ExpMain.jsp"}
+        else{ location.href = "LswController?command=logout"}
    });
+   
 	$(".col_img").click(function() {
 		$(location).attr("href","Collection.html");
 	})

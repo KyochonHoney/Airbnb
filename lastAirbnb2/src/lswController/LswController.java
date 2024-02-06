@@ -28,6 +28,7 @@ import myAction.main3Action;
 import swAction.CollectionAction;
 import swAction.ExpInfoAction;
 import swAction.PaymentAction;
+import swAction.WriteReviewAction;
 
 
 
@@ -59,6 +60,7 @@ import swAction.PaymentAction;
 			case "showNextTimeline" : action = new ShowNextTimelinePageAction(); break;
 			case "main2" : action = new main2Action(); break;
 		    case "main3" : action = new main3Action(); break;
+		    case "write_review" : action = new WriteReviewAction(); break;
 		    
 		    case "expInfo" : action = new ExpInfoAction(); break;
 		    case "collection" : action = new CollectionAction(); break;

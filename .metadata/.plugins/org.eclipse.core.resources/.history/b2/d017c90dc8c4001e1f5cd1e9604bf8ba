@@ -1,0 +1,40 @@
+package swVo;
+
+public class WishlistListVo {
+	private int wishlistIdx;
+	private int useridx;
+	private String biglistName;
+	private String img;
+	private int cnt;
+	
+	public WishlistListVo(int wishlistIdx, int useridx, String biglistName, String img, int cnt) {
+		this.wishlistIdx = wishlistIdx;
+		this.useridx = useridx;
+		this.biglistName = biglistName;
+		this.img = img;
+		this.cnt = cnt;
+	}
+
+	public int getWishlistIdx() {
+		return wishlistIdx;
+	}
+
+	public int getUseridx() {
+		return useridx;
+	}
+
+	public String getBiglistName() {
+		return biglistName;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public int getCnt() {
+		return cnt;
+	}
+	
+	
+
+}

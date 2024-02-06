@@ -409,7 +409,7 @@
 								<%
 								for(ExperienceVo vo : listExpVo2) {
 								%>
-									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="ExpInfo?exp_idx=<%=vo.getExpIdx()%>" target="_blank">
+									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="LswController?command=expInfo&exp_idx=<%=vo.getExpIdx()%>" target="_blank">
 										<img class="exp_img" src="<%=vo.getExpImg1()%>"/>
 										<svg class="heart_empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: rgba(0, 0, 0, 0.5);height: 24px;width: 24px; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
 										<img class="star" src="images/star.png"/>
@@ -444,7 +444,7 @@
 								<%
 								for(ExperienceVo vo : listExpVo3) {
 								%>
-									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="ExpInfo?exp_idx=<%=vo.getExpIdx()%>" target="_blank">
+									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="LswController?command=expInfo&exp_idx=<%=vo.getExpIdx()%>" target="_blank">
 										<img class="exp_img" src="<%=vo.getExpImg1()%>"/>
 										<svg class="heart_empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: rgba(0, 0, 0, 0.5);height: 24px;width: 24px; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
 										<img class="star" src="images/star.png"/>
@@ -479,7 +479,7 @@
 								<%
 								for(ExperienceVo vo : listExpVo4) {
 								%>
-									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="ExpInfo?exp_idx=<%=vo.getExpIdx()%>" target="_blank">
+									<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="LswController?command=expInfo&exp_idx=<%=vo.getExpIdx()%>" target="_blank">
 										<img class="exp_img" src="<%=vo.getExpImg1()%>"/>
 										<svg class="heart_empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: rgba(0, 0, 0, 0.5);height: 24px;width: 24px; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
 										<img class="star" src="images/star.png"/>
@@ -516,7 +516,7 @@
 									<%
 									for(ExperienceVo vo : listExpVo5) {
 									%>
-										<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="ExpInfo?exp_idx=<%=vo.getExpIdx()%>" target="_blank">
+										<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="LswController?command=expInfo&exp_idx=<%=vo.getExpIdx()%>" target="_blank">
 											<img class="exp_img" src="<%=vo.getExpImg1()%>"/>
 											<svg class="heart_empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: rgba(0, 0, 0, 0.5);height: 24px;width: 24px; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
 											<img class="star" src="images/star.png"/>
@@ -551,7 +551,7 @@
 									<%
 									for(ExperienceVo vo : listExpVo6) {
 									%>
-										<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="ExpInfo?exp_idx=<%=vo.getExpIdx()%>" target="_blank">
+										<a class="exp" exp_idx="<%=vo.getExpIdx()%>" href="LswController?command=expInfo&exp_idx=<%=vo.getExpIdx()%>" target="_blank">
 											<img class="exp_img" src="<%=vo.getExpImg1()%>"/>
 											<svg class="heart_empty" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block;fill: rgba(0, 0, 0, 0.5);height: 24px;width: 24px; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
 											<img class="star" src="images/star.png"/>

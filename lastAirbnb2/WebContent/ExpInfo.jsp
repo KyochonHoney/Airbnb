@@ -61,6 +61,10 @@
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+		<script> 
+			let max_member= <%= vo.getN() %>;
+		</script>
 	</head>
 	
 	<body>
@@ -247,8 +251,7 @@
 			</div>
 			<div id="exp_etc">
 				<svg class="fl star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 14px; width: 14px; fill: currentcolor;"><path fill-rule="evenodd" d="m15.1 1.58-4.13 8.88-9.86 1.27a1 1 0 0 0-.54 1.74l7.3 6.57-1.97 9.85a1 1 0 0 0 1.48 1.06l8.62-5 8.63 5a1 1 0 0 0 1.48-1.06l-1.97-9.85 7.3-6.57a1 1 0 0 0-.55-1.73l-9.86-1.28-4.12-8.88a1 1 0 0 0-1.82 0z"></path></svg>
-				<div id="score">
-				<span><%= rVo == null ? 0 : rVo.getAvg() %></span> <span>(<%= rVo == null ? 0 : rVo.getCnt() %>)</span> <span>&middot;</span> <u><b><%= vo.getExpLocation() %></b></u></div>
+				<div id="score"><span><%= rVo == null ? 0 : rVo.getAvg() %></span> <span>(<%= rVo == null ? 0 : rVo.getCnt() %>)</span> <span>&middot;</span> <u><b><%= vo.getExpLocation() %></b></u></div>
 				<div class="fr top_button">
 					<div class="heart">
 						<b style="text-decoration: underline;">저장</b>
@@ -808,7 +811,7 @@
 		</div><!--ë°footer-->
       
 		<div class="container">
-	      <div id="date_mv_inner"> <!--YGYGYGYG -->
+	      <div id="date_mv_inner">
 		      <div id="back_page" onclick="history.back();">
 					<div>
 						<svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="cursor:pointer; height: 16px; width: 16px; display: block; fill: rgb(34, 34, 34);"><path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fill-rule="evenodd"></path></svg>
@@ -863,7 +866,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 3일 오전 7:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -886,7 +889,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 3일 오전 8:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -910,7 +913,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 4일 오전 7:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -933,7 +936,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 4일 오전 8:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -957,7 +960,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 5일 오전 7:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -980,7 +983,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 5일 오전 8:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -1004,7 +1007,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 6일 오전 7:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -1027,7 +1030,7 @@
 									</div>
 									<div class="sbt_bottom">
 										<div>프라이빗 예약만 가능</div>
-										<div><span>체험 진행 언어:</span> <span>영어 및 중국어(번체)</span></div>
+										<div><span>체험 진행 언어:</span> <span><%= vo.getLanguage() %></span></div>
 										<div><span>12월 6일 오전 8:00 (KST)</span><span>까지 취소하시면 전액 환불됩니다.</span></div>
 									</div>
 								</div>
@@ -1121,6 +1124,35 @@
 			</div>
 		</div>
 		
+		<div id="share_outer"></div>
+		<div id="share">
+			<div class="share_header">
+				<button class="head_button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;margin:0 auto;"><path d="m6 6 20 20M26 6 6 26"></path></svg></button>
+				체험 공유하기
+			</div>
+			
+			<div class="share_inner1">
+				<img src="<%= vo.getExpImg1() %>"/>
+				<div class="share_content1">
+					<%= vo.getExpName() %> · <%= vo.getExpLocation() %> · ★<%= rVo == null ? 0 : rVo.getAvg() %>
+				</div>
+			</div>
+			
+			<div class="share_inner2">
+				<div class="share_content2">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 32px; width: 32px; fill: currentcolor;"><path d="M25 5a4 4 0 0 1 4 4v17a5 5 0 0 1-5 5H12a5 5 0 0 1-5-5V10a5 5 0 0 1 5-5h13zm0 2H12a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a2 2 0 0 0-2-2zm-3-6v2H11a6 6 0 0 0-6 5.78V22H3V9a8 8 0 0 1 7.75-8H22z"></path></svg>
+					<span>링크 복사</span>	
+				</div>
+			</div>
+			<div class="share_inner2">
+				<div class="share_content2">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 32px; width: 32px; stroke: currentcolor; stroke-width: 2; overflow: visible;"><g fill="none"><rect width="28" height="24" x="2" y="4" rx="4"></rect><path d="m3 6 10.42 8.81a4 4 0 0 0 5.16 0L29 6"></path></g></svg>
+					<span>이메일</span>	
+				</div>
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+		
 		<input type="hidden" id="heart_val"/>
 		<div id="wish_outer"></div>
 		<div id="wish" >
@@ -1153,28 +1185,32 @@
 		            <span class="wish_sp2">0개 저장됨</span>
 		         </div>
 		      </div>
-		<!--    <div class="wish_content_outer">
-		         <div class="wish_content1">
-		            <img src="images/wish.png"/>
-		            <span class="wish_sp1">경기도 안양시</span><br>
-		            <span class="wish_sp2">0개 저장됨</span>
-		         </div>
-		      </div>
-		      <div class="wish_content_outer">
-		         <div class="wish_content1">
-		            <img src="images/wish.png"/>
-		            <span class="wish_sp1">경기도 안양시</span><br>
-		            <span class="wish_sp2">0개 저장됨</span>
-		         </div>
-		      </div> 
-		       -->
-		   
 		   
 		   </div> <!-- inner1끝 -->
 		   <div class="wish_inner2">
 		      <div class="wish_content2">새로운 위시리스트 만들기</div>
 		   </div>
 		</div>
+		<!-- 위시 카테고리 만들기 -->
+		<div id="make_wish_back"></div>
+		<div id="make_wish">
+			<div class="make_wish_header">
+				<button>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;position:absolute;top: 20px;"><path d="m6 6 20 20M26 6 6 26"></path></svg>
+				</button>
+				<span>위시리스트 만들기</span>
+			</div>
+			<form method="get">
+				<div class="make_wish_section">
+					<input type="text" maxlength='7' name="wishlist_name" placeholder="제목입력"/>
+				</div>
+				<div class="make_wish_footer">
+					<input type="reset" name="wish_reset" class="wish_reset" value="지우기"/>
+					<input name="wish_insert" type="submit" class="wish_insert" value="새로 만들기"/>
+				</div>
+			</form>
+		</div>
+		<!-- 위시 카테고리 만들기끝 -->
 		
 		<div id="bg_popup"></div>
         	<div id="pop_review">
@@ -1192,7 +1228,18 @@
 		            </div>
 		            <div class="pop_section1-2">게스트 선호</div>
 		            <div class="pop_section1-3">평점, 후기, 신뢰도 기준<br>에어비앤비에서 가장 사랑받는 체험</div>
+			        <div>
+		              <form method="post" action="/reply/write">
+		                 <p>
+		                    <textarea rows="5" cols="50" name="content"></textarea>
+		                 </p>
+		                 <p>
+		                    <button type="submit">후기 작성</button>
+		                 </p>
+		              </form>
+		           </div>
 		         </div>
+		         
 		         
 		         <div class="pop_section2">
 		            <div>

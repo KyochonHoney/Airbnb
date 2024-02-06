@@ -1,0 +1,11 @@
+package myDao;
+
+import java.util.ArrayList;
+
+import swVo.WishlistVo;
+
+public class WishlistDao {
+	public ArrayList<WishlistVo> getWishlistVoByUserIdx(int userIdx) {
+		
+	}
+}

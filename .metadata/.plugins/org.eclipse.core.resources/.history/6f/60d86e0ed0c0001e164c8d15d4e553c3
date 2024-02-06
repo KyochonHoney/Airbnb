@@ -1,0 +1,10 @@
+import myDao.Main3Dao;
+
+public class TestYG {
+
+	public static void main(String[] args) {
+		Main3Dao mDao = new Main3Dao();
+		
+	}
+
+}

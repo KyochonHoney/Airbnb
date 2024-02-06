@@ -57,8 +57,9 @@ $(function(){
    $(".Logout").click(function(){
 	    var result = confirm("정말 로그아웃 하시겠습니까?");
         if(!result){return false;}
-        else{ location.href = "Controller?command=logout&url=account.jsp"}
+        else{ location.href = "LswController?command=logout"}
    });
+   
 	$("#mv_button").click(function(){
 		$("#et_mv").css("display","inline");
 		$("#mv_button").css("display","none");
@@ -122,7 +123,6 @@ $(function(){
 			$("#year").text(arr[0].trim());
 			$("#month").text(arr[1].trim());
 			$("#day").text(arr[2].trim());
-			//alert(dateval);s
 			$(".select_detail:nth-child(1) > .detail_content").text(d);
 		}
 	
@@ -162,6 +162,11 @@ $(function(){
 	
 	// 인원수 +버튼
 	$(".gc_plus").parent().click(function(){
+		let current_member = Number($(".gc_count:nth-child(1) input").val())
+							+ Number($(".gc_count:nth-child(2) input").val())
+							+ Number($(".gc_count:nth-child(3) input").val());
+		if(current_member == max_member) return;
+		
 		$(this).parent().find(".gc_num").val(Number($(this).parent().find(".gc_num").val()) + 1);
 		$(this).parent().find(".gc_button:nth-child(1)").css("border","1px solid rgb(176, 176, 176)");
 		$(this).parent().find(".gc_minus").css("color"," rgb(113, 113, 113)");
@@ -172,18 +177,29 @@ $(function(){
 			$(this).parent().find(".gc_plus").css("color"," rgb(235, 235, 235)");
 		}
 		// 인원수대로 텍스트 변경
-		let adultVAL = $(".gc_count:nth-child(1) input").val();
-		let kidVAL = $(".gc_count:nth-child(2) input").val();
-		let babyVAL = $(".gc_count:nth-child(3) input").val();
-		let guestCnt = '게스트 ' + (Number(adultVAL) + Number(kidVAL) + Number(babyVAL)) +'명';
+		let guestCnt = '게스트 ' + current_member +'명';
 		$(".select_detail:nth-child(2) > .detail_content").text(guestCnt);
 	});
 	
 	// 인원수 -버튼
 	$(".gc_minus").parent().click(function(){
+		let adultVal = Number($(".gc_count:nth-child(1) input").val());
+		let kidVal = Number($(".gc_count:nth-child(2) input").val());
+		let babyVal = Number($(".gc_count:nth-child(3) input").val());
+		let current_member = adultVal + kidVal + babyVal;
+		
+		if(adultVal == 0) adultVal = 0;
+		if(kidVal == 0) kidVal = 0;
+		if(babyVal == 0) babyVal = 0;
+		
 		$(this).parent().find(".gc_num").val(Number($(this).parent().find(".gc_num").val()) - 1);
-		$(this).parent().find(".gc_button:nth-child(3)").css("border","1px solid rgb(176, 176, 176)");
-		$(this).parent().find(".gc_plus").css("color"," rgb(113, 113, 113)");
+		if(adultVal > 0) {
+			$(this).parent().find(".gc_button:nth-child(3)").css("border","1px solid rgb(176, 176, 176)");
+			$(this).parent().find(".gc_plus").css("color","rgb(113, 113, 113)");
+		} else {
+			$(this).parent().find(".gc_button:nth-child(3)").css("border","1px solid rgb(221, 221, 221)");
+			$(this).parent().find(".gc_plus").css("color","rgb(221, 221, 221)");
+		}
 		
 		if( Number($(this).parent().find(".gc_num").val())>=16 ){
 			$(this).parent().find(".gc_num").val(16);
@@ -191,10 +207,7 @@ $(function(){
 			$(this).parent().find(".gc_plus").css("color"," rgb(235, 235, 235)");
 		}
 		// 인원수대로 텍스트 변경
-		let adultVAL = $(".gc_count:nth-child(1) input").val();
-		let kidVAL = $(".gc_count:nth-child(2) input").val();
-		let babyVAL = $(".gc_count:nth-child(3) input").val();
-		let guestCnt = '게스트 ' + (Number(adultVAL) + Number(kidVAL) + Number(babyVAL)) +'명';
+		let guestCnt = '게스트 ' + current_member +'명';
 		$(".select_detail:nth-child(2) > .detail_content").text(guestCnt);
 	});
 	
@@ -207,7 +220,7 @@ $(function(){
 		$("body").css("overflow-y","scroll");
 	})
 	
-	$(".res_button1").click(function() {
+	/*$(".res_button1").click(function() {
 		$(location).attr("href","Payment.html");
 	})
 	$(".rs_button").click(function() {
@@ -216,7 +229,7 @@ $(function(){
 	
 	$(".sbt_top > div:nth-child(2)").click(function(){
 		$(location).attr("href","Payment.html");
-	})
+	})*/
 	
 	$(".rc_content > div:nth-child(2)").click(function() {
 		if($(this).find('div').css('display') == "none") {
@@ -240,6 +253,35 @@ $(function(){
 	$('#mv_button > b').click(function(e) {
   		e.preventDefault(); 
   		$(this).parent().hide();  
+	});
+	
+	// 공유하기
+	$("#exp_etc > div:nth-child(4), .share").click(function(){
+		$("#share_outer").css("display","block");
+		$("#share").css("display","block");
+		$("body").css("overflow-y","hidden");
+	});
+	$(".share_header>button").click(function(){
+		$("#share_outer").css("display","none");
+		$("#share").css("display","none");
+		$("body").css("overflow-y","scroll");
+	});
+	$("#share_outer").click(function(){
+		$("#share_outer").css("display","none");
+		$("#share").css("display","none");
+		$("body").css("overflow-y","scroll");
+	});
+	$(".side_date_popbtn>div:nth-child(1)").click(function(){
+		$(".side_date_popbtn>div:nth-child(1)").css("border","2.5px solid black");
+		$(".side_date_popbtn>div:nth-child(2)").css("border","0.7px solid rgb(113, 113, 113)");
+	});
+	$(".side_date_popbtn>div:nth-child(2)").click(function(){
+		$(".side_date_popbtn>div:nth-child(2)").css("border","2.5px solid black");
+		$(".side_date_popbtn>div:nth-child(1)").css("border","0.7px solid rgb(113, 113, 113)");
+	});
+	// 닫기버튼
+	$(".side_date_pop3-1>div").click(function(){
+		$(".side_date_pop").css("display","none");
 	});
 	
    $(".heart").click(function() {
@@ -276,6 +318,21 @@ $(function(){
 	   $("body").css("overflow-y","scroll");
 	   $(".heart").eq(idx).find("svg").css("fill", "#FF385C");
    })
+   
+   // 위시 카테고리 만들기
+   $(".wish_content2").click(function(){
+	  $("#wish_outer").css("display","none");
+      $("#wish").css("display","none");
+
+	  $("#make_wish_back").css("display","block");
+      $("#make_wish").css("display","block");
+      $("body").css("overflow-y","hidden");
+	});
+	$(".make_wish_header").click(function() {
+		$("#make_wish_back").css("display","none");
+      $("#make_wish").css("display","none");
+      $("body").css("overflow-y","scroll");
+	})
   
   /*모든리뷰버튼 클릭*/
     $("#rv_all_view").click(function(){

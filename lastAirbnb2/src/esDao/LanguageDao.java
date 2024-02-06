@@ -19,7 +19,7 @@ public class LanguageDao {
 		Connection conn = DBConnection.getConnection();
 
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);	
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
 				String language_idx = rs.getString("language_idx");

@@ -1,0 +1,16 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import myDao.Main3Dao;
+
+// 테이블 r, u 에서 
+public class HelpMeYG1 {
+	public static void main(String[] args) throws Exception {
+		Connection conn = Main3Dao.conn;
+		
+		String sql = "SELECT review_idx, written_date FROM review";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		
+	}
+}

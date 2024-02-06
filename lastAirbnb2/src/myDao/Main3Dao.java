@@ -25,7 +25,7 @@ public class Main3Dao {
    //?Œ·ëª„ì ™è¹‚ë?ë±? ï§Žë¶¿ê½Œï¿½ë±?
    public RoomVo getRoom(int roomIdx) {
       RoomVo roomvo = null;
-      
+System.out.println("³ªÁß¿¡ Áö¿ö¿ä Main3Dao.java) getRoom() -- roomIdx : " + roomIdx);
       String sql = "SELECT * FROM airbnb_room WHERE room_idx=?";
       try {
          PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -63,6 +63,8 @@ public class Main3Dao {
       }catch(SQLException e) {
          e.printStackTrace();
       }
+      System.out.println("³ªÁß¿¡ Áö¿ö¿ä Main3Dao.java) roomvo==null : " + (roomvo==null));
+      
       return roomvo;
    }
    
