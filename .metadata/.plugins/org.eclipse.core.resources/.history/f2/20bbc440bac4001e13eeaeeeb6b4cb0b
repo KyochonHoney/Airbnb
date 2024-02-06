@@ -1,0 +1,7 @@
+package myDao;
+
+public class WishlistDao {
+	public ArrayList<WishlistVo> getWishlistVoByUserIdx(int userIdx) {
+		
+	}
+}

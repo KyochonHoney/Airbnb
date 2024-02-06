@@ -1,0 +1,25 @@
+package myDao;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import common.DBConnection;
+import swVo.WishlistVo;
+
+public class WishlistDao {
+	public ArrayList<WishlistVo> getWishlistVoByUserIdx(int userIdx) {
+		String sql = "SELECT w.*, wi.*, ri.img1, e.exp_img1"
+				+ " FROM wishlist w, wishlist_item wi, room_image ri, experience e"
+				+ " WHERE w.wishlist_idx = wi.wishlist_idx "
+				+ " AND wi.room_idx = ri.room_idx(+)"
+				+ " AND wi.exp_idx = e.exp_idx(+)"
+				+ " AND user_idx=? "
+				+ " ORDER BY w.wishlist_idx ASC";
+		
+		Connection conn = DBConnection.getConnection();
+		ArrayList<WishlistVo> listRet = new ArrayList<WishlistVo>(0;)
+		try {
+			
+		}
+	}
+}
