@@ -3,6 +3,7 @@ package myDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import common.DBConnection;
@@ -40,7 +41,7 @@ public class Main2Dao {
    
    // Ïπ¥ÌÖåÍ≥†Î¶¨Î≥ÑÎ°ú ?àô?ÜåÎ∂àÎü¨?ò§Í∏?
    public static ArrayList<RepresentRoomListVo> getRoom(int cateIdx){
-      ArrayList<RepresentRoomListVo> list2 = new ArrayList<RepresentRoomListVo>(); //arraylistÍ∞ùÏ≤¥?Éù?Ñ±
+	   ArrayList<RepresentRoomListVo> list2 = new ArrayList<RepresentRoomListVo>(); //arraylistÍ∞ùÏ≤¥?Éù?Ñ±
       
       String sql= " SELECT i.img1, r.room_name, r.room_score,r.room_price, r.room_idx, r.longitude, r.latitude"  
             + " FROM airbnb_room r, room_image i"  
@@ -97,17 +98,23 @@ public class Main2Dao {
       return Math.round(distance);
    }
    //« ≈Õø° ∏¬¥¬ º˜º“µÈ ∞°¡Æø¿±‚
-   public ArrayList<RepresentRoomListVo> showRoomListsByFilter(int minPrice,int maxPrice,int roomCategory){
+   public ArrayList<RepresentRoomListVo> showRoomListsByFilter(int minPrice,int maxPrice,int roomCategory,int bedRoom, int bedTotal, int bathRoom ){
+//	   if(maxPrice==0) maxPrice = Integer.MAX_VALUE;
+	   
 	   ArrayList<RepresentRoomListVo> list = new ArrayList<RepresentRoomListVo>();
 	   String sql = "SELECT i.img1, r.room_name, r.room_score,r.room_price, r.room_idx, r.longitude, r.latitude " + 
 	   		" FROM airbnb_room r, room_image i" + 
-	   		" WHERE r.room_category_idx = ? AND i.room_idx = r.room_idx AND r.room_price BETWEEN ? AND ?";
+	   		" WHERE r.room_category_idx = ? AND i.room_idx = r.room_idx AND r.room_price BETWEEN ? AND ?" +
+	   		" AND r.bedroom =? AND bed_total =? AND bathroom =?";
 	   
 	   try {
 		   PreparedStatement pstmt = conn.prepareStatement(sql);
 		   pstmt.setInt(1, roomCategory);
 		   pstmt.setInt(2, minPrice);
 		   pstmt.setInt(3, maxPrice);
+		   pstmt.setInt(4, bedRoom);
+		   pstmt.setInt(5, bedTotal);
+		   pstmt.setInt(6, bathRoom);
 		   ResultSet rs = pstmt.executeQuery();
 		   while(rs.next()) {
 			   String roomImg1 = rs.getString("img1");
@@ -119,6 +126,8 @@ public class Main2Dao {
 	            double longitude = rs.getDouble("longitude");
 	            list.add(new RepresentRoomListVo(roomImg1, roomName, roomScore, roomPrice, latitude, longitude, roomIdx));
 		   }
+//		   System.out.println(pstmt.getConnection().toString());
+		   System.out.println(list);
 		   rs.close();
 		   pstmt.close();
 	   } catch(Exception e) { e.printStackTrace(); }
@@ -126,5 +135,33 @@ public class Main2Dao {
 	   return list;
 	   
    }
-
+   
+   
+   // ªı ¿ßΩ√∏ÆΩ∫∆Æ ∏∏µÈ±‚(¿Ø¿˙æ∆¿Ãµ, ªı ¿ßΩ√∏ÆΩ∫∆Æ ¿Ã∏ß)
+   public void makeWishList(int userIdx,String makeWishName) {
+	   String sql = "INSERT INTO wishlist(wishlist_idx,user_idx,biglist_name)" +
+			   		"VALUES(WISH_MAKE_CATE.nextval,?,?)";
+	   try {
+		   PreparedStatement pstmt = conn.prepareStatement(sql);
+		   pstmt.setInt(1, userIdx);
+		   pstmt.setString(2, makeWishName);
+		   pstmt.executeLargeUpdate();
+		   pstmt.close();
+	   }catch(SQLException e) {
+		   e.printStackTrace();
+	   }
+   }
+   // «œ∆ÆªË¡¶«“∂ß
+   public void deleteWishLish(int roomIdx) {
+	 try {
+		  String sql = "DELETE FROM wish_list WHERE room_idx=?";
+		  PreparedStatement pstmt = conn.prepareStatement(sql);
+		  pstmt.setInt(1, roomIdx);
+		  pstmt.executeUpdate();
+		  pstmt.close();
+	 }catch(Exception e) {
+		 e.printStackTrace();
+	 }
+   }
+   
 }

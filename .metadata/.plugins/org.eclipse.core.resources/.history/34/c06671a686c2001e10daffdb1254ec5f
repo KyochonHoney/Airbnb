@@ -1,0 +1,20 @@
+<%@page import="myVo.*"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%
+	RoomVo roomvo = (RoomVo)request.getAttribute("roomvo");
+	int countriveiw =(Integer)request.getAttribute("countReview");
+%>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>확인 및 결제 &middot; 에어비앤비</title>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/Payment.css"/>
+	</head>
+	<body>
+		
+	</body>
+</html>

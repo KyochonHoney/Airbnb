@@ -1,0 +1,6 @@
+package myAction;
+
+import action.Action;
+public class WriteReviewAction implements Action{
+
+}

@@ -1,0 +1,12 @@
+import java.sql.Connection;
+
+import myDao.Main3Dao;
+
+// 테이블 r, u 에서 
+public class HelpMeYG1 {
+	public static void main(String[] args) {
+		Connection conn = Main3Dao.conn;
+		
+		String sql = "SELECT review_idx, written_date FROM review";
+	}
+}

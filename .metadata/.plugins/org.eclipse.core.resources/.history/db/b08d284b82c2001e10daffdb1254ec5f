@@ -1,0 +1,7 @@
+package myAction;
+
+import javax.swing.Action;
+
+public class RoomPaymentAction implements Action{
+
+}

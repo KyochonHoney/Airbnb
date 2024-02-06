@@ -1,0 +1,12 @@
+package swVo;
+
+public class WishlistListVo {
+	private int wishlistIdx;
+	private int userIdx;
+	private String biglistName;
+	private String img;
+	private int cnt;
+	
+	
+
+}

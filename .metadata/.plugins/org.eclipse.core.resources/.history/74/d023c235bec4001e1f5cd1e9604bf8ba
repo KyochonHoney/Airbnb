@@ -1,0 +1,5 @@
+package myDao;
+
+public class WishlistDao {
+
+}
